@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "Ricoh_Cells")(type "KiCad")(uri "${KIPRJMOD}/Libs/Ricoh_Cells.kicad_sym")(options "")(descr ""))
+)
