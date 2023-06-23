@@ -346,6 +346,10 @@
     [
       "f34260c0-5998-461e-bddc-407835c1ca78",
       "ADDR_AND_DATA_BUSES"
+    ],
+    [
+      "e7c40e34-ed5c-4acf-abcb-e687ca829050",
+      "MULTIPLICATION & DIVISION REGISTERS"
     ]
   ],
   "text_variables": {}
