@@ -349,7 +349,11 @@
     ],
     [
       "e7c40e34-ed5c-4acf-abcb-e687ca829050",
-      "MULTIPLICATION & DIVISION REGISTERS"
+      "DIVISION QUOTIENT REGISTERS"
+    ],
+    [
+      "a9057ef9-fbbc-4a6c-a32c-d29bca6c6f67",
+      "MUL PRODUCT OR DIV REMAINDER REGISTERS"
     ]
   ],
   "text_variables": {}
