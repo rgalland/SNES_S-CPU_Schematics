@@ -354,6 +354,10 @@
     [
       "a9057ef9-fbbc-4a6c-a32c-d29bca6c6f67",
       "MUL PRODUCT OR DIV REMAINDER REGISTERS"
+    ],
+    [
+      "6ab7ea20-bfb3-4f18-94ca-a294126fa0fb",
+      "DMA"
     ]
   ],
   "text_variables": {}

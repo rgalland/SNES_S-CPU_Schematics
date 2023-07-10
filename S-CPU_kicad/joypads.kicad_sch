@@ -11430,8 +11430,8 @@
     )
     (pin "1" (uuid 2b8a3e4d-f03e-411f-a3ef-96af991c76c6))
     (pin "2" (uuid a46f28ef-642c-4bbd-95bb-812a108ba92f))
-    (pin "3" (uuid 4963e25e-4842-4a2d-acc0-0e8422b19899))
-    (pin "3" (uuid 4963e25e-4842-4a2d-acc0-0e8422b19899))
+    (pin "3" (uuid 4963e25e-4842-4a2d-acc0-0e8422b1989e))
+    (pin "3" (uuid 4963e25e-4842-4a2d-acc0-0e8422b1989e))
     (pin "4" (uuid 3cfbc270-023c-400a-81bd-7bb02dcd97a6))
     (instances
       (project "S-CPU"
