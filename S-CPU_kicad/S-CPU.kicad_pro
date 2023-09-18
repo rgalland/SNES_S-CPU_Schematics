@@ -361,7 +361,11 @@
     ],
     [
       "606b397f-d353-4bdc-83fa-3e77f933e2b8",
-      "DMA Logic"
+      "DMA & HDMA Control Registers"
+    ],
+    [
+      "6249ed0e-dad5-438e-aa66-f1dc5c72ea48",
+      "Other DMA gates"
     ]
   ],
   "text_variables": {}
