@@ -1768,7 +1768,7 @@
     (property "Datasheet" "" (at 1.27 -7.62 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "ki_description" "Simple inverter." (at 0 0 0)
+    (property "ki_description" "Simple non-inverting buffer" (at 0 0 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (symbol "DELAY_BUF_1_0"
