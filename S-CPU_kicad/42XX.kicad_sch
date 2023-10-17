@@ -5138,6 +5138,11 @@
     (effects (font (size 5 5) (thickness 1) bold) (justify left bottom))
     (uuid 000baa90-19f2-47e4-8321-97bfe53c2f0a)
   )
+  (text "Positive pulse on VBLANK falling edge for XIN/4 period"
+    (at 361.95 125.73 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 0f2be688-56be-47bc-99ac-cf1f187f327c)
+  )
   (text "CPU version 2\nD3-0 = \"0010\"" (at 480.695 97.79 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 12f25b26-1d3f-4ed2-b4da-7374ad13e87b)
@@ -5754,7 +5759,7 @@
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid 8542327c-b3b7-4bcc-9032-a08bd8f93bf3)
   )
-  (hierarchical_label "RISING_VBLANK" (shape output) (at 398.78 135.89 0) (fields_autoplaced)
+  (hierarchical_label "FALLING_VBLANK" (shape output) (at 398.78 135.89 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid 8af1960c-2a22-43c9-903f-2e9455271199)
   )
@@ -5770,7 +5775,7 @@
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid 99063431-cd96-408f-95c3-bbaa3598fcf4)
   )
-  (hierarchical_label "FALLING_VBLANK" (shape output) (at 358.14 173.99 0) (fields_autoplaced)
+  (hierarchical_label "LONG_FALLING_VBLANK" (shape output) (at 358.14 173.99 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid ae5013cf-0942-4326-995a-602095953b7c)
   )
@@ -5952,9 +5957,9 @@
     (property "Datasheet" "" (at 97.155 227.965 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "" (uuid 01656080-e9d7-4d92-9e45-885b2048f226))
-    (pin "" (uuid 01656080-e9d7-4d92-9e45-885b2048f226))
-    (pin "" (uuid 01656080-e9d7-4d92-9e45-885b2048f226))
+    (pin "" (uuid 01656080-e9d7-4d92-9e45-885b2048f230))
+    (pin "" (uuid 01656080-e9d7-4d92-9e45-885b2048f230))
+    (pin "" (uuid 01656080-e9d7-4d92-9e45-885b2048f230))
     (instances
       (project "S-CPU"
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/c42cdb83-bc69-486b-820b-017180bd7612"
@@ -6105,9 +6110,9 @@
     (property "Datasheet" "" (at 97.155 255.905 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "" (uuid 00761cc6-64a6-4ddf-a1f7-6a2879e00305))
-    (pin "" (uuid 00761cc6-64a6-4ddf-a1f7-6a2879e00305))
-    (pin "" (uuid 00761cc6-64a6-4ddf-a1f7-6a2879e00305))
+    (pin "" (uuid 00761cc6-64a6-4ddf-a1f7-6a2879e0030f))
+    (pin "" (uuid 00761cc6-64a6-4ddf-a1f7-6a2879e0030f))
+    (pin "" (uuid 00761cc6-64a6-4ddf-a1f7-6a2879e0030f))
     (instances
       (project "S-CPU"
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/c42cdb83-bc69-486b-820b-017180bd7612"
@@ -7158,9 +7163,9 @@
     (property "Datasheet" "" (at 97.155 241.935 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "" (uuid 4d048c5c-5957-4e6c-836d-af7b186aa9c9))
-    (pin "" (uuid 4d048c5c-5957-4e6c-836d-af7b186aa9c9))
-    (pin "" (uuid 4d048c5c-5957-4e6c-836d-af7b186aa9c9))
+    (pin "" (uuid 4d048c5c-5957-4e6c-836d-af7b186aa9d3))
+    (pin "" (uuid 4d048c5c-5957-4e6c-836d-af7b186aa9d3))
+    (pin "" (uuid 4d048c5c-5957-4e6c-836d-af7b186aa9d3))
     (instances
       (project "S-CPU"
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/c42cdb83-bc69-486b-820b-017180bd7612"
