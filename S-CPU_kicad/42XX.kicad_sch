@@ -8,7 +8,7 @@
     (title "SNES S-CPU Schematics ")
     (date "2023-06-14")
     (rev "0.1")
-    (company "Regis Galland")
+    (company "Author: Regis Galland")
   )
 
   (lib_symbols
@@ -5177,10 +5177,6 @@
     (effects (font (size 5 5) (thickness 1) bold) (justify left bottom))
     (uuid a7069267-bac7-4f36-bcf6-e7cacf0b70e6)
   )
-  (text "4200 WRITE" (at 309.88 292.1 0)
-    (effects (font (size 5 5) (thickness 1) bold) (justify left bottom))
-    (uuid e21ca3b8-7941-48f4-80ca-ae30ec3531a1)
-  )
   (text "4210 READ" (at 439.42 63.5 0)
     (effects (font (size 5 5) (thickness 1) bold) (justify left bottom))
     (uuid fa7edaa1-df5a-45e3-9ca7-56d4c4e1e7e2)
@@ -5206,7 +5202,7 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 0cece241-a965-4c0b-91b5-d5f498e04509)
   )
-  (label "wNBRL_wNBQA_XIN{slash}4" (at 535.305 229.87 0) (fields_autoplaced)
+  (label "wNBRL_wNBQA_~{XIN{slash}4}" (at 535.305 229.87 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 0fc15c11-d1f4-4c7c-9339-e04c33e5a335)
   )
@@ -5410,7 +5406,7 @@
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid 78c08d79-49fc-4141-b247-585e865606ca)
   )
-  (label "wNBRL_wNBQA_XIN{slash}4" (at 363.22 226.695 0) (fields_autoplaced)
+  (label "wNBRL_wNBQA_~{XIN{slash}4}" (at 363.22 226.695 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 7d63e8b5-f487-4003-bcd5-c59dd6f33f8d)
   )
@@ -5482,7 +5478,7 @@
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid a2f68cdd-8cbb-4a09-bd3b-bef0abe57e68)
   )
-  (label "wNBRL_wNBQA_XIN{slash}4" (at 273.685 133.35 0) (fields_autoplaced)
+  (label "wNBRL_wNBQA_~{XIN{slash}4}" (at 273.685 133.35 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid a431e1b4-b9b3-43c4-8966-40f99909d022)
   )
@@ -5494,7 +5490,7 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid a5740279-b38d-4812-a082-8c6ae7781a2e)
   )
-  (label "wNBRL_wNBQA_XIN{slash}4" (at 257.81 219.075 0) (fields_autoplaced)
+  (label "wNBRL_wNBQA_~{XIN{slash}4}" (at 257.81 219.075 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid a864214a-36d6-4e69-b035-44a94178b7e1)
   )
@@ -5538,7 +5534,7 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid b892153b-9412-4819-b6fb-b4f1407bcc7f)
   )
-  (label "wNBRL_wNBQA_XIN{slash}4" (at 554.99 115.57 0) (fields_autoplaced)
+  (label "wNBRL_wNBQA_~{XIN{slash}4}" (at 554.99 115.57 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid b9ae1945-df42-4a8d-914d-82caded48321)
   )
@@ -5715,7 +5711,7 @@
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid 0bdb80b4-3cb4-483b-950c-abad5e9f9945)
   )
-  (hierarchical_label "wNBRL_wNBQA_XIN{slash}4" (shape input) (at 273.685 133.35 180) (fields_autoplaced)
+  (hierarchical_label "wNBRL_wNBQA_~{XIN{slash}4}" (shape input) (at 273.685 133.35 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid 28e3e2da-98a3-43a4-a7a8-e7b0cab449b1)
   )
@@ -5957,9 +5953,9 @@
     (property "Datasheet" "" (at 97.155 227.965 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "" (uuid 01656080-e9d7-4d92-9e45-885b2048f230))
-    (pin "" (uuid 01656080-e9d7-4d92-9e45-885b2048f230))
-    (pin "" (uuid 01656080-e9d7-4d92-9e45-885b2048f230))
+    (pin "" (uuid 01656080-e9d7-4d92-9e45-885b2048f23a))
+    (pin "" (uuid 01656080-e9d7-4d92-9e45-885b2048f23a))
+    (pin "" (uuid 01656080-e9d7-4d92-9e45-885b2048f23a))
     (instances
       (project "S-CPU"
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/c42cdb83-bc69-486b-820b-017180bd7612"
@@ -6110,9 +6106,9 @@
     (property "Datasheet" "" (at 97.155 255.905 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "" (uuid 00761cc6-64a6-4ddf-a1f7-6a2879e0030f))
-    (pin "" (uuid 00761cc6-64a6-4ddf-a1f7-6a2879e0030f))
-    (pin "" (uuid 00761cc6-64a6-4ddf-a1f7-6a2879e0030f))
+    (pin "" (uuid 00761cc6-64a6-4ddf-a1f7-6a2879e00319))
+    (pin "" (uuid 00761cc6-64a6-4ddf-a1f7-6a2879e00319))
+    (pin "" (uuid 00761cc6-64a6-4ddf-a1f7-6a2879e00319))
     (instances
       (project "S-CPU"
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/c42cdb83-bc69-486b-820b-017180bd7612"
@@ -7163,9 +7159,9 @@
     (property "Datasheet" "" (at 97.155 241.935 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "" (uuid 4d048c5c-5957-4e6c-836d-af7b186aa9d3))
-    (pin "" (uuid 4d048c5c-5957-4e6c-836d-af7b186aa9d3))
-    (pin "" (uuid 4d048c5c-5957-4e6c-836d-af7b186aa9d3))
+    (pin "" (uuid 4d048c5c-5957-4e6c-836d-af7b186aa9dd))
+    (pin "" (uuid 4d048c5c-5957-4e6c-836d-af7b186aa9dd))
+    (pin "" (uuid 4d048c5c-5957-4e6c-836d-af7b186aa9dd))
     (instances
       (project "S-CPU"
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/c42cdb83-bc69-486b-820b-017180bd7612"

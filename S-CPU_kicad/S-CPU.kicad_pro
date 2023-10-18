@@ -345,7 +345,7 @@
     ],
     [
       "f34260c0-5998-461e-bddc-407835c1ca78",
-      "ADDR_AND_DATA_BUSES"
+      "A-BUS AND B-BUS"
     ],
     [
       "e7c40e34-ed5c-4acf-abcb-e687ca829050",
@@ -366,6 +366,18 @@
     [
       "6249ed0e-dad5-438e-aa66-f1dc5c72ea48",
       "Other DMA gates"
+    ],
+    [
+      "07b46eb7-d060-47db-b3fe-ac171637ec19",
+      "CLOCKS AND RESETS"
+    ],
+    [
+      "be36cab5-2fce-4944-8328-33b291bdd45b",
+      "RW SIGNALS AND ADDRESS_DECODING"
+    ],
+    [
+      "51127ecd-2e04-4024-92b3-6d1bf736c0b0",
+      "ADDR BUS CONTROL AND DATA BUS"
     ]
   ],
   "text_variables": {}
