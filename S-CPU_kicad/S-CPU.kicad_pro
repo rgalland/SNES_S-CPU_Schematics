@@ -378,6 +378,10 @@
     [
       "51127ecd-2e04-4024-92b3-6d1bf736c0b0",
       "ADDR BUS CONTROL AND DATA BUS"
+    ],
+    [
+      "df31d498-9729-452c-b4bd-c0293b928458",
+      "DMA CONFIG AND ADDRESS BUSES"
     ]
   ],
   "text_variables": {}
