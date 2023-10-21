@@ -5,7 +5,7 @@ Inkscape has been used to create and edit the SVG file.
 
 - Most cell types have been identified with the exception of a couple (65816 will not be reversed engineered)
 - All cells have been allocated a 4 letter unique identifier in the SVG file
-- Most cells are in sKicad schematics. A lot of them need to move about to make more sense + more annotations 
+- Most cells are in Kicad schematics. A lot of them need to move about to make more sense + more annotations 
 
 
 

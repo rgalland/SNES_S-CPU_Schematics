@@ -232,7 +232,7 @@
       "no_connect_dangling": "warning",
       "pin_not_connected": "error",
       "pin_not_driven": "error",
-      "pin_to_pin": "warning",
+      "pin_to_pin": "error",
       "power_pin_not_driven": "error",
       "similar_labels": "warning",
       "simulation_model_issue": "error",
@@ -268,6 +268,91 @@
         "via_diameter": 0.8,
         "via_drill": 0.4,
         "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.2,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "ADDRESS",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgb(0, 255, 255)",
+        "track_width": 0.25,
+        "via_diameter": 0.8,
+        "via_drill": 0.4,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.2,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "CLOCK",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgb(255, 153, 0)",
+        "track_width": 0.25,
+        "via_diameter": 0.8,
+        "via_drill": 0.4,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.2,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "DATA",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgb(0, 255, 0)",
+        "track_width": 0.25,
+        "via_diameter": 0.8,
+        "via_drill": 0.4,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.2,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "MODES",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgb(0, 0, 0)",
+        "track_width": 0.25,
+        "via_diameter": 0.8,
+        "via_drill": 0.4,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.2,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "RESET",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgb(255, 0, 0)",
+        "track_width": 0.25,
+        "via_diameter": 0.8,
+        "via_drill": 0.4,
+        "wire_width": 6
       }
     ],
     "meta": {
@@ -275,7 +360,292 @@
     },
     "net_colors": null,
     "netclass_assignments": null,
-    "netclass_patterns": []
+    "netclass_patterns": [
+      {
+        "netclass": "RESET",
+        "pattern": "/CLOCKS AND RESETS/wIAYI"
+      },
+      {
+        "netclass": "RESET",
+        "pattern": "/CLOCKS AND RESETS/wMASS_~{JP_RST}"
+      },
+      {
+        "netclass": "RESET",
+        "pattern": "/CLOCKS AND RESETS/wDBJW_wHASI_~{RST}"
+      },
+      {
+        "netclass": "CLOCK",
+        "pattern": "/CLOCKS AND RESETS/~{XIN1}"
+      },
+      {
+        "netclass": "CLOCK",
+        "pattern": "/CLOCKS AND RESETS/wOAGE_SYSCLK"
+      },
+      {
+        "netclass": "CLOCK",
+        "pattern": "/CLOCKS AND RESETS/wACLK"
+      },
+      {
+        "netclass": "CLOCK",
+        "pattern": "/CLOCKS AND RESETS/wNAGK_wNAJD"
+      },
+      {
+        "netclass": "CLOCK",
+        "pattern": "/CLOCKS AND RESETS/wMAGR_wMAGV"
+      },
+      {
+        "netclass": "CLOCK",
+        "pattern": "/CLOCKS AND RESETS/wNAQE_wNBBM_XIN{slash}2"
+      },
+      {
+        "netclass": "CLOCK",
+        "pattern": "/CLOCKS AND RESETS/wNBHJ_wNBHM_XIN{slash}2"
+      },
+      {
+        "netclass": "CLOCK",
+        "pattern": "/CLOCKS AND RESETS/wOBXZ_wOCHV_~{XIN{slash}2}"
+      },
+      {
+        "netclass": "CLOCK",
+        "pattern": "/CLOCKS AND RESETS/wOACU_wOAFI_XIN{slash}4"
+      },
+      {
+        "netclass": "CLOCK",
+        "pattern": "/CLOCKS AND RESETS/wNBRL_wNBQA_~{XIN{slash}4}"
+      },
+      {
+        "netclass": "CLOCK",
+        "pattern": "/CLOCKS AND RESETS/wNBKW_wNBPG_~{XIN{slash}4}"
+      },
+      {
+        "netclass": "CLOCK",
+        "pattern": "/CLOCKS AND RESETS/wNBEB_wNBEG_XIN{slash}8"
+      },
+      {
+        "netclass": "CLOCK",
+        "pattern": "/CLOCKS AND RESETS/wOCRQ_wOCRS_~{XIN{slash}8}"
+      },
+      {
+        "netclass": "CLOCK",
+        "pattern": "/CLOCKS AND RESETS/wOATI_~{XIN{slash}256}"
+      },
+      {
+        "netclass": "ADDRESS",
+        "pattern": "/CLOCKS AND RESETS/A[0..23]"
+      },
+      {
+        "netclass": "RESET",
+        "pattern": "/JOYPADS REGISTERS/wMASS_~{JP_RST}"
+      },
+      {
+        "netclass": "CLOCK",
+        "pattern": "/OTHER_42XX_REGISTERS/wNBRL_wNBQA_~{XIN{slash}4}"
+      },
+      {
+        "netclass": "DATA",
+        "pattern": "/JOYPADS REGISTERS/D[0..7]"
+      },
+      {
+        "netclass": "ADDRESS",
+        "pattern": "/A-BUS AND B-BUS/A[0..23]"
+      },
+      {
+        "netclass": "CLOCK",
+        "pattern": "/DIVISION QUOTIENT REGISTERS/wOAGE_SYSCLK"
+      },
+      {
+        "netclass": "ADDRESS",
+        "pattern": "/A-BUS AND B-BUS/A23"
+      },
+      {
+        "netclass": "ADDRESS",
+        "pattern": "/A-BUS AND B-BUS/A22"
+      },
+      {
+        "netclass": "ADDRESS",
+        "pattern": "/A-BUS AND B-BUS/A21"
+      },
+      {
+        "netclass": "ADDRESS",
+        "pattern": "/A-BUS AND B-BUS/A20"
+      },
+      {
+        "netclass": "ADDRESS",
+        "pattern": "/A-BUS AND B-BUS/A19"
+      },
+      {
+        "netclass": "ADDRESS",
+        "pattern": "/A-BUS AND B-BUS/A18"
+      },
+      {
+        "netclass": "ADDRESS",
+        "pattern": "/A-BUS AND B-BUS/A17"
+      },
+      {
+        "netclass": "ADDRESS",
+        "pattern": "/A-BUS AND B-BUS/A16"
+      },
+      {
+        "netclass": "ADDRESS",
+        "pattern": "/A-BUS AND B-BUS/A4"
+      },
+      {
+        "netclass": "ADDRESS",
+        "pattern": "/A-BUS AND B-BUS/A5"
+      },
+      {
+        "netclass": "ADDRESS",
+        "pattern": "/A-BUS AND B-BUS/A6"
+      },
+      {
+        "netclass": "ADDRESS",
+        "pattern": "/A-BUS AND B-BUS/A7"
+      },
+      {
+        "netclass": "ADDRESS",
+        "pattern": "/A-BUS AND B-BUS/A1"
+      },
+      {
+        "netclass": "ADDRESS",
+        "pattern": "/A-BUS AND B-BUS/A15"
+      },
+      {
+        "netclass": "ADDRESS",
+        "pattern": "/A-BUS AND B-BUS/A14"
+      },
+      {
+        "netclass": "ADDRESS",
+        "pattern": "/A-BUS AND B-BUS/A13"
+      },
+      {
+        "netclass": "ADDRESS",
+        "pattern": "/A-BUS AND B-BUS/A12"
+      },
+      {
+        "netclass": "ADDRESS",
+        "pattern": "/A-BUS AND B-BUS/A11"
+      },
+      {
+        "netclass": "ADDRESS",
+        "pattern": "/A-BUS AND B-BUS/A10"
+      },
+      {
+        "netclass": "ADDRESS",
+        "pattern": "/A-BUS AND B-BUS/A9"
+      },
+      {
+        "netclass": "ADDRESS",
+        "pattern": "/A-BUS AND B-BUS/A8"
+      },
+      {
+        "netclass": "DATA",
+        "pattern": "/JOYPADS REGISTERS/D1"
+      },
+      {
+        "netclass": "DATA",
+        "pattern": "/JOYPADS REGISTERS/D2"
+      },
+      {
+        "netclass": "DATA",
+        "pattern": "/JOYPADS REGISTERS/D3"
+      },
+      {
+        "netclass": "DATA",
+        "pattern": "/JOYPADS REGISTERS/D4"
+      },
+      {
+        "netclass": "DATA",
+        "pattern": "/JOYPADS REGISTERS/D5"
+      },
+      {
+        "netclass": "DATA",
+        "pattern": "/JOYPADS REGISTERS/D6"
+      },
+      {
+        "netclass": "MODES",
+        "pattern": "/ADDR BUS CONTROL AND DATA BUS/~{MODE0}"
+      },
+      {
+        "netclass": "MODES",
+        "pattern": "/ADDR BUS CONTROL AND DATA BUS/~{MODE1}"
+      },
+      {
+        "netclass": "MODES",
+        "pattern": "/MODES/~{MODE4}"
+      },
+      {
+        "netclass": "MODES",
+        "pattern": "/MODES/~{MODE5}"
+      },
+      {
+        "netclass": "MODES",
+        "pattern": "/MODES/~{MODE6}"
+      },
+      {
+        "netclass": "MODES",
+        "pattern": "/ADDR BUS CONTROL AND DATA BUS/wOCOG_~{MODE7}"
+      },
+      {
+        "netclass": "MODES",
+        "pattern": "/ADDR BUS CONTROL AND DATA BUS/~{MODE0_OR_MODE1}"
+      },
+      {
+        "netclass": "MODES",
+        "pattern": "/MODES/~{MODE0_OR_MODE6}"
+      },
+      {
+        "netclass": "MODES",
+        "pattern": "/MODES/MODE2_OR_MODE3"
+      },
+      {
+        "netclass": "MODES",
+        "pattern": "/MODES/MODE4_OR_MODE5"
+      },
+      {
+        "netclass": "MODES",
+        "pattern": "/ADDR BUS CONTROL AND DATA BUS/MODE4-6"
+      },
+      {
+        "netclass": "MODES",
+        "pattern": "/MODES/MODE1_OR_MODE3"
+      },
+      {
+        "netclass": "MODES",
+        "pattern": "/MODES/~{MODE4_OR_MODE6}"
+      },
+      {
+        "netclass": "MODES",
+        "pattern": "/MODES/MODE5_OR_MODE7"
+      },
+      {
+        "netclass": "RESET",
+        "pattern": "/ADDR BUS CONTROL AND DATA BUS/wIAYI"
+      },
+      {
+        "netclass": "CLOCK",
+        "pattern": "/ADDR BUS CONTROL AND DATA BUS/wACLK"
+      },
+      {
+        "netclass": "CLOCK",
+        "pattern": "/A-BUS AND B-BUS/wMAGR_wMAGV"
+      },
+      {
+        "netclass": "CLOCK",
+        "pattern": "/CLOCKS AND RESETS/wMBLO_~{XIN{slash}256}"
+      },
+      {
+        "netclass": "ADDRESS",
+        "pattern": "/A-BUS/A*"
+      },
+      {
+        "netclass": "CLOCK",
+        "pattern": "/B-BUS/wMAGR_wMAGV"
+      },
+      {
+        "netclass": "CLOCK",
+        "pattern": "/B-BUS/wOCRQ_wOCRS_~{XIN{slash}8}"
+      }
+    ]
   },
   "pcbnew": {
     "last_paths": {
@@ -345,7 +715,7 @@
     ],
     [
       "f34260c0-5998-461e-bddc-407835c1ca78",
-      "A-BUS AND B-BUS"
+      "A-BUS"
     ],
     [
       "e7c40e34-ed5c-4acf-abcb-e687ca829050",
@@ -382,6 +752,14 @@
     [
       "df31d498-9729-452c-b4bd-c0293b928458",
       "DMA CONFIG AND ADDRESS BUSES"
+    ],
+    [
+      "c08e9298-7a1a-4422-b5e6-0d0a75dfcc35",
+      "MODES"
+    ],
+    [
+      "57b0b9a3-51ba-4364-8d9d-dc971e7bd669",
+      "B-BUS"
     ]
   ],
   "text_variables": {}
