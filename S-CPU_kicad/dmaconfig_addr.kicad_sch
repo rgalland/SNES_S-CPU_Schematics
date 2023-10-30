@@ -4510,7 +4510,7 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 39aad259-ae63-45b5-899d-b6cfb8b90005)
   )
-  (text "LATCH_NEXT_DMA_ADDR_BUS is only valid for 1 mclk cycle every 8 cycles"
+  (text "LATCH_NEXT_DMA_ADDR_BUS is only valid for 1 mclk cycle every 8 cycles (on cycle 1)"
     (at 425.45 57.15 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 3cdcdc19-a924-48d1-8a80-0a886c49d4c8)
@@ -6142,8 +6142,8 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid be31fae5-a2dc-47d8-87dc-20eed5e02bd8))
-    (pin "2" (uuid 71551e71-dd36-4e04-887d-10f11b7b46dd))
-    (pin "2" (uuid 71551e71-dd36-4e04-887d-10f11b7b46dd))
+    (pin "2" (uuid 71551e71-dd36-4e04-887d-10f11b7b46e3))
+    (pin "2" (uuid 71551e71-dd36-4e04-887d-10f11b7b46e3))
     (instances
       (project "S-CPU"
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb"
@@ -6265,8 +6265,8 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid f4f18853-8920-4cb3-811e-0102b291ddd0))
-    (pin "2" (uuid 42231638-d1a8-49af-bdf0-3a283989631b))
-    (pin "2" (uuid 42231638-d1a8-49af-bdf0-3a283989631b))
+    (pin "2" (uuid 42231638-d1a8-49af-bdf0-3a2839896321))
+    (pin "2" (uuid 42231638-d1a8-49af-bdf0-3a2839896321))
     (instances
       (project "S-CPU"
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb"
@@ -7309,8 +7309,8 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 1ec55fdc-ec57-42bc-8d65-19ea26ace3b8))
-    (pin "2" (uuid 10929c23-7eae-4d68-8482-a5604c9dcefc))
-    (pin "2" (uuid 10929c23-7eae-4d68-8482-a5604c9dcefc))
+    (pin "2" (uuid 10929c23-7eae-4d68-8482-a5604c9dcf02))
+    (pin "2" (uuid 10929c23-7eae-4d68-8482-a5604c9dcf02))
     (instances
       (project "S-CPU"
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb"
@@ -7556,8 +7556,8 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 04a9c772-10e1-4f41-9476-7446307e8779))
-    (pin "2" (uuid 0f6eb369-c8b3-48b4-b287-8febbf800e60))
-    (pin "2" (uuid 0f6eb369-c8b3-48b4-b287-8febbf800e60))
+    (pin "2" (uuid 0f6eb369-c8b3-48b4-b287-8febbf800e66))
+    (pin "2" (uuid 0f6eb369-c8b3-48b4-b287-8febbf800e66))
     (instances
       (project "S-CPU"
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb"
@@ -8058,8 +8058,8 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 5d830008-4c65-483a-bc90-560a5b22981f))
-    (pin "2" (uuid a7b4bdeb-8595-47df-a1b4-e7eace294e82))
-    (pin "2" (uuid a7b4bdeb-8595-47df-a1b4-e7eace294e82))
+    (pin "2" (uuid a7b4bdeb-8595-47df-a1b4-e7eace294e88))
+    (pin "2" (uuid a7b4bdeb-8595-47df-a1b4-e7eace294e88))
     (instances
       (project "S-CPU"
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb"
@@ -8247,8 +8247,8 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid cce092fb-4dd6-4060-a95d-8c182b7646b9))
-    (pin "2" (uuid 77f4b6d3-9a73-422d-938c-05eaa11812bb))
-    (pin "2" (uuid 77f4b6d3-9a73-422d-938c-05eaa11812bb))
+    (pin "2" (uuid 77f4b6d3-9a73-422d-938c-05eaa11812c1))
+    (pin "2" (uuid 77f4b6d3-9a73-422d-938c-05eaa11812c1))
     (instances
       (project "S-CPU"
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb"

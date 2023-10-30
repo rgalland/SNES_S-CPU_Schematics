@@ -1027,7 +1027,7 @@
     (stroke (width 0) (type default))
     (uuid 2c6349ab-0ade-4a27-8eac-9014ac84d86e)
   )
-  (wire (pts (xy 269.24 217.805) (xy 266.7 217.805))
+  (wire (pts (xy 271.78 217.805) (xy 266.7 217.805))
     (stroke (width 0) (type default))
     (uuid 2ca7ecf8-b52e-4798-b8c2-b07a4c5a78fa)
   )
@@ -1235,7 +1235,7 @@
     (stroke (width 0) (type default))
     (uuid 5a5d93ba-7139-4a14-84e1-3cd6a8d439d3)
   )
-  (wire (pts (xy 284.48 208.28) (xy 298.45 208.28))
+  (wire (pts (xy 287.02 198.12) (xy 298.45 198.12))
     (stroke (width 0) (type default))
     (uuid 5bd51829-137c-4aaa-b28b-6765e9a52863)
   )
@@ -1451,7 +1451,7 @@
     (stroke (width 0) (type default))
     (uuid 8a1d4a8c-cb36-468f-aef3-cf6a7d67d835)
   )
-  (wire (pts (xy 672.465 332.74) (xy 687.07 332.74))
+  (wire (pts (xy 659.765 332.74) (xy 687.07 332.74))
     (stroke (width 0) (type default))
     (uuid 8b32aa5b-394c-44f9-b4b6-4c37e8f9578c)
   )
@@ -1531,7 +1531,7 @@
     (stroke (width 0) (type default))
     (uuid 987bc599-ef0e-4d28-9783-f0a2d9481fc6)
   )
-  (wire (pts (xy 269.24 205.74) (xy 266.7 205.74))
+  (wire (pts (xy 271.78 195.58) (xy 266.7 195.58))
     (stroke (width 0) (type default))
     (uuid 991a1fd0-ceab-441e-b397-6e0864dd37f9)
   )
@@ -1555,7 +1555,7 @@
     (stroke (width 0) (type default))
     (uuid 9f8196e0-66c5-46d5-83be-066e0b9f97aa)
   )
-  (wire (pts (xy 269.24 210.82) (xy 269.24 217.805))
+  (wire (pts (xy 271.78 200.66) (xy 271.78 217.805))
     (stroke (width 0) (type default))
     (uuid a110d052-b415-4f6a-96c3-56d0b582e993)
   )
@@ -1775,10 +1775,6 @@
     (stroke (width 0) (type default))
     (uuid cbc93183-c60d-450d-9fc6-0ac823995c29)
   )
-  (wire (pts (xy 266.7 195.58) (xy 266.7 205.74))
-    (stroke (width 0) (type default))
-    (uuid ce3d2847-8b36-40a4-917b-6fbe581d3419)
-  )
   (wire (pts (xy 401.32 205.74) (xy 401.32 210.82))
     (stroke (width 0) (type default))
     (uuid d02818c8-b020-497b-a36a-2ee927e15fba)
@@ -1867,7 +1863,7 @@
     (stroke (width 0) (type default))
     (uuid dd8761b6-e5d3-4c00-b96b-50434dce50ce)
   )
-  (wire (pts (xy 687.07 335.28) (xy 672.465 335.28))
+  (wire (pts (xy 687.07 335.28) (xy 659.765 335.28))
     (stroke (width 0) (type default))
     (uuid de5df4ac-1c8a-4a38-9abe-c6fb0c43ec58)
   )
@@ -1983,7 +1979,7 @@
     (stroke (width 0) (type default))
     (uuid fcd84b64-9ae1-425e-9846-33757d1f96a0)
   )
-  (wire (pts (xy 298.45 208.28) (xy 298.45 280.035))
+  (wire (pts (xy 298.45 198.12) (xy 298.45 280.035))
     (stroke (width 0) (type default))
     (uuid fcf5df1d-b93c-4397-aa24-d470296a045d)
   )
@@ -2032,7 +2028,7 @@
     (uuid d43ca3f4-880e-4770-b343-b0b92a6d6c36)
   )
 
-  (text "If HDMA starts when GDMA is running, it will wait for the end of the current \npattern HDMA to take over. GDMA will resume at the end of HDMA."
+  (text "If HDMA starts when GDMA is running, it will wait for the end of the current \npattern or the end of transfer (whichever comes first)\nfor HDMA to take over. GDMA will resume at the end of HDMA."
     (at 521.97 122.555 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 0de6db8a-393e-4e8d-a6c4-406c8d7cacda)
@@ -2067,6 +2063,11 @@
   (text "negative pulse on falling edge" (at 431.165 340.36 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid b3cd51d7-46c6-4ca1-989e-af99aafac9a4)
+  )
+  (text "This area seems to have a few mistakes that were corrected between revisions but left some unconnected tracks and stange routing:\n\nROLX looks like it was originally clock by XIN/2 used by SOZR. O track is running very close to ROLX clk input is not conencted.\nCLK had to be brought from the bottwon right hand of the chip only to clock this DFF.\n\nQOYJ looks like an after thought.Layout almost suggest that ~{RST} net was connected to UOTI directly to begin with.\nResetting ROSV would reset UOTI in any case, so why adding an AND gate? "
+    (at 516.89 210.82 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid b6f788a5-b701-41ee-beff-ddea73b41566)
   )
   (text "HDMA\nRESET 1" (at 471.17 331.47 0)
     (effects (font (size 4 4) (thickness 0.8) bold) (justify left bottom))
@@ -2137,7 +2138,7 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 5db957d5-083a-4621-998d-dd1c5896543d)
   )
-  (label "~{NO_GDMA3}" (at 672.465 332.74 0) (fields_autoplaced)
+  (label "~{NO_GDMA3}" (at 659.765 332.74 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 5db9e747-c50b-4c6a-878b-9453dc685efd)
   )
@@ -2169,7 +2170,7 @@
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid 92f2f1bc-21ef-4d65-8129-641a5e8d42d5)
   )
-  (label "~{NO_HDMA3}" (at 672.465 335.28 0) (fields_autoplaced)
+  (label "~{NO_HDMA3}" (at 659.765 335.28 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid a9aca051-e517-4b5f-9c62-03df1aada9fc)
   )
@@ -2301,6 +2302,10 @@
   (hierarchical_label "wOCRQ_wOCRS_~{XIN{slash}8}" (shape input) (at 280.035 452.12 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid 6f05aea6-5bca-4bf0-b080-0f4634fe2626)
+  )
+  (hierarchical_label "HDMA_ON" (shape output) (at 629.285 231.14 0) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify left))
+    (uuid 6f9992fe-1a4a-4321-b002-ee1da70aee13)
   )
   (hierarchical_label "GDMA_TRANSFER" (shape output) (at 680.085 412.75 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left))
@@ -2574,7 +2579,7 @@
   (symbol (lib_id "Ricoh_Cells:DFFR_B") (at 390.525 421.64 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 10801cc7-5dd9-4e51-8364-2e3dd1b8c927)
-    (property "Reference" "FMKL" (at 390.525 413.1777 0)
+    (property "Reference" "OOJS" (at 390.525 413.1777 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "DFFR_B" (at 390.525 415.925 0)
@@ -2595,14 +2600,11 @@
     (pin "7" (uuid b0a9a295-7dff-4f46-999d-7e53e07eae38))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
-          (reference "FMKL") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/6249ed0e-dad5-438e-aa66-f1dc5c72ea48"
           (reference "OOJS") (unit 1)
         )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/98587fa3-8bc3-47dd-b87a-75fccbf68d7b"
-          (reference "FMKL") (unit 1)
+          (reference "OOJS") (unit 1)
         )
       )
     )
@@ -2706,7 +2708,7 @@
   (symbol (lib_id "Ricoh_Cells:DFFR_B") (at 385.445 208.28 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 17e9641a-1f31-48e3-8d8d-a0ae96f189d7)
-    (property "Reference" "FMKL" (at 385.445 199.8177 0)
+    (property "Reference" "RONJ" (at 385.445 199.8177 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "DFFR_B" (at 385.445 202.2419 0)
@@ -2727,14 +2729,11 @@
     (pin "7" (uuid d0943c43-286f-4f93-8a5e-f0f675902fe7))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
-          (reference "FMKL") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/6249ed0e-dad5-438e-aa66-f1dc5c72ea48"
           (reference "RONJ") (unit 1)
         )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/98587fa3-8bc3-47dd-b87a-75fccbf68d7b"
-          (reference "FMKL") (unit 1)
+          (reference "RONJ") (unit 1)
         )
       )
     )
@@ -2832,7 +2831,7 @@
   (symbol (lib_id "Ricoh_Cells:DFFR_B") (at 417.195 208.28 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 1fac00a1-c086-4a83-aa2e-8d7d02eca0b9)
-    (property "Reference" "FMKL" (at 417.195 199.8177 0)
+    (property "Reference" "ROOB" (at 417.195 199.8177 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "DFFR_B" (at 417.195 202.2419 0)
@@ -2853,14 +2852,11 @@
     (pin "7" (uuid 96282f1a-562a-4ee5-a628-cc1a975fb5f4))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
-          (reference "FMKL") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/6249ed0e-dad5-438e-aa66-f1dc5c72ea48"
           (reference "ROOB") (unit 1)
         )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/98587fa3-8bc3-47dd-b87a-75fccbf68d7b"
-          (reference "FMKL") (unit 1)
+          (reference "ROOB") (unit 1)
         )
       )
     )
@@ -2869,7 +2865,7 @@
   (symbol (lib_id "Ricoh_Cells:DFFR_B") (at 315.595 499.11 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 251ebe32-48da-4647-85e8-7c14b0c5f3e4)
-    (property "Reference" "FMKL" (at 315.595 490.6477 0)
+    (property "Reference" "POLC" (at 315.595 490.6477 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "DFFR_B" (at 315.595 493.395 0)
@@ -2890,14 +2886,11 @@
     (pin "7" (uuid a747c2a4-2e71-4cd1-bc48-5916edf47841))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
-          (reference "FMKL") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/6249ed0e-dad5-438e-aa66-f1dc5c72ea48"
           (reference "POLC") (unit 1)
         )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/98587fa3-8bc3-47dd-b87a-75fccbf68d7b"
-          (reference "FMKL") (unit 1)
+          (reference "POLC") (unit 1)
         )
       )
     )
@@ -2937,7 +2930,7 @@
   (symbol (lib_id "Ricoh_Cells:DFFR_B") (at 404.495 272.415 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 2cb6ea96-0cd3-4518-b5e8-a100b1cc149c)
-    (property "Reference" "FMKL" (at 404.495 263.9527 0)
+    (property "Reference" "QOIS" (at 404.495 263.9527 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "DFFR_B" (at 404.495 266.7 0)
@@ -2958,14 +2951,11 @@
     (pin "7" (uuid 8bc0b81d-37ba-4f33-bd0c-010248c55c86))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
-          (reference "FMKL") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/6249ed0e-dad5-438e-aa66-f1dc5c72ea48"
           (reference "QOIS") (unit 1)
         )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/98587fa3-8bc3-47dd-b87a-75fccbf68d7b"
-          (reference "FMKL") (unit 1)
+          (reference "QOIS") (unit 1)
         )
       )
     )
@@ -3039,7 +3029,7 @@
   (symbol (lib_id "Ricoh_Cells:DFFR_B") (at 428.625 406.4 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 39cac8e5-2053-4d61-8db5-124fe0b95b90)
-    (property "Reference" "FMKL" (at 428.625 397.9377 0)
+    (property "Reference" "POQV" (at 428.625 397.9377 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "DFFR_B" (at 428.625 400.685 0)
@@ -3060,14 +3050,11 @@
     (pin "7" (uuid b6ca20cd-ac0f-4d4d-bd40-41927200cc56))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
-          (reference "FMKL") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/6249ed0e-dad5-438e-aa66-f1dc5c72ea48"
           (reference "POQV") (unit 1)
         )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/98587fa3-8bc3-47dd-b87a-75fccbf68d7b"
-          (reference "FMKL") (unit 1)
+          (reference "POQV") (unit 1)
         )
       )
     )
@@ -3132,7 +3119,7 @@
   (symbol (lib_id "Ricoh_Cells:DFFR_B") (at 315.595 277.495 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 4dd68d6a-76f5-479a-932e-c769968c947b)
-    (property "Reference" "FMKL" (at 315.595 269.0327 0)
+    (property "Reference" "SOMN" (at 315.595 269.0327 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "DFFR_B" (at 315.595 271.78 0)
@@ -3153,14 +3140,11 @@
     (pin "7" (uuid 253e79e2-6234-40c4-9772-01713f20d79f))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
-          (reference "FMKL") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/6249ed0e-dad5-438e-aa66-f1dc5c72ea48"
           (reference "SOMN") (unit 1)
         )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/98587fa3-8bc3-47dd-b87a-75fccbf68d7b"
-          (reference "FMKL") (unit 1)
+          (reference "SOMN") (unit 1)
         )
       )
     )
@@ -3236,7 +3220,7 @@
   (symbol (lib_id "Ricoh_Cells:DFFSR") (at 442.595 250.825 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 579627e1-6105-4f44-8c82-6225b584df77)
-    (property "Reference" "SBRW" (at 442.595 241.0927 0)
+    (property "Reference" "QOSC" (at 442.595 241.0927 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "DFFSR" (at 442.595 243.5169 0)
@@ -3257,14 +3241,11 @@
     (pin "7" (uuid d63d3edb-764f-416d-8d13-ee225983141a))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/4dc5cd9a-499d-4e55-930f-d6021c4e63f2"
-          (reference "SBRW") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/6249ed0e-dad5-438e-aa66-f1dc5c72ea48"
           (reference "QOSC") (unit 1)
         )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/98587fa3-8bc3-47dd-b87a-75fccbf68d7b"
-          (reference "SBRW") (unit 1)
+          (reference "QOSC") (unit 1)
         )
       )
     )
@@ -3340,7 +3321,7 @@
   (symbol (lib_id "Ricoh_Cells:DFFR_B") (at 490.855 181.61 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 62285a13-5d1a-4048-83c2-0091b9ffc46d)
-    (property "Reference" "FMKL" (at 490.855 173.1477 0)
+    (property "Reference" "SOXO" (at 490.855 173.1477 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "DFFR_B" (at 490.855 175.5719 0)
@@ -3361,14 +3342,11 @@
     (pin "7" (uuid 9f1b0299-5812-44d0-960a-224b882f38f8))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
-          (reference "FMKL") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/6249ed0e-dad5-438e-aa66-f1dc5c72ea48"
           (reference "SOXO") (unit 1)
         )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/98587fa3-8bc3-47dd-b87a-75fccbf68d7b"
-          (reference "FMKL") (unit 1)
+          (reference "SOXO") (unit 1)
         )
       )
     )
@@ -3377,7 +3355,7 @@
   (symbol (lib_id "Ricoh_Cells:DFFR_B") (at 404.495 332.74 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 66080e2e-3fce-4f19-b9a9-4f083ad6ea4f)
-    (property "Reference" "FMKL" (at 404.495 324.2777 0)
+    (property "Reference" "QOBT" (at 404.495 324.2777 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "DFFR_B" (at 404.495 326.7019 0)
@@ -3398,14 +3376,11 @@
     (pin "7" (uuid f6c204a7-783c-47eb-b09b-396305724ba9))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
-          (reference "FMKL") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/6249ed0e-dad5-438e-aa66-f1dc5c72ea48"
           (reference "QOBT") (unit 1)
         )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/98587fa3-8bc3-47dd-b87a-75fccbf68d7b"
-          (reference "FMKL") (unit 1)
+          (reference "QOBT") (unit 1)
         )
       )
     )
@@ -3414,7 +3389,7 @@
   (symbol (lib_id "Ricoh_Cells:DFFR_B") (at 352.425 377.19 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 6780f794-e9dc-4563-b879-631a66d8a52d)
-    (property "Reference" "FMKL" (at 352.425 368.7277 0)
+    (property "Reference" "OOIO" (at 352.425 368.7277 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "DFFR_B" (at 352.425 371.1519 0)
@@ -3435,14 +3410,11 @@
     (pin "7" (uuid 5d8c1e47-0b8c-4c46-a161-01f4778d3900))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
-          (reference "FMKL") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/6249ed0e-dad5-438e-aa66-f1dc5c72ea48"
           (reference "OOIO") (unit 1)
         )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/98587fa3-8bc3-47dd-b87a-75fccbf68d7b"
-          (reference "FMKL") (unit 1)
+          (reference "OOIO") (unit 1)
         )
       )
     )
@@ -3451,7 +3423,7 @@
   (symbol (lib_id "Ricoh_Cells:DFFR_B") (at 455.295 208.28 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 67c16fb8-e50a-48c3-b7a4-61b00287d7fe)
-    (property "Reference" "FMKL" (at 455.295 199.8177 0)
+    (property "Reference" "ROSV" (at 455.295 199.8177 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "DFFR_B" (at 455.295 202.2419 0)
@@ -3472,14 +3444,11 @@
     (pin "7" (uuid f55c5bb5-faa0-45e6-9c67-a695a3d1c5b4))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
-          (reference "FMKL") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/6249ed0e-dad5-438e-aa66-f1dc5c72ea48"
           (reference "ROSV") (unit 1)
         )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/98587fa3-8bc3-47dd-b87a-75fccbf68d7b"
-          (reference "FMKL") (unit 1)
+          (reference "ROSV") (unit 1)
         )
       )
     )
@@ -3524,7 +3493,7 @@
   (symbol (lib_id "Ricoh_Cells:DFFR_B") (at 374.015 450.85 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 6dbc00bf-d98d-4cf6-948b-d7d7925cd9b3)
-    (property "Reference" "FMKL" (at 374.015 442.3877 0)
+    (property "Reference" "OOGP" (at 374.015 442.3877 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "DFFR_B" (at 374.015 444.8119 0)
@@ -3545,14 +3514,11 @@
     (pin "7" (uuid 99a60974-aa67-4b04-b233-a919b76ba178))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
-          (reference "FMKL") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/6249ed0e-dad5-438e-aa66-f1dc5c72ea48"
           (reference "OOGP") (unit 1)
         )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/98587fa3-8bc3-47dd-b87a-75fccbf68d7b"
-          (reference "FMKL") (unit 1)
+          (reference "OOGP") (unit 1)
         )
       )
     )
@@ -3591,7 +3557,7 @@
   (symbol (lib_id "Ricoh_Cells:DFFR_B") (at 454.66 181.61 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 788a7f04-93e6-438c-ad5a-1a3f2d04554d)
-    (property "Reference" "FMKL" (at 454.66 173.1477 0)
+    (property "Reference" "ROLX" (at 454.66 173.1477 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "DFFR_B" (at 454.66 175.5719 0)
@@ -3612,14 +3578,11 @@
     (pin "7" (uuid fc42645a-0e5b-45e7-8f6e-3b5a0f34cfe5))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
-          (reference "FMKL") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/6249ed0e-dad5-438e-aa66-f1dc5c72ea48"
           (reference "ROLX") (unit 1)
         )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/98587fa3-8bc3-47dd-b87a-75fccbf68d7b"
-          (reference "FMKL") (unit 1)
+          (reference "ROLX") (unit 1)
         )
       )
     )
@@ -3658,7 +3621,7 @@
   (symbol (lib_id "Ricoh_Cells:DFFR_B") (at 404.495 313.69 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 7f78ad0c-4b1f-4656-8a5c-4029721eafec)
-    (property "Reference" "FMKL" (at 404.495 305.2277 0)
+    (property "Reference" "QOBN" (at 404.495 305.2277 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "DFFR_B" (at 404.495 307.6519 0)
@@ -3679,14 +3642,11 @@
     (pin "7" (uuid 3eebe8a8-f832-4028-b95d-0ec0b50709f1))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
-          (reference "FMKL") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/6249ed0e-dad5-438e-aa66-f1dc5c72ea48"
           (reference "QOBN") (unit 1)
         )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/98587fa3-8bc3-47dd-b87a-75fccbf68d7b"
-          (reference "FMKL") (unit 1)
+          (reference "QOBN") (unit 1)
         )
       )
     )
@@ -3695,7 +3655,7 @@
   (symbol (lib_id "Ricoh_Cells:DFFSR") (at 353.695 278.765 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 81174a10-96c8-4bd2-8efa-f908a1e67517)
-    (property "Reference" "SBRW" (at 353.695 269.0327 0)
+    (property "Reference" "SOMK" (at 353.695 269.0327 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "DFFSR" (at 353.695 271.4569 0)
@@ -3716,14 +3676,11 @@
     (pin "7" (uuid aef9d86c-2bdd-4af5-8126-1d66d0989391))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/4dc5cd9a-499d-4e55-930f-d6021c4e63f2"
-          (reference "SBRW") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/6249ed0e-dad5-438e-aa66-f1dc5c72ea48"
           (reference "SOMK") (unit 1)
         )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/98587fa3-8bc3-47dd-b87a-75fccbf68d7b"
-          (reference "SBRW") (unit 1)
+          (reference "SOMK") (unit 1)
         )
       )
     )
@@ -3760,7 +3717,7 @@
   (symbol (lib_id "Ricoh_Cells:DFFR_B") (at 404.495 294.64 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 827a3335-05e2-4dae-a88c-357b9720be51)
-    (property "Reference" "FMKL" (at 404.495 286.1777 0)
+    (property "Reference" "QOBA" (at 404.495 286.1777 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "DFFR_B" (at 404.495 288.6019 0)
@@ -3781,14 +3738,11 @@
     (pin "7" (uuid 94d9ddf9-f487-4cf7-9af8-9818da1c7f18))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
-          (reference "FMKL") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/6249ed0e-dad5-438e-aa66-f1dc5c72ea48"
           (reference "QOBA") (unit 1)
         )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/98587fa3-8bc3-47dd-b87a-75fccbf68d7b"
-          (reference "FMKL") (unit 1)
+          (reference "QOBA") (unit 1)
         )
       )
     )
@@ -3797,7 +3751,7 @@
   (symbol (lib_id "Ricoh_Cells:DFFR_B") (at 352.425 396.24 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 841ddf38-1e28-4c93-add3-63a5e1184368)
-    (property "Reference" "FMKL" (at 352.425 387.7777 0)
+    (property "Reference" "OODF" (at 352.425 387.7777 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "DFFR_B" (at 352.425 390.2019 0)
@@ -3818,14 +3772,11 @@
     (pin "7" (uuid c0840768-81d2-451f-a915-685d8ade120a))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
-          (reference "FMKL") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/6249ed0e-dad5-438e-aa66-f1dc5c72ea48"
           (reference "OODF") (unit 1)
         )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/98587fa3-8bc3-47dd-b87a-75fccbf68d7b"
-          (reference "FMKL") (unit 1)
+          (reference "OODF") (unit 1)
         )
       )
     )
@@ -3834,7 +3785,7 @@
   (symbol (lib_id "Ricoh_Cells:DFFR_B") (at 594.36 233.68 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 8ae0c543-4ab9-4746-b09f-65a7ebb55cca)
-    (property "Reference" "FMKL" (at 594.36 225.2177 0)
+    (property "Reference" "UOTI" (at 594.36 225.2177 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "DFFR_B" (at 594.36 227.6419 0)
@@ -3855,14 +3806,11 @@
     (pin "7" (uuid 2105b1d3-2b8a-4c85-81e8-b4a0328522c9))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
-          (reference "FMKL") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/6249ed0e-dad5-438e-aa66-f1dc5c72ea48"
           (reference "UOTI") (unit 1)
         )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/98587fa3-8bc3-47dd-b87a-75fccbf68d7b"
-          (reference "FMKL") (unit 1)
+          (reference "UOTI") (unit 1)
         )
       )
     )
@@ -3904,7 +3852,7 @@
   (symbol (lib_id "Ricoh_Cells:DFFR_B") (at 556.26 233.68 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 8c7a5208-03ea-4e26-8779-22c84caa5eb2)
-    (property "Reference" "FMKL" (at 556.26 225.2177 0)
+    (property "Reference" "UOTW" (at 556.26 225.2177 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "DFFR_B" (at 556.26 227.6419 0)
@@ -3925,14 +3873,11 @@
     (pin "7" (uuid b39d9f67-3ff3-457d-b3b7-3ecc91e25a42))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
-          (reference "FMKL") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/6249ed0e-dad5-438e-aa66-f1dc5c72ea48"
           (reference "UOTW") (unit 1)
         )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/98587fa3-8bc3-47dd-b87a-75fccbf68d7b"
-          (reference "FMKL") (unit 1)
+          (reference "UOTW") (unit 1)
         )
       )
     )
@@ -3968,19 +3913,19 @@
     )
   )
 
-  (symbol (lib_id "Ricoh_Cells:AND_2") (at 276.86 208.28 0) (unit 1)
+  (symbol (lib_id "Ricoh_Cells:AND_2") (at 279.4 198.12 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 955524a4-ec3a-429d-ac10-cef0888be706)
-    (property "Reference" "SONJ" (at 276.8462 200.3257 0)
+    (property "Reference" "SONJ" (at 279.3862 190.1657 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "AND_2" (at 276.8462 202.7499 0)
+    (property "Value" "AND_2" (at 279.3862 192.5899 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 276.86 208.28 0)
+    (property "Footprint" "" (at 279.4 198.12 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "http://iceboy.a-singer.de/doc/dmg_cells.html#and2" (at 276.86 215.9 0)
+    (property "Datasheet" "http://iceboy.a-singer.de/doc/dmg_cells.html#and2" (at 279.4 205.74 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 12e9cc46-42e8-4aac-a275-3505aef80d2c))
@@ -4001,7 +3946,7 @@
   (symbol (lib_id "Ricoh_Cells:DFFR_B") (at 493.395 264.16 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 9faaec81-5667-40b6-90e4-912f77e7985d)
-    (property "Reference" "FMKL" (at 493.395 255.6977 0)
+    (property "Reference" "QOXN" (at 493.395 255.6977 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "DFFR_B" (at 493.395 258.445 0)
@@ -4022,14 +3967,11 @@
     (pin "7" (uuid e075b55b-b645-4188-bbee-c7b56cd1d5ca))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
-          (reference "FMKL") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/6249ed0e-dad5-438e-aa66-f1dc5c72ea48"
           (reference "QOXN") (unit 1)
         )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/98587fa3-8bc3-47dd-b87a-75fccbf68d7b"
-          (reference "FMKL") (unit 1)
+          (reference "QOXN") (unit 1)
         )
       )
     )
@@ -4038,7 +3980,7 @@
   (symbol (lib_id "Ricoh_Cells:DFFR_B") (at 315.595 454.66 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid a1ad8318-51c5-47de-b0c8-93c4dac959e9)
-    (property "Reference" "FMKL" (at 315.595 446.1977 0)
+    (property "Reference" "POHS" (at 315.595 446.1977 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "DFFR_B" (at 315.595 448.945 0)
@@ -4059,14 +4001,11 @@
     (pin "7" (uuid 2ac6e9b9-e19d-4e1f-83d3-aeeae7e29754))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
-          (reference "FMKL") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/6249ed0e-dad5-438e-aa66-f1dc5c72ea48"
           (reference "POHS") (unit 1)
         )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/98587fa3-8bc3-47dd-b87a-75fccbf68d7b"
-          (reference "FMKL") (unit 1)
+          (reference "POHS") (unit 1)
         )
       )
     )
@@ -4075,7 +4014,7 @@
   (symbol (lib_id "Ricoh_Cells:DFFR_B") (at 628.015 430.53 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid a53ecb02-e8c4-440b-b419-511a6e6a0629)
-    (property "Reference" "FMKL" (at 628.015 422.0677 0)
+    (property "Reference" "POSI" (at 628.015 422.0677 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "DFFR_B" (at 628.015 424.815 0)
@@ -4096,14 +4035,11 @@
     (pin "7" (uuid e12ca9dd-a270-49f6-a862-93dc7bded0e7))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
-          (reference "FMKL") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/6249ed0e-dad5-438e-aa66-f1dc5c72ea48"
           (reference "POSI") (unit 1)
         )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/98587fa3-8bc3-47dd-b87a-75fccbf68d7b"
-          (reference "FMKL") (unit 1)
+          (reference "POSI") (unit 1)
         )
       )
     )
@@ -4142,7 +4078,7 @@
   (symbol (lib_id "Ricoh_Cells:DFFSR") (at 442.595 273.685 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid aba95c69-dc62-4bdc-b9a8-1faf8c8a3dbf)
-    (property "Reference" "SBRW" (at 442.595 263.9527 0)
+    (property "Reference" "QOMK" (at 442.595 263.9527 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "DFFSR" (at 442.595 266.3769 0)
@@ -4163,14 +4099,11 @@
     (pin "7" (uuid 184d2f40-b446-48ad-8934-95f1576558d2))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/4dc5cd9a-499d-4e55-930f-d6021c4e63f2"
-          (reference "SBRW") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/6249ed0e-dad5-438e-aa66-f1dc5c72ea48"
           (reference "QOMK") (unit 1)
         )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/98587fa3-8bc3-47dd-b87a-75fccbf68d7b"
-          (reference "SBRW") (unit 1)
+          (reference "QOMK") (unit 1)
         )
       )
     )
@@ -4297,7 +4230,7 @@
           (reference "QOYJ") (unit 1)
         )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/98587fa3-8bc3-47dd-b87a-75fccbf68d7b"
-          (reference "OBEE") (unit 1)
+          (reference "QOYJ") (unit 1)
         )
       )
     )
@@ -4306,7 +4239,7 @@
   (symbol (lib_id "Ricoh_Cells:DFFR_B") (at 473.075 406.4 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid c56c9f9c-f3c6-4d6f-ad1d-c368b3385953)
-    (property "Reference" "FMKL" (at 473.075 397.9377 0)
+    (property "Reference" "POPO" (at 473.075 397.9377 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "DFFR_B" (at 473.075 400.685 0)
@@ -4327,14 +4260,11 @@
     (pin "7" (uuid 13c74ce2-f6ee-44da-b7b6-89d13637e029))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
-          (reference "FMKL") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/6249ed0e-dad5-438e-aa66-f1dc5c72ea48"
           (reference "POPO") (unit 1)
         )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/98587fa3-8bc3-47dd-b87a-75fccbf68d7b"
-          (reference "FMKL") (unit 1)
+          (reference "POPO") (unit 1)
         )
       )
     )
@@ -4437,7 +4367,7 @@
           (reference "SOZO") (unit 1)
         )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/98587fa3-8bc3-47dd-b87a-75fccbf68d7b"
-          (reference "OBEE") (unit 1)
+          (reference "SOZO") (unit 1)
         )
       )
     )
@@ -4446,7 +4376,7 @@
   (symbol (lib_id "Ricoh_Cells:DFFR_B") (at 442.595 153.035 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid cc207b7d-0f87-4b63-b7c0-824fb709bad6)
-    (property "Reference" "FMKL" (at 442.595 144.5727 0)
+    (property "Reference" "SOZR" (at 442.595 144.5727 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "DFFR_B" (at 442.595 146.9969 0)
@@ -4467,14 +4397,11 @@
     (pin "7" (uuid 143ab3f6-2d58-475f-974a-9593054f2ac4))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
-          (reference "FMKL") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/6249ed0e-dad5-438e-aa66-f1dc5c72ea48"
           (reference "SOZR") (unit 1)
         )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/98587fa3-8bc3-47dd-b87a-75fccbf68d7b"
-          (reference "FMKL") (unit 1)
+          (reference "SOZR") (unit 1)
         )
       )
     )
@@ -4570,7 +4497,7 @@
   (symbol (lib_id "Ricoh_Cells:DFFR_B") (at 396.24 153.035 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid eb1a5a76-2d1a-48ce-bc43-8c6012f1f91c)
-    (property "Reference" "FMKL" (at 396.24 144.5727 0)
+    (property "Reference" "VOJF" (at 396.24 144.5727 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "DFFR_B" (at 396.24 146.9969 0)
@@ -4591,14 +4518,11 @@
     (pin "7" (uuid 1f780098-c890-41da-81e2-8b94adb79663))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
-          (reference "FMKL") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/6249ed0e-dad5-438e-aa66-f1dc5c72ea48"
           (reference "VOJF") (unit 1)
         )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/98587fa3-8bc3-47dd-b87a-75fccbf68d7b"
-          (reference "FMKL") (unit 1)
+          (reference "VOJF") (unit 1)
         )
       )
     )
@@ -4635,7 +4559,7 @@
   (symbol (lib_id "Ricoh_Cells:DFFR_B") (at 315.595 480.06 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid eea92980-1459-42f1-9561-ed586b20a1d1)
-    (property "Reference" "FMKL" (at 315.595 471.5977 0)
+    (property "Reference" "POKF" (at 315.595 471.5977 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "DFFR_B" (at 315.595 474.345 0)
@@ -4656,14 +4580,11 @@
     (pin "7" (uuid 8b043f2a-b619-4b4d-838a-ef0257cc71e4))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
-          (reference "FMKL") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/6249ed0e-dad5-438e-aa66-f1dc5c72ea48"
           (reference "POKF") (unit 1)
         )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/98587fa3-8bc3-47dd-b87a-75fccbf68d7b"
-          (reference "FMKL") (unit 1)
+          (reference "POKF") (unit 1)
         )
       )
     )
@@ -4769,7 +4690,7 @@
   (symbol (lib_id "Ricoh_Cells:DFFR_B") (at 455.295 302.26 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid f6124aa1-fefd-4b7d-abda-c3c392b09893)
-    (property "Reference" "FMKL" (at 455.295 293.7977 0)
+    (property "Reference" "QONK" (at 455.295 293.7977 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "DFFR_B" (at 455.295 296.2219 0)
@@ -4790,14 +4711,11 @@
     (pin "7" (uuid a995c85c-481c-46f9-8cd3-e2bf97c7e552))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
-          (reference "FMKL") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/6249ed0e-dad5-438e-aa66-f1dc5c72ea48"
           (reference "QONK") (unit 1)
         )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/98587fa3-8bc3-47dd-b87a-75fccbf68d7b"
-          (reference "FMKL") (unit 1)
+          (reference "QONK") (unit 1)
         )
       )
     )

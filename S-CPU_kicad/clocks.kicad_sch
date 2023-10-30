@@ -6398,11 +6398,11 @@
     (property "Datasheet" "" (at 278.13 96.52 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "" (uuid 089922ce-f4ac-40d1-be78-52b4585bea6f))
-    (pin "" (uuid 089922ce-f4ac-40d1-be78-52b4585bea6f))
-    (pin "" (uuid 089922ce-f4ac-40d1-be78-52b4585bea6f))
-    (pin "" (uuid 089922ce-f4ac-40d1-be78-52b4585bea6f))
-    (pin "" (uuid 089922ce-f4ac-40d1-be78-52b4585bea6f))
+    (pin "" (uuid 089922ce-f4ac-40d1-be78-52b4585bea87))
+    (pin "" (uuid 089922ce-f4ac-40d1-be78-52b4585bea87))
+    (pin "" (uuid 089922ce-f4ac-40d1-be78-52b4585bea87))
+    (pin "" (uuid 089922ce-f4ac-40d1-be78-52b4585bea87))
+    (pin "" (uuid 089922ce-f4ac-40d1-be78-52b4585bea87))
     (instances
       (project "S-CPU"
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
