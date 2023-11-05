@@ -3,9 +3,11 @@ Reverse engineering of the SNES CPU from die shots found at https://siliconpr0n.
 SVG file has link to die shot but is not included in repository because of its large size. Download it from link above and copy into the root of this repository. 
 Inkscape has been used to create and edit the SVG file.
 
-- Most cell types have been identified with the exception of a couple (65816 will not be reversed engineered)
+- All cell types have been identified (with the exception of the 65816 section)
 - All cells have been allocated a 4 letter unique identifier in the SVG file
-- Most cells are in Kicad schematics. A lot of them need to move about to make more sense + more annotations 
+- All cells captured are in Kicad schematics
+- Schematics rearranged in sections. Only some DMA section still require a few more notes and to be tidied up.
+- TODO: Adding 65816 as a component (still some unknow external connections .. to me anyway) 
 
 
 
