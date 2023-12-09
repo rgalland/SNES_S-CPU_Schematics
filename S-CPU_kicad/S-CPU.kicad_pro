@@ -235,7 +235,7 @@
       "pin_to_pin": "error",
       "power_pin_not_driven": "error",
       "similar_labels": "warning",
-      "simulation_model_issue": "error",
+      "simulation_model_issue": "ignore",
       "unannotated": "error",
       "unit_value_mismatch": "error",
       "unresolved_variable": "error",
@@ -644,6 +644,14 @@
       {
         "netclass": "CLOCK",
         "pattern": "/B-BUS/wOCRQ_wOCRS_~{XIN{slash}8}"
+      },
+      {
+        "netclass": "RESET",
+        "pattern": "/ADDR BUS CONTROL AND DATA BUS/wIAYI_~{RST}"
+      },
+      {
+        "netclass": "CLOCK",
+        "pattern": "/ADDR BUS CONTROL AND DATA BUS/wNBHJ_wNBHM_XIN{slash}2"
       }
     ]
   },
@@ -764,6 +772,10 @@
     [
       "98587fa3-8bc3-47dd-b87a-75fccbf68d7b",
       "DMA START STOP"
+    ],
+    [
+      "9daf1b03-4e32-4183-9617-26f5d966a230",
+      "65C816"
     ]
   ],
   "text_variables": {}

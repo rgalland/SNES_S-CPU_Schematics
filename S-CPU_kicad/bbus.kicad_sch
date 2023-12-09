@@ -4,6 +4,13 @@
 
   (paper "A3")
 
+  (title_block
+    (title "Reverse Engineered SNES S-CPU Schematics ")
+    (date "2023-10-21")
+    (rev "0.1")
+    (company "Author: Regis Galland")
+  )
+
   (lib_symbols
     (symbol "Ricoh_Cells:BUF" (pin_numbers hide) (pin_names hide) (in_bom yes) (on_board yes)
       (property "Reference" "U?" (at 0 5.08 0)
@@ -246,6 +253,9 @@
   )
   (junction (at 181.61 124.46) (diameter 0) (color 0 0 0 0)
     (uuid 42346a8f-59cf-462f-9f76-dd197d1da2e8)
+  )
+  (junction (at 120.65 222.25) (diameter 0) (color 0 0 0 0)
+    (uuid 4add90f0-e7dc-4da9-9e03-1075517c3b14)
   )
   (junction (at 264.16 124.46) (diameter 0) (color 0 0 0 0)
     (uuid 4f29aead-8283-46a7-9126-ce574ab87e8f)
@@ -1052,6 +1062,11 @@
     (stroke (width 0) (type default))
     (uuid a50e02eb-ff15-4acd-ab09-610bd5961b85)
   )
+  (bus (pts (xy 107.95 222.25) (xy 120.65 222.25))
+    (stroke (width 0) (type default))
+    (uuid a5d332cf-6e25-45e5-9e03-6b83209371de)
+  )
+
   (wire (pts (xy 190.5 179.07) (xy 190.5 177.8))
     (stroke (width 0) (type default))
     (uuid a7215526-b427-4656-82f4-b870bde90ea9)
@@ -1562,6 +1577,10 @@
   (hierarchical_label "wOBXZ_wOCHV_~{XIN{slash}2}" (shape input) (at 257.81 166.37 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid 98ecdc06-89e4-4f04-ba43-a55384f34777)
+  )
+  (hierarchical_label "PA[0..7]" (shape tri_state) (at 107.95 222.25 180) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify right))
+    (uuid 9ad47cd0-2cd8-4a04-b527-9160eefd1ccc)
   )
   (hierarchical_label "~{MODE5}" (shape input) (at 138.43 55.88 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right))

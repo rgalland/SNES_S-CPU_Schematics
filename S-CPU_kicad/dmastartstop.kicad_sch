@@ -4,6 +4,13 @@
 
   (paper "A1")
 
+  (title_block
+    (title "Reverse Engineered SNES S-CPU Schematics ")
+    (date "2023-10-21")
+    (rev "0.1")
+    (company "Author: Regis Galland")
+  )
+
   (lib_symbols
     (symbol "Ricoh_Cells:AND_2" (pin_names hide) (in_bom yes) (on_board yes)
       (property "Reference" "U" (at 0 5.08 0)
