@@ -652,6 +652,14 @@
       {
         "netclass": "CLOCK",
         "pattern": "/ADDR BUS CONTROL AND DATA BUS/wNBHJ_wNBHM_XIN{slash}2"
+      },
+      {
+        "netclass": "ADDRESS",
+        "pattern": "/B-BUS/PA7"
+      },
+      {
+        "netclass": "ADDRESS",
+        "pattern": "/B-BUS/PA*"
       }
     ]
   },

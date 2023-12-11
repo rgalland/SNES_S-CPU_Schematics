@@ -2882,7 +2882,7 @@
 
   (sheet (at 355.6 304.8) (size 50.8 57.15) (fields_autoplaced)
     (stroke (width 0.1524) (type solid))
-    (fill (color 0 0 0 0.0000))
+    (fill (color 255 0 255 0.3000))
     (uuid 6ab7ea20-bfb3-4f18-94ca-a294126fa0fb)
     (property "Sheetname" "DMA" (at 355.6 304.0884 0)
       (effects (font (size 1.27 1.27)) (justify left bottom))
