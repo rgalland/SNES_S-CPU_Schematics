@@ -6,7 +6,7 @@
 
   (title_block
     (title "Reverse Engineered SNES S-CPU Schematics ")
-    (date "2023-10-21")
+    (date "2024-02-12")
     (rev "0.1")
     (company "Author: Regis Galland")
   )
@@ -70,7 +70,7 @@
       (property "Datasheet" "" (at 1.27 -7.62 0)
         (effects (font (size 1.27 1.27)) hide)
       )
-      (property "ki_description" "Simple inverter." (at 0 0 0)
+      (property "ki_description" "Simple inverter" (at 0 0 0)
         (effects (font (size 1.27 1.27)) hide)
       )
       (symbol "BUF_1_0"
@@ -139,7 +139,7 @@
         )
       )
     )
-    (symbol "Ricoh_Cells:D_LATCH_A2" (pin_numbers hide) (in_bom yes) (on_board yes)
+    (symbol "Ricoh_Cells:D_LATCH_A2" (in_bom yes) (on_board yes)
       (property "Reference" "PKBB0" (at 0 8.4623 0)
         (effects (font (size 1.27 1.27)))
       )
@@ -149,7 +149,7 @@
       (property "Footprint" "" (at 0 0 0)
         (effects (font (size 1.27 1.27)) hide)
       )
-      (property "Datasheet" "http://iceboy.a-singer.de/doc/dmg_cells.html#d_latch_a" (at 0 -8.255 0)
+      (property "Datasheet" "" (at 0 -8.255 0)
         (effects (font (size 1.27 1.27)) hide)
       )
       (property "ki_description" "Gated data latch without inverted output." (at 0 0 0)
@@ -162,21 +162,21 @@
         )
       )
       (symbol "D_LATCH_A2_1_1"
-        (pin input line (at -10.16 2.54 0) (length 3.81) hide
-          (name "~{ENA}" (effects (font (size 1.27 1.27))))
+        (pin input line (at -10.16 2.54 0) (length 3.81)
+          (name "ENA" (effects (font (size 1.27 1.27))))
           (number "1" (effects (font (size 1.27 1.27))))
         )
         (pin input line (at -10.16 -2.54 0) (length 3.81)
           (name "D" (effects (font (size 1.27 1.27))))
-          (number "2" (effects (font (size 1.27 1.27))))
-        )
-        (pin input line (at -10.16 2.54 0) (length 3.81)
-          (name "ENA" (effects (font (size 1.27 1.27))))
           (number "3" (effects (font (size 1.27 1.27))))
         )
         (pin output line (at 10.16 2.54 180) (length 3.81)
           (name "Q" (effects (font (size 1.27 1.27))))
-          (number "4" (effects (font (size 1.27 1.27))))
+          (number "5" (effects (font (size 1.27 1.27))))
+        )
+        (pin output line (at 10.16 -2.54 180) (length 3.81)
+          (name "~{Q}" (effects (font (size 1.27 1.27))))
+          (number "6" (effects (font (size 1.27 1.27))))
         )
       )
     )
@@ -1271,6 +1271,8 @@
   (junction (at 285.75 225.425) (diameter 0) (color 0 0 0 0)
     (uuid ff260424-92dc-4778-b592-b133d4ff3cf3)
   )
+
+  (no_connect (at 166.37 74.93) (uuid f3a30c5f-4ba3-4cdf-a2e2-e5d5a18a4f2d))
 
   (bus_entry (at 122.555 196.85) (size 2.54 2.54)
     (stroke (width 0) (type default))
@@ -5542,10 +5544,9 @@
     (effects (font (size 5 5) (thickness 1) bold) (justify left bottom))
     (uuid 943ab54c-7a67-4927-8f9b-16bddd31b12b)
   )
-  (text "Bizarrely, RW gets inverted unlike the other signals"
-    (at 149.225 107.95 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid b4a1d8c9-757c-44f0-b924-b3736e42d5bc)
+  (text "A23-16 - Bank Address bus\nnot used in NES mode" (at 76.2 260.35 0)
+    (effects (font (size 5 5) (thickness 1) bold) (justify left bottom))
+    (uuid b88fe3d2-cf96-403d-b82e-b1ad225bd9fa)
   )
 
   (label "A22" (at 334.01 168.275 180) (fields_autoplaced)
@@ -6041,7 +6042,7 @@
   (symbol (lib_id "Ricoh_Cells:IOBUF_A") (at 379.73 66.04 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 0066e11c-9a9c-44c1-ae14-4ccd09640d6a)
-    (property "Reference" "CA7" (at 377.19 57.785 0)
+    (property "Reference" "CA15" (at 377.19 57.785 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "IOBUF_A" (at 377.19 59.69 0)
@@ -6058,9 +6059,6 @@
     (pin "3" (uuid 34d11c6d-cca0-4751-aa56-7768256ec275))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "CA7") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "CA15") (unit 1)
         )
@@ -6089,9 +6087,6 @@
     (pin "2" (uuid b7a9a9ca-11be-416d-8dc0-c74e967e56a0))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb"
-          (reference "OMNC2") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "OMNC2") (unit 1)
         )
@@ -6119,9 +6114,6 @@
     (pin "3" (uuid b170505c-dbcc-4927-a3d4-fb6c3fc3de46))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "CA7") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "CA7") (unit 1)
         )
@@ -6150,9 +6142,6 @@
     (pin "2" (uuid acaf334f-a9ec-4a22-bf8f-966f29b2fe62))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb"
-          (reference "OMNC3") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "OMNC3") (unit 1)
         )
@@ -6179,9 +6168,6 @@
     (pin "2" (uuid a6fe3f21-6a2c-4e04-b779-32fbc830797f))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb"
-          (reference "OMDX") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "OMDX") (unit 1)
         )
@@ -6209,9 +6195,6 @@
     (pin "3" (uuid e3028ef4-70ed-43e9-9097-5fff31faa81c))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "CA17") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "CA17") (unit 1)
         )
@@ -6222,7 +6205,7 @@
   (symbol (lib_id "Ricoh_Cells:TRI_BUF_IF0") (at 444.5 323.85 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 0984cb4d-8241-4a15-b83f-eb81f39bdd30)
-    (property "Reference" "ACGM" (at 444.5 329.192 0)
+    (property "Reference" "DAVA" (at 444.5 329.192 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "TRI_BUF_IF0" (at 444.5 331.24 0)
@@ -6240,9 +6223,6 @@
     (pin "2" (uuid 9a2e9667-31ad-4839-af01-07381e1649fd))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "ACGM") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "DAVA") (unit 1)
         )
@@ -6282,7 +6262,7 @@
   (symbol (lib_id "Ricoh_Cells:TRI_BUF_IF0") (at 444.5 69.85 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 0b9d1267-232e-4d48-aa87-6ec418bacc54)
-    (property "Reference" "ABVA" (at 444.5 75.192 0)
+    (property "Reference" "DAEE" (at 444.5 75.192 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "TRI_BUF_IF0" (at 444.5 77.24 0)
@@ -6300,9 +6280,6 @@
     (pin "2" (uuid 369a44f0-bf26-42b0-9962-bde77d6bf933))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "ABVA") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "DAEE") (unit 1)
         )
@@ -6313,7 +6290,7 @@
   (symbol (lib_id "Ricoh_Cells:TRI_BUF_IF0") (at 103.505 133.35 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 110d3791-c191-4bd9-8d3d-a591e04ae2d7)
-    (property "Reference" "ABWF2" (at 103.505 138.692 0)
+    (property "Reference" "GBTC6" (at 103.505 138.692 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "TRI_BUF_IF0" (at 103.505 140.97 0)
@@ -6331,9 +6308,6 @@
     (pin "2" (uuid 3efc134e-9e43-4245-aa0b-b1ffba995782))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "ABWF2") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "GBTC6") (unit 1)
         )
@@ -6391,9 +6365,6 @@
     (pin "1" (uuid 6fb551ab-058c-4f38-b107-86868e6ed988))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "ABIV") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "ABIV") (unit 1)
         )
@@ -6421,9 +6392,6 @@
     (pin "3" (uuid 5d49e45c-134f-4539-8d83-9676cc94ff97))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "CA21") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "CA21") (unit 1)
         )
@@ -6452,9 +6420,6 @@
     (pin "1" (uuid 2acf2d83-886b-4c92-ad12-3cdaa6c4ddf7))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "AAXI") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "AAXI") (unit 1)
         )
@@ -6539,9 +6504,6 @@
     (pin "2" (uuid fad28adc-8805-4142-b41a-ffd60d5564a9))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb"
-          (reference "OKSL") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "OKSL") (unit 1)
         )
@@ -6569,9 +6531,6 @@
     (pin "3" (uuid cc8ab7c2-eebe-47de-84ec-46d7e6dbab67))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "CA19") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "CA19") (unit 1)
         )
@@ -6600,9 +6559,6 @@
     (pin "2" (uuid 2037bc8c-c668-40fa-8387-0bda2136cfbe))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb"
-          (reference "OKMN0") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "OKMN0") (unit 1)
         )
@@ -6613,7 +6569,7 @@
   (symbol (lib_id "Ricoh_Cells:TRI_BUF_IF0") (at 304.8 196.85 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 1773753c-d675-4e6c-97d9-ea40ce67a9ad)
-    (property "Reference" "ABXH" (at 304.8 202.192 0)
+    (property "Reference" "LASN" (at 304.8 202.192 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "TRI_BUF_IF0" (at 304.8 204.24 0)
@@ -6631,9 +6587,6 @@
     (pin "2" (uuid 9c3caeeb-097c-4176-b09a-75a3fd6fd593))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "ABXH") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "LASN") (unit 1)
         )
@@ -6673,7 +6626,7 @@
   (symbol (lib_id "power:GND") (at 84.455 231.775 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 18ffe2a9-1abe-4f73-bc70-77a91c01fd15)
-    (property "Reference" "#PWR06" (at 84.455 238.125 0)
+    (property "Reference" "#PWR023" (at 84.455 238.125 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 84.455 235.9105 0)
@@ -6688,9 +6641,6 @@
     (pin "1" (uuid b10ec6ff-6ea4-4e25-80ad-9e18367421e9))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "#PWR06") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "#PWR023") (unit 1)
         )
@@ -6701,7 +6651,7 @@
   (symbol (lib_id "Ricoh_Cells:IOBUF_A") (at 379.73 510.54 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 19753377-20e2-4b4a-aec7-09f5a4f7da17)
-    (property "Reference" "CA4" (at 379.73 502.285 0)
+    (property "Reference" "CA8" (at 379.73 502.285 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "IOBUF_A" (at 379.73 504.19 0)
@@ -6718,9 +6668,6 @@
     (pin "3" (uuid 9958be85-3d7a-4215-b7ac-070abb576346))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "CA4") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "CA8") (unit 1)
         )
@@ -6731,7 +6678,7 @@
   (symbol (lib_id "Ricoh_Cells:IOBUF_A") (at 379.73 383.54 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 1a1d041a-9aed-40d4-bdeb-a8b5edc247bf)
-    (property "Reference" "CA4" (at 379.73 375.285 0)
+    (property "Reference" "CA10" (at 379.73 375.285 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "IOBUF_A" (at 379.73 377.19 0)
@@ -6748,9 +6695,6 @@
     (pin "3" (uuid 8aa5ac30-2318-497d-a03d-7448fe32f835))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "CA4") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "CA10") (unit 1)
         )
@@ -6779,9 +6723,6 @@
     (pin "2" (uuid 39ffd79a-2725-44fc-bf42-2aee5347d616))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb"
-          (reference "OMIG3") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "OMIG3") (unit 1)
         )
@@ -6810,9 +6751,6 @@
     (pin "2" (uuid 1dcfd023-33df-43ca-bd33-86ec26d94f66))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb"
-          (reference "OKMN2") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "OKMN2") (unit 1)
         )
@@ -6840,9 +6778,6 @@
     (pin "3" (uuid aee34de5-8726-4fdd-b584-3b0879308561))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "CA22") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "CA22") (unit 1)
         )
@@ -6882,7 +6817,7 @@
   (symbol (lib_id "Ricoh_Cells:IOBUF_A") (at 379.73 129.54 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 28686eb6-7df8-462d-b466-ba6d6d78bf77)
-    (property "Reference" "CA6" (at 379.73 121.285 0)
+    (property "Reference" "CA14" (at 379.73 121.285 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "IOBUF_A" (at 379.73 123.19 0)
@@ -6899,9 +6834,6 @@
     (pin "3" (uuid ae993b3b-3c09-4372-9493-c88e8d40451a))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "CA6") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "CA14") (unit 1)
         )
@@ -6912,7 +6844,7 @@
   (symbol (lib_id "Ricoh_Cells:TRI_INV_IF2") (at 266.7 250.825 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 2aed7b8b-53d5-4e0c-8a38-5009f4df00d0)
-    (property "Reference" "ABGY" (at 266.7 256.3575 0)
+    (property "Reference" "LATX" (at 266.7 256.3575 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "TRI_INV_IF2" (at 266.7 258.2785 0)
@@ -6930,9 +6862,6 @@
     (pin "1" (uuid d35c4829-0f75-4474-aaec-f2d63d2099a7))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "ABGY") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "LATX") (unit 1)
         )
@@ -6960,9 +6889,6 @@
     (pin "3" (uuid d990615e-2b5a-4c66-a5d8-6e0ff924b038))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "JBRI") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "JBRI") (unit 1)
         )
@@ -6973,7 +6899,7 @@
   (symbol (lib_id "Ricoh_Cells:TRI_BUF_IF0") (at 304.8 450.85 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 2ca511ff-8a1e-465c-b445-4c1e98183b16)
-    (property "Reference" "ACJG" (at 304.8 456.192 0)
+    (property "Reference" "LBHP" (at 304.8 456.192 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "TRI_BUF_IF0" (at 304.8 458.24 0)
@@ -6991,9 +6917,6 @@
     (pin "2" (uuid 14af1444-6eb2-44f1-8b90-28f5f3391eb7))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "ACJG") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "LBHP") (unit 1)
         )
@@ -7021,9 +6944,6 @@
     (pin "3" (uuid 69271919-6ffb-4433-9ad8-5b6c545ce31a))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "CA5") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "CA5") (unit 1)
         )
@@ -7052,9 +6972,6 @@
     (pin "2" (uuid ac53f48f-a95e-4d73-807c-85a0ecf2c677))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb"
-          (reference "OKTR0") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "OKTR0") (unit 1)
         )
@@ -7065,7 +6982,7 @@
   (symbol (lib_id "Ricoh_Cells:TRI_BUF_IF0") (at 304.8 69.85 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 30e86753-598f-467b-9886-438b6bce4eeb)
-    (property "Reference" "ABVA" (at 304.8 75.192 0)
+    (property "Reference" "LADZ" (at 304.8 75.192 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "TRI_BUF_IF0" (at 304.8 77.24 0)
@@ -7083,9 +7000,6 @@
     (pin "2" (uuid cf1a0403-b670-4173-8420-5ee1c3b38529))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "ABVA") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "LADZ") (unit 1)
         )
@@ -7125,7 +7039,7 @@
   (symbol (lib_id "Ricoh_Cells:TRI_BUF_IF0") (at 444.5 260.35 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 3519aff6-bee6-420c-b02d-33520b36f96c)
-    (property "Reference" "ACBV" (at 444.5 265.8801 0)
+    (property "Reference" "DATD" (at 444.5 265.8801 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "TRI_BUF_IF0" (at 444.5 268.3043 0)
@@ -7143,9 +7057,6 @@
     (pin "2" (uuid 8f300f53-c6af-47ea-a315-7b8eb8104caa))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "ACBV") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "DATD") (unit 1)
         )
@@ -7173,9 +7084,6 @@
     (pin "3" (uuid b9d954fd-6214-4c7e-b9f4-6a65edf125a8))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "CA4") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "CA4") (unit 1)
         )
@@ -7186,7 +7094,7 @@
   (symbol (lib_id "Ricoh_Cells:TRI_INV_IF2") (at 266.7 441.325 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 3b01fcee-12c3-4c87-b61e-675aaab83343)
-    (property "Reference" "ABPK" (at 266.7 446.8575 0)
+    (property "Reference" "LBGI" (at 266.7 446.8575 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "TRI_INV_IF2" (at 266.7 448.7785 0)
@@ -7204,9 +7112,6 @@
     (pin "1" (uuid cd4c46bb-3bb5-4935-8e78-5b5a359b85f2))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "ABPK") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "LBGI") (unit 1)
         )
@@ -7235,9 +7140,6 @@
     (pin "2" (uuid 1b895fb1-ab34-4a50-a7b4-fcde7c57aaa6))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb"
-          (reference "OLDU3") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "OLDU3") (unit 1)
         )
@@ -7293,9 +7195,6 @@
     (pin "2" (uuid 5ffa4deb-f64b-4faa-993b-2b44983bb718))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb"
-          (reference "OKPW") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "OKPW") (unit 1)
         )
@@ -7306,7 +7205,7 @@
   (symbol (lib_id "Ricoh_Cells:IOBUF_A") (at 519.43 447.04 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 41444dcb-0d28-4e64-a1fe-47092bd3ea6d)
-    (property "Reference" "CA4" (at 519.43 438.785 0)
+    (property "Reference" "CA1" (at 519.43 438.785 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "IOBUF_A" (at 519.43 440.69 0)
@@ -7323,9 +7222,6 @@
     (pin "3" (uuid 955c0f8c-00a4-46ae-86db-8aacb9c5356e))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "CA4") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "CA1") (unit 1)
         )
@@ -7354,9 +7250,6 @@
     (pin "1" (uuid 27cb634b-609f-4f36-bbdc-434a0e9c6c46))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "ABOH") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "ABOH") (unit 1)
         )
@@ -7385,9 +7278,6 @@
     (pin "2" (uuid 0c7034e5-28da-4837-b952-1bd86e74e055))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb"
-          (reference "OKTY0") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "OKTY0") (unit 1)
         )
@@ -7416,9 +7306,6 @@
     (pin "2" (uuid 6c7240f0-aa9c-4745-866c-ca29cfcb3b3e))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "ACBV") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "ACBV") (unit 1)
         )
@@ -7447,9 +7334,6 @@
     (pin "2" (uuid 556617ea-186e-4eba-9ddf-d2707b0c062a))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "ABWF") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "ABWF") (unit 1)
         )
@@ -7478,9 +7362,6 @@
     (pin "2" (uuid c1156098-98f2-4a49-a33a-fdce20cd8c62))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "ACKH") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "ACKH") (unit 1)
         )
@@ -7491,7 +7372,7 @@
   (symbol (lib_id "Ricoh_Cells:TRI_INV_IF2") (at 406.4 187.325 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 50b38313-5dd6-4299-9517-40ede37fd603)
-    (property "Reference" "ABEB" (at 406.4 192.8575 0)
+    (property "Reference" "DAKP" (at 406.4 192.8575 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "TRI_INV_IF2" (at 406.4 194.7785 0)
@@ -7509,9 +7390,6 @@
     (pin "1" (uuid f475da40-6025-4278-96a9-383c9e1b8ef1))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "ABEB") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "DAKP") (unit 1)
         )
@@ -7540,9 +7418,6 @@
     (pin "2" (uuid dc47b913-aa65-4a15-80e7-f251ba33dfb9))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb"
-          (reference "OLDU0") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "OLDU0") (unit 1)
         )
@@ -7569,9 +7444,6 @@
     (pin "2" (uuid 29560cc4-d2e8-45aa-9708-59c25c9b54fc))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb"
-          (reference "OLCW") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "OLCW") (unit 1)
         )
@@ -7582,7 +7454,7 @@
   (symbol (lib_id "Ricoh_Cells:TRI_BUF_IF0") (at 444.5 387.35 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 5306d056-e167-42af-8cb2-0672b0474372)
-    (property "Reference" "ACHJ" (at 444.5 392.692 0)
+    (property "Reference" "DBEB" (at 444.5 392.692 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "TRI_BUF_IF0" (at 444.5 394.74 0)
@@ -7600,9 +7472,6 @@
     (pin "2" (uuid d34297c2-2651-4a3d-830d-fd5f99fc6468))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "ACHJ") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "DBEB") (unit 1)
         )
@@ -7658,9 +7527,6 @@
     (pin "2" (uuid 865dfcfb-cba9-4d48-90b1-ea40f7dbe64a))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb"
-          (reference "OMMV") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "OMMV") (unit 1)
         )
@@ -7689,9 +7555,6 @@
     (pin "2" (uuid 810dc4fe-f54a-43b0-a987-6d8cc1a53305))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb"
-          (reference "OKTR1") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "OKTR1") (unit 1)
         )
@@ -7720,9 +7583,6 @@
     (pin "2" (uuid 8e32867a-d49a-419d-855b-da46cce131f6))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb"
-          (reference "OKTY1") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "OKTY1") (unit 1)
         )
@@ -7733,7 +7593,7 @@
   (symbol (lib_id "Ricoh_Cells:TRI_INV_IF2") (at 406.4 60.325 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 57e94fa5-7da0-4c56-a09b-459a6d1b0c80)
-    (property "Reference" "AAXI" (at 406.4 65.8575 0)
+    (property "Reference" "DADQ" (at 406.4 65.8575 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "TRI_INV_IF2" (at 406.4 67.7785 0)
@@ -7751,9 +7611,6 @@
     (pin "1" (uuid 54259a31-d8b3-4e91-b1e5-3dcdf93c2179))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "AAXI") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "DADQ") (unit 1)
         )
@@ -7764,7 +7621,7 @@
   (symbol (lib_id "Ricoh_Cells:TRI_BUF_IF0") (at 304.8 387.35 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 5a426b97-9504-4a49-aa59-f7359309e3d9)
-    (property "Reference" "ACHJ" (at 304.8 392.692 0)
+    (property "Reference" "LBGG" (at 304.8 392.692 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "TRI_BUF_IF0" (at 304.8 394.74 0)
@@ -7782,9 +7639,6 @@
     (pin "2" (uuid e8557422-200d-4d09-a80f-1d3fde6bf1db))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "ACHJ") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "LBGG") (unit 1)
         )
@@ -7795,7 +7649,7 @@
   (symbol (lib_id "Ricoh_Cells:TRI_INV_IF2") (at 266.7 187.325 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 5bd068bd-6f6a-46d1-8ea8-8482509a14c4)
-    (property "Reference" "ABEB" (at 266.7 192.8575 0)
+    (property "Reference" "LARV" (at 266.7 192.8575 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "TRI_INV_IF2" (at 266.7 194.7785 0)
@@ -7813,9 +7667,6 @@
     (pin "1" (uuid 48f7023e-9afc-4933-b003-6305cfa7453c))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "ABEB") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "LARV") (unit 1)
         )
@@ -7844,9 +7695,6 @@
     (pin "2" (uuid 2d5f685f-00d6-46f9-9c5e-7c27c007b922))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb"
-          (reference "OMNC1") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "OMNC1") (unit 1)
         )
@@ -7857,7 +7705,7 @@
   (symbol (lib_id "Ricoh_Cells:TRI_INV_IF2") (at 406.4 441.325 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 5eb49820-da46-48b3-bc73-6504b6c02de9)
-    (property "Reference" "ABPK" (at 406.4 446.8575 0)
+    (property "Reference" "DBEH" (at 406.4 446.8575 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "TRI_INV_IF2" (at 406.4 448.7785 0)
@@ -7875,9 +7723,6 @@
     (pin "1" (uuid e1752d2d-7bee-4449-84ef-6ebc673fbf5c))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "ABPK") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "DBEH") (unit 1)
         )
@@ -7888,7 +7733,7 @@
   (symbol (lib_id "Ricoh_Cells:TRI_BUF_IF0") (at 304.8 133.35 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 645087b7-c294-4cf1-8c4b-94592159ca24)
-    (property "Reference" "ABWF" (at 304.8 138.692 0)
+    (property "Reference" "LAKV" (at 304.8 138.692 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "TRI_BUF_IF0" (at 304.8 140.74 0)
@@ -7906,9 +7751,6 @@
     (pin "2" (uuid 8bbc2829-c25c-48a1-9c94-e646bbaef270))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "ABWF") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "LAKV") (unit 1)
         )
@@ -7977,7 +7819,7 @@
   (symbol (lib_id "Ricoh_Cells:TRI_BUF_IF0") (at 103.505 212.725 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 65e95630-6f7e-4f33-98e1-7ca00858e291)
-    (property "Reference" "ABWF2" (at 103.505 218.067 0)
+    (property "Reference" "GBTC1" (at 103.505 218.067 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "TRI_BUF_IF0" (at 103.505 220.345 0)
@@ -7995,9 +7837,6 @@
     (pin "2" (uuid 4e800d6f-1a17-4e26-8688-a34fc42fa323))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "ABWF2") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "GBTC1") (unit 1)
         )
@@ -8017,16 +7856,13 @@
     (property "Footprint" "" (at 95.25 35.56 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "http://www.ti.com/lit/ds/symlink/cd4010b-q1.pdf" (at 99.06 43.18 0)
+    (property "Datasheet" "" (at 99.06 43.18 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 169ae867-06fa-4a99-bf14-c6a135f9dfa2))
     (pin "2" (uuid 3217dd3a-6e53-4ef6-8b48-552b6eff188f))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "GBTL") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "GBTL") (unit 1)
         )
@@ -8055,9 +7891,6 @@
     (pin "2" (uuid 1e63ee92-7051-41df-a665-6a6b46d7073d))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "ABVA") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "ABVA") (unit 1)
         )
@@ -8068,7 +7901,7 @@
   (symbol (lib_id "Ricoh_Cells:TRI_BUF_IF0") (at 103.505 149.225 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 69401e84-ef5d-47f0-b89d-e81ec9876fb9)
-    (property "Reference" "ABWF2" (at 103.505 154.567 0)
+    (property "Reference" "GBTC5" (at 103.505 154.567 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "TRI_BUF_IF0" (at 103.505 156.845 0)
@@ -8086,9 +7919,6 @@
     (pin "2" (uuid cb2e1982-bca6-48ec-82bc-2c46ffbe1e97))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "ABWF2") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "GBTC5") (unit 1)
         )
@@ -8099,7 +7929,7 @@
   (symbol (lib_id "Ricoh_Cells:IOBUF_A") (at 379.73 256.54 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 6d750725-7e8d-4478-aff0-4462a19ca2aa)
-    (property "Reference" "CA4" (at 379.73 248.285 0)
+    (property "Reference" "CA12" (at 379.73 248.285 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "IOBUF_A" (at 379.73 250.19 0)
@@ -8116,9 +7946,6 @@
     (pin "3" (uuid 7ec48f31-3ace-4f03-85e2-63071900660e))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "CA4") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "CA12") (unit 1)
         )
@@ -8158,7 +7985,7 @@
   (symbol (lib_id "Ricoh_Cells:TRI_BUF_IF0") (at 304.8 514.35 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 7015ee88-4561-4b05-aed8-3578d3aa412c)
-    (property "Reference" "ACKH" (at 304.8 519.692 0)
+    (property "Reference" "LBOJ" (at 304.8 519.692 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "TRI_BUF_IF0" (at 304.8 521.74 0)
@@ -8176,9 +8003,6 @@
     (pin "2" (uuid 2592ba7c-ac11-4ec1-b618-72254644c75d))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "ACKH") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "LBOJ") (unit 1)
         )
@@ -8189,7 +8013,7 @@
   (symbol (lib_id "Ricoh_Cells:TRI_INV_IF2") (at 406.4 250.825 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 736e478f-26b5-4275-9a81-d76970a1762b)
-    (property "Reference" "ABGY" (at 406.4 256.3575 0)
+    (property "Reference" "DAPF" (at 406.4 256.3575 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "TRI_INV_IF2" (at 406.4 258.2785 0)
@@ -8207,9 +8031,6 @@
     (pin "1" (uuid 2164258b-aaa5-45c5-b345-38feddca271c))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "ABGY") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "DAPF") (unit 1)
         )
@@ -8220,7 +8041,7 @@
   (symbol (lib_id "Ricoh_Cells:TRI_BUF_IF0") (at 103.505 117.475 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 73cfecb4-80b9-46fb-859b-7049ac615995)
-    (property "Reference" "ABWF2" (at 103.505 122.817 0)
+    (property "Reference" "GBTC7" (at 103.505 122.817 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "TRI_BUF_IF0" (at 103.505 125.095 0)
@@ -8238,9 +8059,6 @@
     (pin "2" (uuid 9a1d89c6-a3a3-4ecc-88a9-a98114150adc))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "ABWF2") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "GBTC7") (unit 1)
         )
@@ -8251,7 +8069,7 @@
   (symbol (lib_id "Ricoh_Cells:TRI_BUF_IF0") (at 103.505 165.1 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 7602db06-99f4-40e7-8f75-9f20baecf33c)
-    (property "Reference" "ABWF2" (at 103.505 170.442 0)
+    (property "Reference" "GBTC4" (at 103.505 170.442 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "TRI_BUF_IF0" (at 103.505 172.72 0)
@@ -8269,9 +8087,6 @@
     (pin "2" (uuid d0b6d8ad-1dbd-469b-a5be-044409e05226))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "ABWF2") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "GBTC4") (unit 1)
         )
@@ -8282,7 +8097,7 @@
   (symbol (lib_id "Ricoh_Cells:TRI_INV_IF2") (at 406.4 504.825 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 777dafa8-96cf-4512-bedd-63197702c1b3)
-    (property "Reference" "ABOH" (at 406.4 510.3575 0)
+    (property "Reference" "DBFY" (at 406.4 510.3575 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "TRI_INV_IF2" (at 406.4 512.2785 0)
@@ -8300,9 +8115,6 @@
     (pin "1" (uuid dd53c18b-1aac-4536-b641-7eb0b6da6183))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "ABOH") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "DBFY") (unit 1)
         )
@@ -8322,16 +8134,13 @@
     (property "Footprint" "" (at 95.25 57.15 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "http://www.ti.com/lit/ds/symlink/cd4010b-q1.pdf" (at 99.06 64.77 0)
+    (property "Datasheet" "" (at 99.06 64.77 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid b63635f3-47a2-490b-85ec-5ff7ad939407))
     (pin "2" (uuid d38d65b3-ebc9-40a4-80d5-0a3b7d91a438))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "LBOP") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "LBOP") (unit 1)
         )
@@ -8360,9 +8169,6 @@
     (pin "2" (uuid e85d6b15-2bbb-480f-8cb8-b5cc2a8c2ad7))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb"
-          (reference "OMIG2") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "OMIG2") (unit 1)
         )
@@ -8391,9 +8197,6 @@
     (pin "2" (uuid 42afb913-d4bd-4e2c-81ac-c660c599998a))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb"
-          (reference "OMIG1") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "OMIG1") (unit 1)
         )
@@ -8422,9 +8225,6 @@
     (pin "2" (uuid 2fff90da-e5ff-4662-8da5-3c0d787ad33b))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb"
-          (reference "OKMN3") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "OKMN3") (unit 1)
         )
@@ -8435,7 +8235,7 @@
   (symbol (lib_id "Ricoh_Cells:TRI_INV_IF2") (at 266.7 123.825 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 865c8957-3320-49de-ae88-0424411c67c2)
-    (property "Reference" "AAZK" (at 266.7 129.3575 0)
+    (property "Reference" "LAGG" (at 266.7 129.3575 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "TRI_INV_IF2" (at 266.7 131.2785 0)
@@ -8453,9 +8253,6 @@
     (pin "1" (uuid 206e52ca-9a5e-4c48-9cad-768e8f12fcd0))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "AAZK") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "LAGG") (unit 1)
         )
@@ -8483,9 +8280,6 @@
     (pin "4" (uuid cd90991f-b28c-42c3-ab54-54994bcb32e7))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "RW") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "RW") (unit 1)
         )
@@ -8496,7 +8290,7 @@
   (symbol (lib_id "Ricoh_Cells:IOBUF_A") (at 379.73 193.04 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 8a5d9bbf-1eed-4e18-a68a-9fd4bbbcccc6)
-    (property "Reference" "CA5" (at 379.73 184.785 0)
+    (property "Reference" "CA13" (at 379.73 184.785 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "IOBUF_A" (at 379.73 186.69 0)
@@ -8513,9 +8307,6 @@
     (pin "3" (uuid cfa6572c-4c3e-4789-be4d-4c9f454da0f3))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "CA5") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "CA13") (unit 1)
         )
@@ -8526,7 +8317,7 @@
   (symbol (lib_id "Ricoh_Cells:IOBUF_A") (at 519.43 320.04 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 8b3757c7-52dc-4e5b-a3f0-80de4b58ae3f)
-    (property "Reference" "CA4" (at 519.43 311.785 0)
+    (property "Reference" "CA3" (at 519.43 311.785 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "IOBUF_A" (at 519.43 313.69 0)
@@ -8543,9 +8334,6 @@
     (pin "3" (uuid 45e44a90-85d5-47de-9d1f-86c6a238051b))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "CA4") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "CA3") (unit 1)
         )
@@ -8585,7 +8373,7 @@
   (symbol (lib_id "Ricoh_Cells:TRI_BUF_IF0") (at 103.505 228.6 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 8dba39d5-e465-40c4-8dbf-f950af70dd20)
-    (property "Reference" "ABWF2" (at 103.505 233.942 0)
+    (property "Reference" "GBTC0" (at 103.505 233.942 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "TRI_BUF_IF0" (at 103.505 236.22 0)
@@ -8603,9 +8391,6 @@
     (pin "2" (uuid d1bf9340-61de-45e5-8fc8-cf0270ae8568))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "ABWF2") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "GBTC0") (unit 1)
         )
@@ -8633,9 +8418,6 @@
     (pin "1" (uuid bfb47266-2c64-43b5-8a47-393e2b0836b3))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "ACOU") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "ACOU") (unit 1)
         )
@@ -8646,7 +8428,7 @@
   (symbol (lib_id "Ricoh_Cells:TRI_BUF_IF0") (at 444.5 514.35 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 966cd4ad-5d58-461b-b338-21d87024dd3e)
-    (property "Reference" "ACKH" (at 444.5 519.692 0)
+    (property "Reference" "DBHA" (at 444.5 519.692 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "TRI_BUF_IF0" (at 444.5 521.74 0)
@@ -8664,9 +8446,6 @@
     (pin "2" (uuid 6501473c-5f8b-49eb-a218-d06aadb78dfa))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "ACKH") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "DBHA") (unit 1)
         )
@@ -8677,7 +8456,7 @@
   (symbol (lib_id "Ricoh_Cells:TRI_INV_IF2") (at 266.7 314.325 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 9870da05-25ea-4cef-8689-3abeddc25c42)
-    (property "Reference" "ABIV" (at 266.7 319.8575 0)
+    (property "Reference" "LAYH" (at 266.7 319.8575 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "TRI_INV_IF2" (at 266.7 321.7785 0)
@@ -8695,9 +8474,6 @@
     (pin "1" (uuid 3d40daf3-7ddf-4425-8f17-72a030a0ed23))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "ABIV") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "LAYH") (unit 1)
         )
@@ -8708,7 +8484,7 @@
   (symbol (lib_id "Ricoh_Cells:TRI_BUF_IF0") (at 304.8 323.85 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 995dce2b-3867-4df4-8448-11adaa82be5b)
-    (property "Reference" "ACGM" (at 304.8 329.192 0)
+    (property "Reference" "LAZN" (at 304.8 329.192 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "TRI_BUF_IF0" (at 304.8 331.24 0)
@@ -8726,9 +8502,6 @@
     (pin "2" (uuid e9c7bc37-3eb5-4282-a2ca-2d0f2de128b7))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "ACGM") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "LAZN") (unit 1)
         )
@@ -8739,7 +8512,7 @@
   (symbol (lib_id "Ricoh_Cells:TRI_BUF_IF0") (at 444.5 450.85 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 99be2b14-c1cb-4bad-924a-93cde2425fd1)
-    (property "Reference" "ACJG" (at 444.5 456.192 0)
+    (property "Reference" "DBFT" (at 444.5 456.192 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "TRI_BUF_IF0" (at 444.5 458.24 0)
@@ -8757,9 +8530,6 @@
     (pin "2" (uuid 1597a447-62bc-4d2e-ab23-ca55310b44d5))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "ACJG") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "DBFT") (unit 1)
         )
@@ -8788,9 +8558,6 @@
     (pin "2" (uuid f8cf18de-3d43-4b5b-a188-0f1372bce097))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb"
-          (reference "OMIG0") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "OMIG0") (unit 1)
         )
@@ -8848,9 +8615,6 @@
     (pin "2" (uuid 58fad681-a10a-4409-afcb-09c7bc565b5e))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb"
-          (reference "OKTR2") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "OKTR2") (unit 1)
         )
@@ -8861,7 +8625,7 @@
   (symbol (lib_id "Ricoh_Cells:TRI_INV_IF2") (at 266.7 377.825 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid a2a252d4-6ba1-48cb-93de-e47f763b7533)
-    (property "Reference" "ABNG" (at 266.7 383.3575 0)
+    (property "Reference" "LBCJ" (at 266.7 383.3575 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "TRI_INV_IF2" (at 266.7 385.2785 0)
@@ -8879,9 +8643,6 @@
     (pin "1" (uuid a3c6cf38-745e-4b98-a7ae-54e37dcb8126))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "ABNG") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "LBCJ") (unit 1)
         )
@@ -8892,7 +8653,7 @@
   (symbol (lib_id "Ricoh_Cells:TRI_BUF_IF0") (at 103.505 180.975 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid a349475e-ec0d-4606-9ec6-7dd7184f1df2)
-    (property "Reference" "ABWF2" (at 103.505 186.317 0)
+    (property "Reference" "GBTC3" (at 103.505 186.317 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "TRI_BUF_IF0" (at 103.505 188.595 0)
@@ -8910,9 +8671,6 @@
     (pin "2" (uuid 77931783-d174-4d6a-8022-080a399a5c77))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "ABWF2") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "GBTC3") (unit 1)
         )
@@ -8940,9 +8698,6 @@
     (pin "3" (uuid 4ab055de-c11e-4a12-a5f0-4072161bb449))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "CA18") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "CA18") (unit 1)
         )
@@ -8982,7 +8737,7 @@
   (symbol (lib_id "Ricoh_Cells:TRI_INV_IF2") (at 406.4 314.325 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid a9462116-4f85-4a29-a0d2-6935e6dc611c)
-    (property "Reference" "ABIV" (at 406.4 319.8575 0)
+    (property "Reference" "DATZ" (at 406.4 319.8575 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "TRI_INV_IF2" (at 406.4 321.7785 0)
@@ -9000,9 +8755,6 @@
     (pin "1" (uuid 60971005-3a80-4ff0-9d7f-21c8db6451bb))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "ABIV") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "DATZ") (unit 1)
         )
@@ -9013,7 +8765,7 @@
   (symbol (lib_id "Ricoh_Cells:TRI_BUF_IF0") (at 444.5 133.35 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid ab0fdce8-ff1f-4308-a5c0-db28bc18710c)
-    (property "Reference" "ABWF" (at 444.5 138.692 0)
+    (property "Reference" "DAJJ" (at 444.5 138.692 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "TRI_BUF_IF0" (at 444.5 140.74 0)
@@ -9031,9 +8783,6 @@
     (pin "2" (uuid daf15b3b-261f-4abb-ac7e-15308348ea2d))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "ABWF") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "DAJJ") (unit 1)
         )
@@ -9062,9 +8811,6 @@
     (pin "1" (uuid a8012716-e82d-4e4c-a3e6-705dcc76b4d7))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "ABNG") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "ABNG") (unit 1)
         )
@@ -9093,9 +8839,6 @@
     (pin "1" (uuid 6e8fb3a7-f6f8-475b-88d4-ae0a2673868a))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "AAZK") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "AAZK") (unit 1)
         )
@@ -9106,7 +8849,7 @@
   (symbol (lib_id "Ricoh_Cells:TRI_INV_IF2") (at 266.7 60.325 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid ae57567f-0f52-4100-92b8-9cc22f3bd8c4)
-    (property "Reference" "AAXI" (at 266.7 65.8575 0)
+    (property "Reference" "LABH" (at 266.7 65.8575 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "TRI_INV_IF2" (at 266.7 67.7785 0)
@@ -9124,9 +8867,6 @@
     (pin "1" (uuid 3b98486e-ddf3-4596-aa79-2711ff655658))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "AAXI") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "LABH") (unit 1)
         )
@@ -9155,9 +8895,6 @@
     (pin "2" (uuid a99f99ed-222d-4016-9def-9a9eef6c42a3))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb"
-          (reference "OKTY2") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "OKTY2") (unit 1)
         )
@@ -9168,7 +8905,7 @@
   (symbol (lib_id "Ricoh_Cells:IOBUF_A") (at 379.73 447.04 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid afe39a0a-9b2b-43d7-b28e-9e2dfc652f56)
-    (property "Reference" "CA4" (at 379.73 438.785 0)
+    (property "Reference" "CA9" (at 379.73 438.785 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "IOBUF_A" (at 379.73 440.69 0)
@@ -9185,9 +8922,6 @@
     (pin "3" (uuid 4a0df60f-c887-45a3-8b25-8b8e04a832c8))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "CA4") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "CA9") (unit 1)
         )
@@ -9198,7 +8932,7 @@
   (symbol (lib_id "Ricoh_Cells:TRI_INV_IF2") (at 406.4 377.825 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid b5195086-8ec2-484c-9b2a-10e330716684)
-    (property "Reference" "ABNG" (at 406.4 383.3575 0)
+    (property "Reference" "DBDK" (at 406.4 383.3575 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "TRI_INV_IF2" (at 406.4 385.2785 0)
@@ -9216,9 +8950,6 @@
     (pin "1" (uuid 7a100335-e50b-46aa-bffc-e380866a5e73))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "ABNG") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "DBDK") (unit 1)
         )
@@ -9245,9 +8976,6 @@
     (pin "2" (uuid 7d44b5f1-6851-43f8-888f-3a32e42a0a59))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "IBPR") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "IBPR") (unit 1)
         )
@@ -9258,7 +8986,7 @@
   (symbol (lib_id "Ricoh_Cells:IOBUF_A") (at 519.43 510.54 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid b9ee900e-18f6-4af1-af3c-80684c84a735)
-    (property "Reference" "CA4" (at 519.43 502.285 0)
+    (property "Reference" "CA0" (at 519.43 502.285 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "IOBUF_A" (at 519.43 504.19 0)
@@ -9275,9 +9003,6 @@
     (pin "3" (uuid 709c1262-8c55-494f-90c2-b0b1a47d9cdb))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "CA4") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "CA0") (unit 1)
         )
@@ -9335,9 +9060,6 @@
     (pin "2" (uuid 7f06d7e0-e8a5-4520-b566-641787c9a1e5))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb"
-          (reference "OKMN1") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "OKMN1") (unit 1)
         )
@@ -9366,9 +9088,6 @@
     (pin "2" (uuid 886f635e-03c2-44c1-88e5-5ac7c675c695))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "ABXH") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "ABXH") (unit 1)
         )
@@ -9396,9 +9115,6 @@
     (pin "3" (uuid 5ea86d40-4ce3-4252-a9d3-1060be693ed7))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "CA16") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "CA16") (unit 1)
         )
@@ -9409,7 +9125,7 @@
   (symbol (lib_id "Ricoh_Cells:TRI_BUF_IF0") (at 103.505 196.85 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid c2a5df55-ef34-42f6-a9be-181cb42f1ec5)
-    (property "Reference" "ABWF2" (at 103.505 202.192 0)
+    (property "Reference" "GBTC2" (at 103.505 202.192 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "TRI_BUF_IF0" (at 103.505 204.47 0)
@@ -9427,9 +9143,6 @@
     (pin "2" (uuid e909b9e7-ebc1-4fa7-a601-779405675399))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "ABWF2") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "GBTC2") (unit 1)
         )
@@ -9458,9 +9171,6 @@
     (pin "1" (uuid e94e4359-a44e-486d-9d5a-ac1e5901671f))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "ABGY") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "ABGY") (unit 1)
         )
@@ -9518,9 +9228,6 @@
     (pin "2" (uuid 5c0ef720-3634-46c8-aee8-9c1ed5a384cb))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb"
-          (reference "OMNC0") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "OMNC0") (unit 1)
         )
@@ -9531,7 +9238,7 @@
   (symbol (lib_id "Ricoh_Cells:IOBUF_A") (at 379.73 320.04 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid c930f902-4f3f-45af-91b8-b3dafb2ac48a)
-    (property "Reference" "CA4" (at 379.73 311.785 0)
+    (property "Reference" "CA11" (at 379.73 311.785 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "IOBUF_A" (at 379.73 313.69 0)
@@ -9548,9 +9255,6 @@
     (pin "3" (uuid b900477f-1d47-43e1-8402-98275187fd6d))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "CA4") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "CA11") (unit 1)
         )
@@ -9607,9 +9311,6 @@
     (pin "3" (uuid df21fd40-1b5f-482c-96dd-fed45fdcad88))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "JBQV") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "JBQV") (unit 1)
         )
@@ -9638,9 +9339,6 @@
     (pin "2" (uuid ae0e9dff-c424-4c15-8716-825a54cec0ed))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "ACGM") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "ACGM") (unit 1)
         )
@@ -9669,9 +9367,6 @@
     (pin "1" (uuid b8885471-d6ef-4894-912f-e218590f82b8))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "ABRB") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "ABRB") (unit 1)
         )
@@ -9700,9 +9395,6 @@
     (pin "2" (uuid 492b041f-6135-40e4-9be7-8ac46a0100d1))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb"
-          (reference "OLDU1") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "OLDU1") (unit 1)
         )
@@ -9731,9 +9423,6 @@
     (pin "2" (uuid 62d23986-bc95-4df3-8125-6ac2b7c5c708))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "IBPD") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "IBPD") (unit 1)
         )
@@ -9753,18 +9442,15 @@
     (property "Footprint" "" (at 156.21 72.39 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "http://iceboy.a-singer.de/doc/dmg_cells.html#d_latch_a" (at 156.21 80.645 0)
+    (property "Datasheet" "" (at 156.21 80.645 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid d8a1e0e2-47bc-4b0f-9014-d42651f8a9a2))
-    (pin "2" (uuid 9e927df1-04f8-43ec-a32f-e1565082b420))
+    (pin "5" (uuid 9e927df1-04f8-43ec-a32f-e1565082b420))
     (pin "3" (uuid a296cbcb-05b0-4ed4-8aca-7da72e2a8287))
-    (pin "4" (uuid 8557941b-e479-492d-90af-792dc9e72aeb))
+    (pin "6" (uuid 67d5f29b-c10e-4637-88ff-3688fc823781))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "IBSM") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "IBSM") (unit 1)
         )
@@ -9775,7 +9461,7 @@
   (symbol (lib_id "Ricoh_Cells:IOBUF_A") (at 519.43 383.54 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid d2e81c52-6eee-44e2-babb-65b2790923c7)
-    (property "Reference" "CA4" (at 519.43 375.285 0)
+    (property "Reference" "CA2" (at 519.43 375.285 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "IOBUF_A" (at 519.43 377.19 0)
@@ -9792,9 +9478,6 @@
     (pin "3" (uuid aab3da69-5832-4eeb-9021-632b23106b57))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "CA4") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "CA2") (unit 1)
         )
@@ -9821,9 +9504,6 @@
     (pin "2" (uuid aebc7af8-bf48-426e-8424-f45e440edf2a))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb"
-          (reference "OKUR") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "OKUR") (unit 1)
         )
@@ -9881,9 +9561,6 @@
     (pin "2" (uuid 2c12971b-43d6-4516-b5a9-4a99a6555080))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb"
-          (reference "OKTR3") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "OKTR3") (unit 1)
         )
@@ -9894,7 +9571,7 @@
   (symbol (lib_id "Ricoh_Cells:TRI_BUF_IF0") (at 444.5 196.85 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid d799e534-2380-422f-8766-a0a5fd1d31cb)
-    (property "Reference" "ABXH" (at 444.5 202.192 0)
+    (property "Reference" "DANS" (at 444.5 202.192 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "TRI_BUF_IF0" (at 444.5 204.24 0)
@@ -9912,9 +9589,6 @@
     (pin "2" (uuid dc6a6003-7713-428a-be15-b97309096825))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "ABXH") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "DANS") (unit 1)
         )
@@ -10001,9 +9675,6 @@
     (pin "2" (uuid 80280120-065c-49cc-a646-515bdecefb64))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "ACJG") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "ACJG") (unit 1)
         )
@@ -10032,9 +9703,6 @@
     (pin "2" (uuid 9b9e93de-4094-4131-b129-31f5b27a1c0a))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "ACHJ") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "ACHJ") (unit 1)
         )
@@ -10091,9 +9759,6 @@
     (pin "3" (uuid c1c9fb4f-c141-4579-a916-f4b0c8ea2da0))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "CA20") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "CA20") (unit 1)
         )
@@ -10104,7 +9769,7 @@
   (symbol (lib_id "Ricoh_Cells:TRI_BUF_IF0") (at 304.8 260.35 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid e401113a-8dd9-42fe-8f39-ed959cba9fe2)
-    (property "Reference" "ACBV" (at 304.8 265.692 0)
+    (property "Reference" "LAXS" (at 304.8 265.692 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "TRI_BUF_IF0" (at 304.8 267.74 0)
@@ -10122,9 +9787,6 @@
     (pin "2" (uuid 4aee393b-7ebb-4af3-bfa8-fffb437bdc6d))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "ACBV") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "LAXS") (unit 1)
         )
@@ -10182,9 +9844,6 @@
     (pin "1" (uuid e00dc9f5-c34c-44fa-9af3-2c402c1b8c8b))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "ABEB") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "ABEB") (unit 1)
         )
@@ -10195,7 +9854,7 @@
   (symbol (lib_id "Ricoh_Cells:INVERTER_A") (at 77.47 104.775 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid edc4c5ad-f481-42ef-8cf5-80972a3814e7)
-    (property "Reference" "GBTC" (at 77.47 97.9551 0)
+    (property "Reference" "GBTD" (at 77.47 97.9551 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "INVERTER_A" (at 77.47 109.855 0)
@@ -10211,9 +9870,6 @@
     (pin "2" (uuid 65277cb6-6d42-47c2-9069-173dcf57eaac))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "GBTC") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "GBTD") (unit 1)
         )
@@ -10271,9 +9927,6 @@
     (pin "1" (uuid 96445583-1f86-403f-b76a-547e3c132535))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "ABPK") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "ABPK") (unit 1)
         )
@@ -10301,9 +9954,6 @@
     (pin "3" (uuid 74f67d57-ebc8-4018-b648-1f7ebc50512d))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "CA6") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "CA6") (unit 1)
         )
@@ -10314,7 +9964,7 @@
   (symbol (lib_id "Ricoh_Cells:TRI_INV_IF2") (at 406.4 123.825 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid f943977f-4824-47d1-b389-f80f613fdc1e)
-    (property "Reference" "AAZK" (at 406.4 129.3575 0)
+    (property "Reference" "DAJI" (at 406.4 129.3575 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "TRI_INV_IF2" (at 406.4 131.2785 0)
@@ -10332,9 +9982,6 @@
     (pin "1" (uuid 49e05978-1bcd-469b-94de-59908ee4bc96))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "AAZK") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "DAJI") (unit 1)
         )
@@ -10363,9 +10010,6 @@
     (pin "2" (uuid 4fa4e423-ca0b-4f4c-bbf3-67f75f0e0d44))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb"
-          (reference "OLDU2") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "OLDU2") (unit 1)
         )
@@ -10394,9 +10038,6 @@
     (pin "2" (uuid a4e4f506-6b82-41b2-a4e2-d18e0919f01d))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb"
-          (reference "OKTY3") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "OKTY3") (unit 1)
         )
@@ -10407,7 +10048,7 @@
   (symbol (lib_id "Ricoh_Cells:TRI_INV_IF2") (at 266.7 504.825 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid fc5af361-d72a-4879-9cbe-82fbec2e4552)
-    (property "Reference" "ABOH" (at 266.7 510.3575 0)
+    (property "Reference" "LBHV" (at 266.7 510.3575 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "TRI_INV_IF2" (at 266.7 512.2785 0)
@@ -10425,9 +10066,6 @@
     (pin "1" (uuid 7b3d81a9-7869-47a5-8a65-51e2de078a85))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "ABOH") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "LBHV") (unit 1)
         )
@@ -10455,9 +10093,6 @@
     (pin "3" (uuid 66f3b2cd-fd15-486d-b45e-9fdc0c18861f))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "CA23") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/f34260c0-5998-461e-bddc-407835c1ca78"
           (reference "CA23") (unit 1)
         )

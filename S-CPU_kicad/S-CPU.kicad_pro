@@ -660,6 +660,274 @@
       {
         "netclass": "ADDRESS",
         "pattern": "/B-BUS/PA*"
+      },
+      {
+        "netclass": "CLOCK",
+        "pattern": "/CLOCKS AND RESETS/DMA_~{XIN{slash}4}"
+      },
+      {
+        "netclass": "CLOCK",
+        "pattern": "/CLOCKS AND RESETS/DMA_~{XIN{slash}8}"
+      },
+      {
+        "netclass": "CLOCK",
+        "pattern": "/B-BUS/DMA_~{XIN{slash}8}"
+      },
+      {
+        "netclass": "CLOCK",
+        "pattern": "/B-BUS/DMA_~{XIN{slash}4}"
+      },
+      {
+        "netclass": "CLOCK",
+        "pattern": "/CLOCKS AND RESETS/DMA_XIN{slash}8"
+      },
+      {
+        "netclass": "CLOCK",
+        "pattern": "/CLOCKS AND RESETS/DMA_XIN{slash}4"
+      },
+      {
+        "netclass": "CLOCK",
+        "pattern": "/DMA/DMA START STOP/DMA_XIN{slash}4"
+      },
+      {
+        "netclass": "CLOCK",
+        "pattern": "/CLOCKS AND RESETS/DMA_~{XIN{slash}2}"
+      },
+      {
+        "netclass": "CLOCK",
+        "pattern": "/B-BUS/DMA_~{XIN{slash}2}"
+      },
+      {
+        "netclass": "CLOCK",
+        "pattern": "/CLOCKS AND RESETS/DMA_XIN{slash}2"
+      },
+      {
+        "netclass": "CLOCK",
+        "pattern": "/CLOCKS AND RESETS/XIN{slash}2"
+      },
+      {
+        "netclass": "CLOCK",
+        "pattern": "/ADDR BUS CONTROL AND DATA BUS/XIN{slash}2"
+      },
+      {
+        "netclass": "CLOCK",
+        "pattern": "/CLOCKS AND RESETS/~{XIN{slash}4}"
+      },
+      {
+        "netclass": "CLOCK",
+        "pattern": "/OTHER_42XX_REGISTERS/~{XIN{slash}4}"
+      },
+      {
+        "netclass": "CLOCK",
+        "pattern": "/CLOCKS AND RESETS/~{XIN{slash}256}"
+      },
+      {
+        "netclass": "CLOCK",
+        "pattern": "/ADDR BUS CONTROL AND DATA BUS/wNAGK_wNAJD"
+      },
+      {
+        "netclass": "RESET",
+        "pattern": "/JOYPADS REGISTERS/~{JP_RST}"
+      },
+      {
+        "netclass": "RESET",
+        "pattern": "/CLOCKS AND RESETS/~{MRST}"
+      },
+      {
+        "netclass": "CLOCK",
+        "pattern": "/CLOCKS AND RESETS/DMA_SYSCLK!"
+      },
+      {
+        "netclass": "CLOCK",
+        "pattern": "/CLOCKS AND RESETS/~{DMA_SYSCLK}"
+      },
+      {
+        "netclass": "CLOCK",
+        "pattern": "/DMA/DMA START STOP/DMA_SYSCLK"
+      },
+      {
+        "netclass": "CLOCK",
+        "pattern": "/B-BUS/DMA_SYSCLK"
+      },
+      {
+        "netclass": "CLOCK",
+        "pattern": "/DIVISION QUOTIENT REGISTERS/MULDIV_SYSCLK"
+      },
+      {
+        "netclass": "MODES",
+        "pattern": "/ADDRESS DECODING /MODE2_OR_MODE3"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "/DATA BUS/~{DMA_BUS_EN}"
+      },
+      {
+        "netclass": "CLOCK",
+        "pattern": "/RW SIGNALS AND ADDRESS_DECODING/~{XIN}"
+      },
+      {
+        "netclass": "CLOCK",
+        "pattern": "/CLOCKS AND RESETS/~{XIN}"
+      },
+      {
+        "netclass": "DATA",
+        "pattern": "/SNES JP REGISTERS/D[0..7]"
+      },
+      {
+        "netclass": "RESET",
+        "pattern": "/SNES JP REGISTERS/~{JP_RST}"
+      },
+      {
+        "netclass": "MODES",
+        "pattern": "/DATA BUS/~{MODE0}"
+      },
+      {
+        "netclass": "MODES",
+        "pattern": "/DATA BUS/~{MODE[0..7]}"
+      },
+      {
+        "netclass": "MODES",
+        "pattern": "/DATA BUS/~{MODE0_OR_MODE1}"
+      },
+      {
+        "netclass": "MODES",
+        "pattern": "/DATA BUS/MODE4-6"
+      },
+      {
+        "netclass": "RESET",
+        "pattern": "/RW SIGNALS AND ADDRESS_DECODING/~{CPU_RST}"
+      },
+      {
+        "netclass": "MODES",
+        "pattern": "/DMA/~{MODE5}"
+      },
+      {
+        "netclass": "MODES",
+        "pattern": "/DMA/~{MODE*"
+      },
+      {
+        "netclass": "MODES",
+        "pattern": "/B-BUS/~{MODE*"
+      },
+      {
+        "netclass": "CLOCK",
+        "pattern": "/CLOCKS AND RESETS/MULDIV_SYSCLK"
+      },
+      {
+        "netclass": "MODES",
+        "pattern": "/OTHER_42XX_REGISTERS/~{MODE*"
+      },
+      {
+        "netclass": "MODES",
+        "pattern": "/ADDRESS DECODING AND LEGACY JP REGISTERS/MODE2_OR_MODE3"
+      },
+      {
+        "netclass": "CLOCK",
+        "pattern": "/OTHER_42XX_REGISTERS/DIVISION QUOTIENT REGISTERS/MULDIV_SYSCLK"
+      },
+      {
+        "netclass": "CLOCK",
+        "pattern": "/RW SIGNALS AND ADDRESS_DECODING/wSYSCLK"
+      },
+      {
+        "netclass": "CLOCK",
+        "pattern": "/CLOCKS AND RESETS/JP_CLK"
+      },
+      {
+        "netclass": "MODES",
+        "pattern": "/CLOCKS AND RESETS/COUNTER_TEST_MODE"
+      },
+      {
+        "netclass": "DATA",
+        "pattern": "/SNES JP REGISTERS/D1"
+      },
+      {
+        "netclass": "DATA",
+        "pattern": "/SNES JP REGISTERS/D4"
+      },
+      {
+        "netclass": "DATA",
+        "pattern": "/SNES JP REGISTERS/D2"
+      },
+      {
+        "netclass": "DATA",
+        "pattern": "/SNES JP REGISTERS/D3"
+      },
+      {
+        "netclass": "MODES",
+        "pattern": "/ADDRESS REGION DECODING/MODE2_OR_MODE3"
+      },
+      {
+        "netclass": "DATA",
+        "pattern": "/SNES JP REGISTERS/D5"
+      },
+      {
+        "netclass": "DATA",
+        "pattern": "/SNES JP REGISTERS/D6"
+      },
+      {
+        "netclass": "MODES",
+        "pattern": "/MODES/MODE4-6"
+      },
+      {
+        "netclass": "MODES",
+        "pattern": "/CLOCKS AND RESETS/~{MODE[0..7]}"
+      },
+      {
+        "netclass": "CLOCK",
+        "pattern": "/DMA AND B-BUS/DMA START STOP/DMA_XIN{slash}4"
+      },
+      {
+        "netclass": "CLOCK",
+        "pattern": "/CLOCKS AND RESETS/DMA_SYSCLK"
+      },
+      {
+        "netclass": "CLOCK",
+        "pattern": "/DMA AND B-BUS/INTERNAL_SYSCLK"
+      },
+      {
+        "netclass": "CLOCK",
+        "pattern": "/65C816/CPU_CLK"
+      },
+      {
+        "netclass": "MODES",
+        "pattern": "/65C816/~{MODE*"
+      },
+      {
+        "netclass": "RESET",
+        "pattern": "/RW SIGNALS/~{CPU_RST}"
+      },
+      {
+        "netclass": "CLOCK",
+        "pattern": "/65C816 CPU/CPU_CLK"
+      },
+      {
+        "netclass": "MODES",
+        "pattern": "/65C816 CPU/~{MODE[0..7]}"
+      },
+      {
+        "netclass": "MODES",
+        "pattern": "/65C816 CPU/~{MODE1}"
+      },
+      {
+        "netclass": "MODES",
+        "pattern": "/65C816 CPU/~{MODE2}"
+      },
+      {
+        "netclass": "MODES",
+        "pattern": "/65C816 CPU/~{MODE3}"
+      },
+      {
+        "netclass": "MODES",
+        "pattern": "/65C816 CPU/~{MODE4}"
+      },
+      {
+        "netclass": "MODES",
+        "pattern": "/65C816 CPU/~{MODE5}"
+      },
+      {
+        "netclass": "MODES",
+        "pattern": "/65C816 CPU/~{MODE6}"
       }
     ]
   },
@@ -707,7 +975,7 @@
       "workbook_filename": ""
     },
     "page_layout_descr_file": "",
-    "plot_directory": "",
+    "plot_directory": "Output/Schematics/",
     "spice_current_sheet_as_root": false,
     "spice_external_command": "spice \"%I\"",
     "spice_model_current_sheet_as_root": true,
@@ -723,7 +991,7 @@
     ],
     [
       "c42cdb83-bc69-486b-820b-017180bd7612",
-      "JOYPADS REGISTERS"
+      "SNES JP REGISTERS"
     ],
     [
       "4dc5cd9a-499d-4e55-930f-d6021c4e63f2",
@@ -734,16 +1002,16 @@
       "A-BUS"
     ],
     [
-      "e7c40e34-ed5c-4acf-abcb-e687ca829050",
-      "DIVISION QUOTIENT REGISTERS"
-    ],
-    [
-      "a9057ef9-fbbc-4a6c-a32c-d29bca6c6f67",
+      "a4925dfa-dd2e-4315-8fa7-8b9eef891b55",
       "MUL PRODUCT OR DIV REMAINDER REGISTERS"
     ],
     [
+      "1b0cf808-859c-4b0e-9af7-5d57ff7fb1d6",
+      "DIVISION QUOTIENT REGISTERS"
+    ],
+    [
       "6ab7ea20-bfb3-4f18-94ca-a294126fa0fb",
-      "DMA"
+      "DMA AND B-BUS"
     ],
     [
       "606b397f-d353-4bdc-83fa-3e77f933e2b8",
@@ -759,11 +1027,11 @@
     ],
     [
       "be36cab5-2fce-4944-8328-33b291bdd45b",
-      "RW SIGNALS AND ADDRESS_DECODING"
+      "RW SIGNALS"
     ],
     [
       "51127ecd-2e04-4024-92b3-6d1bf736c0b0",
-      "ADDR BUS CONTROL AND DATA BUS"
+      "DATA BUS"
     ],
     [
       "df31d498-9729-452c-b4bd-c0293b928458",
@@ -774,16 +1042,28 @@
       "MODES"
     ],
     [
-      "57b0b9a3-51ba-4364-8d9d-dc971e7bd669",
-      "B-BUS"
-    ],
-    [
       "98587fa3-8bc3-47dd-b87a-75fccbf68d7b",
       "DMA START STOP"
     ],
     [
       "9daf1b03-4e32-4183-9617-26f5d966a230",
-      "65C816"
+      "65C816 CPU"
+    ],
+    [
+      "89b00f3d-7da8-4095-89b5-16f092a50a77",
+      "ADDRESS REGION DECODING"
+    ],
+    [
+      "5530ce67-eb16-4ee2-9a09-6e7b7d440cad",
+      "LEGACY JP REGISTERS"
+    ],
+    [
+      "28d20e6d-ffea-44ab-ac71-17d4b9dc07d3",
+      "FAST ROM REG"
+    ],
+    [
+      "f6a7dd4a-ea7c-414b-81cc-998cdd598d06",
+      "B-BUS"
     ]
   ],
   "text_variables": {}

@@ -6,7 +6,7 @@
 
   (title_block
     (title "Reverse Engineered SNES S-CPU Schematics ")
-    (date "2023-10-21")
+    (date "2024-02-12")
     (rev "0.1")
     (company "Author: Regis Galland")
   )
@@ -257,7 +257,7 @@
         )
       )
     )
-    (symbol "Ricoh_Cells:DFFR_A" (pin_numbers hide) (in_bom yes) (on_board yes)
+    (symbol "Ricoh_Cells:DFFR_A" (in_bom yes) (on_board yes)
       (property "Reference" "U" (at 0 5.715 0)
         (effects (font (size 1.27 1.27)))
       )
@@ -267,7 +267,7 @@
       (property "Footprint" "" (at 0 0 0)
         (effects (font (size 1.27 1.27)) hide)
       )
-      (property "Datasheet" "http://iceboy.a-singer.de/doc/dmg_cells.html#dffr_a" (at 0 -8.255 0)
+      (property "Datasheet" "" (at 0 -8.255 0)
         (effects (font (size 1.27 1.27)) hide)
       )
       (property "ki_description" "Single-edge-triggered data flip-flop with active-low asynchronous reset and without inverted output." (at 0 0 0)
@@ -280,33 +280,25 @@
         )
       )
       (symbol "DFFR_A_1_1"
-        (pin input line (at -10.16 0 0) (length 3.81)
-          (name "~{RESET}" (effects (font (size 1.27 1.27))))
+        (pin input clock (at -10.16 2.54 0) (length 3.81)
+          (name "CLK" (effects (font (size 1.27 1.27))))
           (number "1" (effects (font (size 1.27 1.27))))
         )
         (pin input line (at -10.16 -2.54 0) (length 3.81)
           (name "D" (effects (font (size 1.27 1.27))))
           (number "2" (effects (font (size 1.27 1.27))))
         )
-        (pin input clock (at -10.16 2.54 0) (length 3.81)
-          (name "CLK" (effects (font (size 1.27 1.27))))
-          (number "3" (effects (font (size 1.27 1.27))))
-        )
-        (pin input clock (at -10.16 2.54 0) (length 3.81) hide
-          (name "~{CLK}" (effects (font (size 1.27 1.27))))
-          (number "4" (effects (font (size 1.27 1.27))))
-        )
-        (pin input line (at -10.16 0 0) (length 3.81) hide
+        (pin input line (at -10.16 0 0) (length 3.81)
           (name "~{RESET}" (effects (font (size 1.27 1.27))))
-          (number "5" (effects (font (size 1.27 1.27))))
+          (number "6" (effects (font (size 1.27 1.27))))
         )
         (pin output line (at 10.16 2.54 180) (length 3.81)
           (name "Q" (effects (font (size 1.27 1.27))))
-          (number "6" (effects (font (size 1.27 1.27))))
+          (number "9" (effects (font (size 1.27 1.27))))
         )
       )
     )
-    (symbol "Ricoh_Cells:DFFR_B" (pin_numbers hide) (in_bom yes) (on_board yes)
+    (symbol "Ricoh_Cells:DFFR_B" (in_bom yes) (on_board yes)
       (property "Reference" "U" (at 0 5.715 0)
         (effects (font (size 1.27 1.27)))
       )
@@ -316,7 +308,7 @@
       (property "Footprint" "" (at 0 0 0)
         (effects (font (size 1.27 1.27)) hide)
       )
-      (property "Datasheet" "http://iceboy.a-singer.de/doc/dmg_cells.html#dffr_b" (at 0 -8.255 0)
+      (property "Datasheet" "" (at 0 -8.255 0)
         (effects (font (size 1.27 1.27)) hide)
       )
       (property "ki_description" "Single-edge-triggered data flip-flop with active-low asynchronous reset." (at 0 0 0)
@@ -329,37 +321,29 @@
         )
       )
       (symbol "DFFR_B_1_1"
-        (pin input line (at -10.16 0 0) (length 3.81)
-          (name "~{RESET}" (effects (font (size 1.27 1.27))))
+        (pin input clock (at -10.16 2.54 0) (length 3.81)
+          (name "CLK" (effects (font (size 1.27 1.27))))
           (number "1" (effects (font (size 1.27 1.27))))
         )
         (pin input line (at -10.16 -2.54 0) (length 3.81)
           (name "D" (effects (font (size 1.27 1.27))))
           (number "2" (effects (font (size 1.27 1.27))))
         )
-        (pin input clock (at -10.16 2.54 0) (length 3.81)
-          (name "CLK" (effects (font (size 1.27 1.27))))
-          (number "3" (effects (font (size 1.27 1.27))))
-        )
-        (pin input clock (at -10.16 2.54 0) (length 3.81) hide
-          (name "~{CLK}" (effects (font (size 1.27 1.27))))
-          (number "4" (effects (font (size 1.27 1.27))))
-        )
-        (pin input line (at -10.16 0 0) (length 3.81) hide
+        (pin input line (at -10.16 0 0) (length 3.81)
           (name "~{RESET}" (effects (font (size 1.27 1.27))))
-          (number "5" (effects (font (size 1.27 1.27))))
+          (number "6" (effects (font (size 1.27 1.27))))
         )
         (pin output line (at 10.16 -2.54 180) (length 3.81)
           (name "~{Q}" (effects (font (size 1.27 1.27))))
-          (number "6" (effects (font (size 1.27 1.27))))
+          (number "8" (effects (font (size 1.27 1.27))))
         )
         (pin output line (at 10.16 2.54 180) (length 3.81)
           (name "Q" (effects (font (size 1.27 1.27))))
-          (number "7" (effects (font (size 1.27 1.27))))
+          (number "9" (effects (font (size 1.27 1.27))))
         )
       )
     )
-    (symbol "Ricoh_Cells:DFFR_D" (pin_numbers hide) (in_bom yes) (on_board yes)
+    (symbol "Ricoh_Cells:DFFR_D" (in_bom yes) (on_board yes)
       (property "Reference" "U" (at 0 5.715 0)
         (effects (font (size 1.27 1.27)))
       )
@@ -6117,7 +6101,7 @@
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid 13ecaa4b-9b05-4bf5-85fd-08aa3942dcc3)
   )
-  (hierarchical_label "wDBJW_wHASI_~{RST}" (shape input) (at 93.345 63.5 180) (fields_autoplaced)
+  (hierarchical_label "~{MRST}" (shape input) (at 93.345 63.5 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid 156d23d7-5d6c-4726-a028-544af26e131d)
   )
@@ -6125,7 +6109,7 @@
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid 16ab4b20-b424-404b-a469-998743892c1d)
   )
-  (hierarchical_label "wNBEB_wNBEG_XIN{slash}8" (shape input) (at 74.93 107.95 180) (fields_autoplaced)
+  (hierarchical_label "DMA_XIN{slash}8" (shape input) (at 74.93 107.95 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid 1cbba5ef-78f5-41f7-8a7f-60d3d7a80b63)
   )
@@ -6137,7 +6121,7 @@
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid 312dfd4b-9eb3-48fc-8111-034000fb39a6)
   )
-  (hierarchical_label "wDBJW_wHASI_~{RST}" (shape input) (at 601.345 253.365 180) (fields_autoplaced)
+  (hierarchical_label "~{MRST}" (shape input) (at 601.345 253.365 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid 35808dff-0375-4462-a23b-1dbc22034c78)
   )
@@ -6177,7 +6161,7 @@
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid 80ace36c-4714-41ef-8337-7de69995c295)
   )
-  (hierarchical_label "wNBEB_wNBEG_XIN{slash}8" (shape input) (at 725.17 392.43 180) (fields_autoplaced)
+  (hierarchical_label "DMA_XIN{slash}8" (shape input) (at 725.17 392.43 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid 8f3e908b-1a6e-4699-baf9-98beff322107)
   )
@@ -6232,7 +6216,7 @@
   (symbol (lib_id "Ricoh_Cells:NOR_LATCH") (at 194.945 101.6 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 036e209b-63b3-451b-ac15-08397cd29721)
-    (property "Reference" "PAWC" (at 194.945 93.1377 0)
+    (property "Reference" "LMAV" (at 194.945 93.1377 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "NOR_LATCH" (at 194.945 95.5619 0)
@@ -6249,9 +6233,6 @@
     (pin "4" (uuid 7d8c0d3f-a1d2-41d8-b831-70f0051941f1))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "PAWC") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
           (reference "LMAV") (unit 1)
         )
@@ -6357,11 +6338,9 @@
     )
     (pin "1" (uuid bc16529d-bfa4-43e0-8905-0b27c87bd505))
     (pin "2" (uuid 828c9e97-2a53-46b2-baba-03119b4ea697))
-    (pin "3" (uuid 35784966-3f8d-4bee-8159-17d70b213cea))
-    (pin "4" (uuid 3f3e5ad5-be0f-462b-8c6e-bdcafb55b55d))
-    (pin "5" (uuid 1c7df089-b116-4b5b-a39b-e94ab51c278f))
+    (pin "8" (uuid 35784966-3f8d-4bee-8159-17d70b213cea))
+    (pin "9" (uuid 3f3e5ad5-be0f-462b-8c6e-bdcafb55b55d))
     (pin "6" (uuid 7969055f-2764-46c0-acc3-83e89b6844bb))
-    (pin "7" (uuid 4d2e47b5-8d4b-4616-b4f1-0c589d07807b))
     (instances
       (project "S-CPU"
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
@@ -6374,7 +6353,7 @@
   (symbol (lib_id "Ricoh_Cells:DFFR_B") (at 333.375 144.145 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 0773f591-dbaa-4e2d-a7aa-2c920ba58d3e)
-    (property "Reference" "EBVQ" (at 333.375 135.6827 0)
+    (property "Reference" "HMBN" (at 333.375 135.6827 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "DFFR_B" (at 333.375 138.1069 0)
@@ -6388,16 +6367,11 @@
     )
     (pin "1" (uuid cd3bbe90-0af3-4d9e-a113-00bf165b0d80))
     (pin "2" (uuid 1f28cd73-1e76-4c79-afb5-4f3fd7afdf57))
-    (pin "3" (uuid f81e8925-457c-4e8c-9b56-30093cf7184c))
-    (pin "4" (uuid d5f41dd0-4c30-4dfa-b20c-3a4f5ec9c969))
-    (pin "5" (uuid 9f51c9c9-5192-4ea3-8173-a07ca5c452c8))
+    (pin "8" (uuid f81e8925-457c-4e8c-9b56-30093cf7184c))
+    (pin "9" (uuid d5f41dd0-4c30-4dfa-b20c-3a4f5ec9c969))
     (pin "6" (uuid 8b9fe4cf-90f1-46c7-b554-3c926373e52f))
-    (pin "7" (uuid 1518060e-21ef-40e2-8fd4-d2aa1e9c7941))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "EBVQ") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
           (reference "HMBN") (unit 1)
         )
@@ -6462,7 +6436,7 @@
   (symbol (lib_id "Ricoh_Cells:DFFR_B") (at 333.375 487.045 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 096ee218-e3eb-4f90-9502-6f2e27697833)
-    (property "Reference" "ECGO" (at 333.375 478.5827 0)
+    (property "Reference" "HMJO" (at 333.375 478.5827 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "DFFR_B" (at 333.375 481.0069 0)
@@ -6476,16 +6450,11 @@
     )
     (pin "1" (uuid d4fb671a-f254-46e9-83c7-25399e9e1107))
     (pin "2" (uuid 6c84e872-442d-4479-96c9-383d1ce9b3ea))
-    (pin "3" (uuid e8e471d6-e5eb-49e1-99ba-ea29da261a8f))
-    (pin "4" (uuid 7c1d1287-a004-463a-b671-bd6049009206))
-    (pin "5" (uuid b2b1641c-b135-4c44-92af-f8f3b806eaa9))
+    (pin "8" (uuid e8e471d6-e5eb-49e1-99ba-ea29da261a8f))
+    (pin "9" (uuid 7c1d1287-a004-463a-b671-bd6049009206))
     (pin "6" (uuid 3a15ea46-4dfc-4f95-82ef-82d41c685beb))
-    (pin "7" (uuid c8ada12d-49f9-4eae-85d8-e1661f0265e6))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "ECGO") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
           (reference "HMJO") (unit 1)
         )
@@ -6496,7 +6465,7 @@
   (symbol (lib_id "Ricoh_Cells:NOR_LATCH") (at 194.945 403.225 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 0a1ed9f0-35ca-4cf4-b0c3-c5b904c7d51c)
-    (property "Reference" "PAWC" (at 194.945 394.7627 0)
+    (property "Reference" "MNLE" (at 194.945 394.7627 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "NOR_LATCH" (at 194.945 397.1869 0)
@@ -6513,9 +6482,6 @@
     (pin "4" (uuid c910c971-2171-45af-81f7-62d774821503))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "PAWC") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
           (reference "MNLE") (unit 1)
         )
@@ -6540,9 +6506,7 @@
     )
     (pin "1" (uuid d9a113dc-c93d-4104-83f5-303a89961f4d))
     (pin "2" (uuid 6f4f18f6-0361-407e-8fa8-6a2514a5e3d6))
-    (pin "3" (uuid 5784fe84-0de3-4a1c-89b5-ebf692347a40))
-    (pin "4" (uuid 2238da04-6f41-4594-b4e4-36d02d5cef6a))
-    (pin "5" (uuid 0464b337-c5b4-4ad3-ba07-82897e4b3c10))
+    (pin "9" (uuid 5784fe84-0de3-4a1c-89b5-ebf692347a40))
     (pin "6" (uuid eeba4a44-eca0-4d8e-b4a7-d5baa14db83f))
     (instances
       (project "S-CPU"
@@ -6565,7 +6529,7 @@
     (property "Footprint" "" (at 742.95 427.99 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "http://iceboy.a-singer.de/doc/dmg_cells.html#dffr_b" (at 742.95 436.245 0)
+    (property "Datasheet" "" (at 742.95 436.245 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid dfb7cd15-fc8a-4745-b061-da8fee8394e9))
@@ -6584,7 +6548,7 @@
   (symbol (lib_id "Ricoh_Cells:DFFR_A") (at 659.765 389.89 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 0c9c26e7-a372-4dc9-854d-1f09b11bffeb)
-    (property "Reference" "EBSG" (at 659.765 381.4277 0)
+    (property "Reference" "CNDH" (at 659.765 381.4277 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "DFFR_A" (at 659.765 383.8519 0)
@@ -6598,15 +6562,10 @@
     )
     (pin "1" (uuid 5410d8ef-9b20-4fa0-88d1-8672e0fc08b7))
     (pin "2" (uuid b157c5bd-7359-4fd4-8d63-402a44b40adb))
-    (pin "3" (uuid 3622abfc-f76c-4ac4-a313-dd208fcf9713))
-    (pin "4" (uuid f06fab78-e419-42fe-a3a7-59b564ea92e4))
-    (pin "5" (uuid a8db953e-54ad-4572-948a-eb70b4512a07))
+    (pin "9" (uuid 3622abfc-f76c-4ac4-a313-dd208fcf9713))
     (pin "6" (uuid 8c448acb-5a25-4741-8aa0-bebddb9bb312))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "EBSG") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
           (reference "CNDH") (unit 1)
         )
@@ -6717,9 +6676,6 @@
     (pin "5" (uuid 4d291cad-bfb1-4c0f-ad68-7ff3ad979ec1))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "DBZJ") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
           (reference "DBZJ") (unit 1)
         )
@@ -6744,11 +6700,9 @@
     )
     (pin "1" (uuid 7801c757-fe1c-42ee-a619-1ed5cf8b3ac2))
     (pin "2" (uuid 4646df7d-c579-493b-97de-89355cf5d389))
-    (pin "3" (uuid 61adddd8-ff99-4968-8445-f3624f1e409a))
-    (pin "4" (uuid 3a498de5-71c3-46a0-96bb-2866dd017312))
-    (pin "5" (uuid fd2543d2-a46d-41b8-9ee2-d06968557d5e))
+    (pin "8" (uuid 61adddd8-ff99-4968-8445-f3624f1e409a))
+    (pin "9" (uuid 3a498de5-71c3-46a0-96bb-2866dd017312))
     (pin "6" (uuid 6bfeccfc-7ee0-46e9-92e9-5bc98fb303d7))
-    (pin "7" (uuid e2f953d5-3159-4154-9dff-667c6e2d07a2))
     (instances
       (project "S-CPU"
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
@@ -6761,7 +6715,7 @@
   (symbol (lib_id "Ricoh_Cells:DFFR_A") (at 659.765 427.99 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 1bb5a59c-c426-44c7-b6d2-fa77a1b55e61)
-    (property "Reference" "EBSG" (at 659.765 419.5277 0)
+    (property "Reference" "CNLW" (at 659.765 419.5277 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "DFFR_A" (at 659.765 421.9519 0)
@@ -6775,15 +6729,10 @@
     )
     (pin "1" (uuid fd466aed-cfed-4381-b673-4cd492baf57f))
     (pin "2" (uuid 5cc383c6-fac3-4726-abce-8732b8144f9e))
-    (pin "3" (uuid dc867ec9-acbe-4535-8ba3-2cd033cfe5bf))
-    (pin "4" (uuid e3a048b7-68b0-4ad4-aa78-37f571cf0b6c))
-    (pin "5" (uuid b14abee6-90a2-47f3-bdee-915603fb3a98))
+    (pin "9" (uuid dc867ec9-acbe-4535-8ba3-2cd033cfe5bf))
     (pin "6" (uuid 3f71f1b1-b01f-44c6-b9ed-95b71a064347))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "EBSG") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
           (reference "CNLW") (unit 1)
         )
@@ -6794,7 +6743,7 @@
   (symbol (lib_id "Ricoh_Cells:DFFR_A") (at 111.125 291.465 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 1bbb0b16-4ac4-415f-85f1-e1dad2e4166e)
-    (property "Reference" "EBSG" (at 111.125 283.0027 0)
+    (property "Reference" "NMGQ" (at 111.125 283.0027 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "DFFR_A" (at 111.125 285.4269 0)
@@ -6808,15 +6757,10 @@
     )
     (pin "1" (uuid bd098139-a80b-44cf-bf21-ec4841eff343))
     (pin "2" (uuid 15d4ef90-49ea-4a3e-a86e-cd77565cb0a6))
-    (pin "3" (uuid 89b228bc-457a-40c0-9427-a77d18ccc394))
-    (pin "4" (uuid 3ac59a23-e710-4d6e-9f35-bf398d0aa4c4))
-    (pin "5" (uuid 3f1d33de-8deb-4434-a2b0-38b2c01850b0))
+    (pin "9" (uuid 89b228bc-457a-40c0-9427-a77d18ccc394))
     (pin "6" (uuid 0684fcf0-448b-438f-abdd-eb07dfd28d4b))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "EBSG") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
           (reference "NMGQ") (unit 1)
         )
@@ -7000,11 +6944,9 @@
     )
     (pin "1" (uuid 73631f0f-19f2-4ee2-8bc8-23b770aa5cc4))
     (pin "2" (uuid 0170b320-3f1d-4862-8d93-969599fe579e))
-    (pin "3" (uuid d6252691-9993-49d3-b280-374bfc885cec))
-    (pin "4" (uuid e3162482-bad2-4799-aaca-77b8fd538140))
-    (pin "5" (uuid 55c8a4fc-154d-45f9-9b41-fbcb5fdc2ed6))
+    (pin "8" (uuid d6252691-9993-49d3-b280-374bfc885cec))
+    (pin "9" (uuid e3162482-bad2-4799-aaca-77b8fd538140))
     (pin "6" (uuid 28a48b55-57e2-42d9-87f7-6748a497fe1a))
-    (pin "7" (uuid e49d372b-67ce-45eb-a6fc-141c1daf9963))
     (instances
       (project "S-CPU"
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
@@ -7072,7 +7014,7 @@
   (symbol (lib_id "Ricoh_Cells:NOR_LATCH") (at 194.945 346.075 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 232574ee-ea1a-4207-a0fd-5a6415505302)
-    (property "Reference" "PAWC" (at 194.945 337.82 0)
+    (property "Reference" "MNFB" (at 194.945 337.82 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "NOR_LATCH" (at 194.945 340.0369 0)
@@ -7089,9 +7031,6 @@
     (pin "4" (uuid 41a9601e-0090-44bb-8ba3-a172ee9d010d))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "PAWC") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
           (reference "MNFB") (unit 1)
         )
@@ -7102,7 +7041,7 @@
   (symbol (lib_id "Ricoh_Cells:NOR_LATCH") (at 194.945 174.625 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 232a3423-4d6d-492e-aa0d-601d08c0e962)
-    (property "Reference" "PAWC" (at 194.945 166.1627 0)
+    (property "Reference" "MMMK" (at 194.945 166.1627 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "NOR_LATCH" (at 194.945 168.5869 0)
@@ -7119,9 +7058,6 @@
     (pin "4" (uuid ba7a366b-9d0e-49d9-be58-dc45cc5fd6da))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "PAWC") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
           (reference "MMMK") (unit 1)
         )
@@ -7132,7 +7068,7 @@
   (symbol (lib_id "Ricoh_Cells:DFFR_B") (at 333.375 86.995 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 26651f1f-b5aa-469a-b30f-d4d483e24fb3)
-    (property "Reference" "EBSG" (at 333.375 78.5327 0)
+    (property "Reference" "HMAZ" (at 333.375 78.5327 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "DFFR_B" (at 333.375 80.9569 0)
@@ -7146,16 +7082,11 @@
     )
     (pin "1" (uuid 951745b1-5136-4f78-a656-8825c152abdb))
     (pin "2" (uuid 03eafcb9-ff10-4480-8e73-26d3198005ea))
-    (pin "3" (uuid b3a964c0-d7ad-4354-a5c0-32ea8fd31d63))
-    (pin "4" (uuid 32dc8cbb-7087-456f-a5ca-c3a73b28b348))
-    (pin "5" (uuid df61b83f-6382-45b0-b4dd-7bf956b64b50))
+    (pin "8" (uuid b3a964c0-d7ad-4354-a5c0-32ea8fd31d63))
+    (pin "9" (uuid 32dc8cbb-7087-456f-a5ca-c3a73b28b348))
     (pin "6" (uuid 4f0911fb-29f3-4775-8ab2-6afcd270c476))
-    (pin "7" (uuid 882444ec-3315-43be-b097-0aea5567b322))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "EBSG") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
           (reference "HMAZ") (unit 1)
         )
@@ -7293,9 +7224,6 @@
     (pin "3" (uuid 02e875a2-759f-40b2-9195-4f3d1ebbe602))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "DCBP") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
           (reference "DCBP") (unit 1)
         )
@@ -7320,9 +7248,7 @@
     )
     (pin "1" (uuid ef77dc54-4991-4460-abed-4e8a05d8fa93))
     (pin "2" (uuid d5901094-5a7d-4b01-83c1-9cad41c482f3))
-    (pin "3" (uuid 6c9170da-cca4-4a18-a42e-ea4b3cafd8f6))
-    (pin "4" (uuid e1dbf6f9-0f6b-4a12-9082-a32bb32de2bf))
-    (pin "5" (uuid 00282bcc-6803-4354-b48f-a9aec85c3814))
+    (pin "9" (uuid 6c9170da-cca4-4a18-a42e-ea4b3cafd8f6))
     (pin "6" (uuid 7bac5f41-266e-4cfe-a4be-4e9f69f89613))
     (instances
       (project "S-CPU"
@@ -7336,7 +7262,7 @@
   (symbol (lib_id "Ricoh_Cells:DFFR_B") (at 333.375 201.295 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 30fd04c7-8338-4f4b-8cd5-17a96a6cf87b)
-    (property "Reference" "EBXE" (at 333.375 192.8327 0)
+    (property "Reference" "HMRC" (at 333.375 192.8327 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "DFFR_B" (at 333.375 195.2569 0)
@@ -7350,16 +7276,11 @@
     )
     (pin "1" (uuid dc1b1fc0-8bf6-4873-a809-7e3e13d3e9a2))
     (pin "2" (uuid e397636d-95e5-4051-b07b-cc953b2e2269))
-    (pin "3" (uuid c2d95186-a0bd-4ade-ae0f-4af3ba7f7f06))
-    (pin "4" (uuid b2d53975-f2a7-4e2b-9889-f2b8eed68692))
-    (pin "5" (uuid 0a8e30c4-52d8-4b9c-b8ab-b3c064e75056))
+    (pin "8" (uuid c2d95186-a0bd-4ade-ae0f-4af3ba7f7f06))
+    (pin "9" (uuid b2d53975-f2a7-4e2b-9889-f2b8eed68692))
     (pin "6" (uuid 1d3e013e-61bf-482b-bc30-aea57cbad2c1))
-    (pin "7" (uuid 438f4aa1-0b92-4bab-8354-39a9a8ef1e2f))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "EBXE") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
           (reference "HMRC") (unit 1)
         )
@@ -7395,7 +7316,7 @@
   (symbol (lib_id "Ricoh_Cells:DFFR_A") (at 111.125 120.015 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 324a17f5-2a28-484f-8966-3f4ed3ea5c38)
-    (property "Reference" "EBSG" (at 111.125 111.5527 0)
+    (property "Reference" "NMAW" (at 111.125 111.5527 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "DFFR_A" (at 111.125 113.9769 0)
@@ -7409,15 +7330,10 @@
     )
     (pin "1" (uuid 3c505e1a-33e4-49a0-a8e2-68451ac85658))
     (pin "2" (uuid f71b786c-78e9-46e2-815b-4c6af38e483f))
-    (pin "3" (uuid 53a2d19b-5dfe-4396-a76e-6fed4ca4bbbe))
-    (pin "4" (uuid c8d3c4b7-deda-4cd8-bc1d-5288916c4d94))
-    (pin "5" (uuid bc45ed96-ec59-4ad6-99df-baf26d173ca0))
+    (pin "9" (uuid 53a2d19b-5dfe-4396-a76e-6fed4ca4bbbe))
     (pin "6" (uuid d49bd36e-02dc-4399-a5e9-fd6dd10871da))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "EBSG") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
           (reference "NMAW") (unit 1)
         )
@@ -7442,11 +7358,9 @@
     )
     (pin "1" (uuid c98dbd00-4d24-449b-8275-a175d4fff9b5))
     (pin "2" (uuid 264efcbe-cc62-436a-9a88-6508caea5826))
-    (pin "3" (uuid 58fa1aee-6f73-4da6-b0e6-c37c58b174e8))
-    (pin "4" (uuid fa24ad45-c51f-4e40-bbaa-6c2ea468b74f))
-    (pin "5" (uuid 2458a69c-6527-44eb-a515-3cd330c8b816))
+    (pin "8" (uuid 58fa1aee-6f73-4da6-b0e6-c37c58b174e8))
+    (pin "9" (uuid fa24ad45-c51f-4e40-bbaa-6c2ea468b74f))
     (pin "6" (uuid 60eec2b5-19ea-4a3f-9042-d841835dc4df))
-    (pin "7" (uuid 6d545ee9-9bbd-42dd-97fd-73ebbd824a8d))
     (instances
       (project "S-CPU"
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
@@ -7473,11 +7387,9 @@
     )
     (pin "1" (uuid 25f3d432-7f23-4239-ab3b-1bc70a01cb16))
     (pin "2" (uuid fab28f80-3bfa-4a4e-ba08-486c51fc75ed))
-    (pin "3" (uuid 42b85a8c-5816-46e1-8d1d-88f83faa0736))
-    (pin "4" (uuid af7ad555-1f8e-4873-bba6-1d03cd35c043))
-    (pin "5" (uuid 0868dba3-fd2b-43cb-9590-de95ee25c79b))
+    (pin "8" (uuid 42b85a8c-5816-46e1-8d1d-88f83faa0736))
+    (pin "9" (uuid af7ad555-1f8e-4873-bba6-1d03cd35c043))
     (pin "6" (uuid f590f922-8c5e-45f5-9392-807a18beeb19))
-    (pin "7" (uuid 6e074672-10cc-49fd-b9cc-90e7eacf6c11))
     (instances
       (project "S-CPU"
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
@@ -7517,7 +7429,7 @@
   (symbol (lib_id "Ricoh_Cells:NOR_LATCH") (at 194.945 158.75 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 3ba8267f-42fb-427a-91cb-6f8efd7fc2a7)
-    (property "Reference" "PAWC" (at 194.945 150.2877 0)
+    (property "Reference" "LMGT" (at 194.945 150.2877 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "NOR_LATCH" (at 194.945 152.7119 0)
@@ -7534,9 +7446,6 @@
     (pin "4" (uuid 4b04d263-3e94-4173-b278-f94ac11b26fe))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "PAWC") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
           (reference "LMGT") (unit 1)
         )
@@ -7588,9 +7497,7 @@
     )
     (pin "1" (uuid 00310a6c-aece-4ab2-82ea-edf4c6b9534c))
     (pin "2" (uuid e701c41f-71f5-4df7-87d5-574ccecdcb64))
-    (pin "3" (uuid 587fb424-c1a4-4ec5-9ba8-ee87fdddeef4))
-    (pin "4" (uuid f32e4de1-6754-4901-b80d-71bcf76015c7))
-    (pin "5" (uuid 33e59195-26f2-454c-b9ec-7c3e89842607))
+    (pin "9" (uuid 587fb424-c1a4-4ec5-9ba8-ee87fdddeef4))
     (pin "6" (uuid caaf66fb-e7ea-477f-8cf4-08be648594bf))
     (instances
       (project "S-CPU"
@@ -7604,7 +7511,7 @@
   (symbol (lib_id "Ricoh_Cells:NOR_LATCH") (at 194.945 117.475 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 3f0dbdff-6268-408c-94db-837a78266fa5)
-    (property "Reference" "PAWC" (at 194.945 109.0127 0)
+    (property "Reference" "MMBE" (at 194.945 109.0127 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "NOR_LATCH" (at 194.945 111.4369 0)
@@ -7621,9 +7528,6 @@
     (pin "4" (uuid ae5e055e-7326-4559-a0f8-6e35920d2c3e))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "PAWC") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
           (reference "MMBE") (unit 1)
         )
@@ -7661,7 +7565,7 @@
   (symbol (lib_id "Ricoh_Cells:DFFR_A") (at 659.765 408.94 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 42e9d353-0b73-4b87-b70f-ea27f7509a87)
-    (property "Reference" "EBSG" (at 659.765 400.4777 0)
+    (property "Reference" "CNFW" (at 659.765 400.4777 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "DFFR_A" (at 659.765 402.9019 0)
@@ -7675,15 +7579,10 @@
     )
     (pin "1" (uuid ae65b7df-e62f-48f9-8017-0bf22519c240))
     (pin "2" (uuid ce6c5114-d742-4d62-9a99-9ec66af36672))
-    (pin "3" (uuid e67e7a57-8a95-4a42-8654-b08c825965ba))
-    (pin "4" (uuid 24513030-1a1b-459c-8c6c-fbf66ae1c85f))
-    (pin "5" (uuid 02beceea-ee7b-487e-8c5a-8ba823195eee))
+    (pin "9" (uuid e67e7a57-8a95-4a42-8654-b08c825965ba))
     (pin "6" (uuid 5b94fa55-c62b-4c18-871c-ae05dfc5d781))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "EBSG") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
           (reference "CNFW") (unit 1)
         )
@@ -7694,7 +7593,7 @@
   (symbol (lib_id "Ricoh_Cells:NOR_LATCH") (at 194.945 288.925 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 45d829cd-013a-4e72-8702-32633ef2120e)
-    (property "Reference" "PAWC" (at 194.945 280.4627 0)
+    (property "Reference" "MMVN" (at 194.945 280.4627 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "NOR_LATCH" (at 194.945 282.8869 0)
@@ -7711,9 +7610,6 @@
     (pin "4" (uuid 31774bbb-820d-496c-8e2d-67b50ffe81f9))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "PAWC") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
           (reference "MMVN") (unit 1)
         )
@@ -7764,18 +7660,10 @@
     )
     (pin "1" (uuid d5910969-df76-4610-8738-678fcd02e147))
     (pin "2" (uuid ef5eccf6-6528-40cc-a4b3-3149c74ea9df))
-    (pin "3" (uuid 485d42e6-64aa-4377-997b-6380ab6783c5))
-    (pin "4" (uuid 4869c74a-eba8-400a-8e47-bea9d39e726b))
-    (pin "5" (uuid 8af54a28-5020-4f25-bee3-e81e09ffd41e))
+    (pin "9" (uuid 485d42e6-64aa-4377-997b-6380ab6783c5))
     (pin "6" (uuid ca7d87ef-9eff-40c2-8401-1866f091f62b))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "ECGN") (unit 1)
-        )
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb"
-          (reference "ECGN1") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
           (reference "ECGN") (unit 1)
         )
@@ -7786,7 +7674,7 @@
   (symbol (lib_id "Ricoh_Cells:NAND_5") (at 569.595 102.87 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 4719f579-845a-4585-a92f-10997062e854)
-    (property "Reference" "UBNH" (at 569.5812 93.6457 0)
+    (property "Reference" "OKES" (at 569.5812 93.6457 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "NAND_5" (at 569.5812 96.0699 0)
@@ -7806,15 +7694,6 @@
     (pin "6" (uuid bbc7b04e-f65d-4005-b42d-624bf414dbd6))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/c42cdb83-bc69-486b-820b-017180bd7612"
-          (reference "UBNH") (unit 1)
-        )
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/4dc5cd9a-499d-4e55-930f-d6021c4e63f2"
-          (reference "UBNH") (unit 1)
-        )
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "OKES") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
           (reference "OKES") (unit 1)
         )
@@ -7852,7 +7731,7 @@
   (symbol (lib_id "Ricoh_Cells:DFFR_B") (at 333.375 258.445 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 4aea0e85-1e45-4d0e-a1d3-019ebb6752de)
-    (property "Reference" "EBYP" (at 333.375 249.9827 0)
+    (property "Reference" "HMDE" (at 333.375 249.9827 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "DFFR_B" (at 333.375 252.4069 0)
@@ -7866,16 +7745,11 @@
     )
     (pin "1" (uuid 08a0488b-6421-4f8f-9c32-863b143bc070))
     (pin "2" (uuid 4c9fbab0-cb07-4236-9c90-69d6e54971a1))
-    (pin "3" (uuid e74bf645-30e4-4900-9598-43db096b8b8a))
-    (pin "4" (uuid dd29bbe4-a0cd-43f8-b19f-2cfe3829fa8e))
-    (pin "5" (uuid ecec6e85-15fb-4c39-a65b-cbee0ec5f290))
+    (pin "8" (uuid e74bf645-30e4-4900-9598-43db096b8b8a))
+    (pin "9" (uuid dd29bbe4-a0cd-43f8-b19f-2cfe3829fa8e))
     (pin "6" (uuid c482894a-9062-46ac-9e8e-861329ce2b6e))
-    (pin "7" (uuid bd1c71d3-70a3-4751-906c-75e94318a224))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "EBYP") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
           (reference "HMDE") (unit 1)
         )
@@ -7886,7 +7760,7 @@
   (symbol (lib_id "Ricoh_Cells:NOR_LATCH") (at 194.945 273.05 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 4c06c5de-8259-4b65-bb3b-d1798752b631)
-    (property "Reference" "PAWC" (at 194.945 264.5877 0)
+    (property "Reference" "LMXB" (at 194.945 264.5877 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "NOR_LATCH" (at 194.945 267.0119 0)
@@ -7903,9 +7777,6 @@
     (pin "4" (uuid 7a63f882-7cf6-4fe0-82c8-c54c27b5f13e))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "PAWC") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
           (reference "LMXB") (unit 1)
         )
@@ -7916,7 +7787,7 @@
   (symbol (lib_id "Ricoh_Cells:NOR_LATCH") (at 194.945 501.65 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 4fee86c2-f798-4a42-8812-92585e8af134)
-    (property "Reference" "PAWC" (at 194.945 493.1877 0)
+    (property "Reference" "LNXC" (at 194.945 493.1877 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "NOR_LATCH" (at 194.945 495.6119 0)
@@ -7933,9 +7804,6 @@
     (pin "4" (uuid 596e23dc-4dd9-49e0-b746-4dad28327bc7))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "PAWC") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
           (reference "LNXC") (unit 1)
         )
@@ -8041,18 +7909,10 @@
     )
     (pin "1" (uuid ffdef2c7-78c5-4839-983f-e2dbfd6e4403))
     (pin "2" (uuid bef43acd-3a2c-4c55-ad35-f0f4586b0e54))
-    (pin "3" (uuid 31a8d3f6-9f88-4998-8008-4a6c7cc7a63d))
-    (pin "4" (uuid e7d7eaea-8749-44f0-820e-427816be541e))
-    (pin "5" (uuid 4e234fc5-e336-4176-9954-d534c1050596))
+    (pin "9" (uuid 31a8d3f6-9f88-4998-8008-4a6c7cc7a63d))
     (pin "6" (uuid 8facd404-1352-44b1-9944-f70f927a33ab))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "ECGO") (unit 1)
-        )
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb"
-          (reference "ECGO1") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
           (reference "ECGO") (unit 1)
         )
@@ -8117,7 +7977,7 @@
   (symbol (lib_id "Ricoh_Cells:NOR_LATCH") (at 194.945 517.525 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 569fc43b-7a84-4d4a-8227-cbd3d9fa2b1c)
-    (property "Reference" "PAWC" (at 194.945 509.0627 0)
+    (property "Reference" "MOEA" (at 194.945 509.0627 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "NOR_LATCH" (at 194.945 511.4869 0)
@@ -8134,9 +7994,6 @@
     (pin "4" (uuid a2879921-506d-42f6-aef4-e031517c104e))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "PAWC") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
           (reference "MOEA") (unit 1)
         )
@@ -8188,9 +8045,7 @@
     )
     (pin "1" (uuid 17677644-bdd6-40fc-8c33-972813508a80))
     (pin "2" (uuid 76932972-7755-49f9-8dac-c3fe83ba1719))
-    (pin "3" (uuid 3be55a33-abd9-495a-8386-b10ac4b10f10))
-    (pin "4" (uuid 81e5022a-d697-4179-b2d5-8af16007b64b))
-    (pin "5" (uuid 4d36c80a-dfdf-445c-bcb8-f625ad351f11))
+    (pin "9" (uuid 3be55a33-abd9-495a-8386-b10ac4b10f10))
     (pin "6" (uuid 8aa46e9f-ec0f-4eb2-ae68-8c9f4741ee60))
     (instances
       (project "S-CPU"
@@ -8204,7 +8059,7 @@
   (symbol (lib_id "Ricoh_Cells:DFFR_A") (at 111.125 234.315 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 5d2bf919-bc89-497a-841c-2f4fb70545e3)
-    (property "Reference" "EBSG" (at 111.125 225.8527 0)
+    (property "Reference" "NMCH" (at 111.125 225.8527 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "DFFR_A" (at 111.125 228.2769 0)
@@ -8218,15 +8073,10 @@
     )
     (pin "1" (uuid 6490a560-9976-4542-ba90-4d519e572cd3))
     (pin "2" (uuid d4b617de-c5b2-417c-a7c0-97a4ee617c47))
-    (pin "3" (uuid 6fda1dca-839a-4180-aae8-414018fcea7c))
-    (pin "4" (uuid aedc0a38-b180-4625-8562-5d414de49806))
-    (pin "5" (uuid 39c2fca2-3743-4e99-952c-85e2970dd9d4))
+    (pin "9" (uuid 6fda1dca-839a-4180-aae8-414018fcea7c))
     (pin "6" (uuid 63dc6a21-81ff-4263-8016-03f1d35d2c01))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "EBSG") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
           (reference "NMCH") (unit 1)
         )
@@ -8264,7 +8114,7 @@
   (symbol (lib_id "Ricoh_Cells:OR_2") (at 601.345 140.97 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 5dc17ae9-ca56-4569-8410-c7b393c4b3a7)
-    (property "Reference" "DMA?" (at 601.3448 133.0157 0)
+    (property "Reference" "JMIB" (at 601.3448 133.0157 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "OR_2" (at 601.3448 135.4399 0)
@@ -8281,12 +8131,6 @@
     (pin "3" (uuid 19c36321-767d-4e2d-a081-49e12d1e8d23))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "DMA?") (unit 1)
-        )
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb"
-          (reference "DMA24") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
           (reference "JMIB") (unit 1)
         )
@@ -8313,9 +8157,6 @@
     (pin "2" (uuid c477cb47-4441-4892-968f-9d1df99a2fe9))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/6249ed0e-dad5-438e-aa66-f1dc5c72ea48"
-          (reference "CMVW") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
           (reference "CMVW") (unit 1)
         )
@@ -8340,18 +8181,10 @@
     )
     (pin "1" (uuid 987b3ca1-b792-4fc5-beb0-4fb1dbe47674))
     (pin "2" (uuid cbc6690d-e04c-421e-a8f8-607369083a74))
-    (pin "3" (uuid fc5a418a-15f1-41cf-bfc2-8172039ec912))
-    (pin "4" (uuid 763d1e9c-ce92-4585-bf36-e89528a79368))
-    (pin "5" (uuid debc0be0-b304-4836-b2fa-33e437328a08))
+    (pin "9" (uuid fc5a418a-15f1-41cf-bfc2-8172039ec912))
     (pin "6" (uuid 3fba9c40-35e3-4704-94f5-c417c3c8a999))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "ECCU") (unit 1)
-        )
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb"
-          (reference "ECCU1") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
           (reference "ECCU") (unit 1)
         )
@@ -8362,7 +8195,7 @@
   (symbol (lib_id "Ricoh_Cells:DFFR_A") (at 111.125 405.765 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 5ea5c3fb-e1f5-4e5d-a0c3-fb7f58f431d4)
-    (property "Reference" "EBSG" (at 111.125 397.3027 0)
+    (property "Reference" "NMJU" (at 111.125 397.3027 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "DFFR_A" (at 111.125 399.7269 0)
@@ -8376,15 +8209,10 @@
     )
     (pin "1" (uuid e314a5d0-c03e-4118-893d-4e032eda803b))
     (pin "2" (uuid cb190552-8ece-4c74-bb1f-ab2c88e441da))
-    (pin "3" (uuid 385c7f72-40cb-4fe5-b750-fcf9574f502e))
-    (pin "4" (uuid 4e4c056e-3cf7-421f-9a10-c3530cc3b3d9))
-    (pin "5" (uuid 5b8c52c2-8e0e-42bb-bef9-fd71563e8314))
+    (pin "9" (uuid 385c7f72-40cb-4fe5-b750-fcf9574f502e))
     (pin "6" (uuid 817a9bae-4da5-4dcb-8a04-14318d583089))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "EBSG") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
           (reference "NMJU") (unit 1)
         )
@@ -8490,9 +8318,7 @@
     )
     (pin "1" (uuid 368158a0-acad-4211-bf9e-58fd4b12432c))
     (pin "2" (uuid 0d57f490-3dfb-4596-adac-248c809d7d17))
-    (pin "3" (uuid be97f661-ccf1-447d-be6f-0621a2faf892))
-    (pin "4" (uuid 35416750-276a-4aa7-b4c8-bd6491f7b08e))
-    (pin "5" (uuid f98cf7b2-c673-46f9-9941-a6d3c6acfd5f))
+    (pin "9" (uuid be97f661-ccf1-447d-be6f-0621a2faf892))
     (pin "6" (uuid 7fb27bc6-b898-449b-a222-4daa9c4c1f23))
     (instances
       (project "S-CPU"
@@ -8647,7 +8473,7 @@
   (symbol (lib_id "Ricoh_Cells:OR_2") (at 601.345 105.41 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 673265e7-ce7f-4056-bc84-38f1f7941513)
-    (property "Reference" "DMA?" (at 601.3448 97.4557 0)
+    (property "Reference" "HMDF" (at 601.3448 97.4557 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "OR_2" (at 601.3448 99.8799 0)
@@ -8664,9 +8490,6 @@
     (pin "3" (uuid 039add55-0735-44e8-9e7a-cc51f3083a9b))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "DMA?") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
           (reference "HMDF") (unit 1)
         )
@@ -8793,7 +8616,7 @@
   (symbol (lib_id "Ricoh_Cells:DFFR_B") (at 333.375 372.745 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 7398d5c8-d302-46f2-8eac-8940a230907a)
-    (property "Reference" "ECEK" (at 333.375 365.4171 0)
+    (property "Reference" "HMEG" (at 333.375 365.4171 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "DFFR_B" (at 333.375 367.3381 0)
@@ -8807,16 +8630,11 @@
     )
     (pin "1" (uuid 2abb4d61-10c6-4234-a7eb-4c490f83178b))
     (pin "2" (uuid 11f027e5-3495-4262-9299-770040213d23))
-    (pin "3" (uuid 24e095e5-b68a-47c0-a53f-4c774bd73a0d))
-    (pin "4" (uuid 71d44b1d-b8ad-4662-9833-f6395c73796e))
-    (pin "5" (uuid 76ca08cb-c10d-4d92-9548-30f789714685))
+    (pin "8" (uuid 24e095e5-b68a-47c0-a53f-4c774bd73a0d))
+    (pin "9" (uuid 71d44b1d-b8ad-4662-9833-f6395c73796e))
     (pin "6" (uuid 1506c278-ed66-4cf5-aaa6-6f8f8fb0015d))
-    (pin "7" (uuid 570e6398-16d1-461d-9283-d34a6a022a51))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "ECEK") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
           (reference "HMEG") (unit 1)
         )
@@ -8895,18 +8713,10 @@
     )
     (pin "1" (uuid 2bae74ea-cad9-406c-bb03-24506c117bdb))
     (pin "2" (uuid 42d8a3f6-1669-494f-8a43-88de2404cb50))
-    (pin "3" (uuid 58d83252-7fd7-4fb6-a351-2acf246994e4))
-    (pin "4" (uuid 057c42c8-b706-4aa4-8776-4bd0cc16977f))
-    (pin "5" (uuid 44f2a175-6e41-4d78-9970-e86fa93e555f))
+    (pin "9" (uuid 58d83252-7fd7-4fb6-a351-2acf246994e4))
     (pin "6" (uuid 8f227861-66f0-4777-8b9d-c45f412c4cac))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "EBVQ") (unit 1)
-        )
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb"
-          (reference "EBVQ1") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
           (reference "EBVQ") (unit 1)
         )
@@ -9038,18 +8848,10 @@
     )
     (pin "1" (uuid bffd719d-98fa-42bb-8300-2b6f5714d9ee))
     (pin "2" (uuid de14934b-a349-4885-8519-4458b92e2402))
-    (pin "3" (uuid d011ebaa-e270-4e47-b537-4585a53e88df))
-    (pin "4" (uuid a0609337-8dac-4719-82ff-82bc545827f2))
-    (pin "5" (uuid bcebb27e-10f9-4fbe-a0e0-45d22d5fdd73))
+    (pin "9" (uuid d011ebaa-e270-4e47-b537-4585a53e88df))
     (pin "6" (uuid a8c855e3-77f8-48af-ab03-cfe1f4ffab4f))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "EBYP") (unit 1)
-        )
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb"
-          (reference "EBYP1") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
           (reference "EBYP") (unit 1)
         )
@@ -9141,7 +8943,7 @@
   (symbol (lib_id "Ricoh_Cells:NOR_LATCH") (at 194.945 330.2 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 82479905-87a8-4b60-af6d-84363fe304e6)
-    (property "Reference" "PAWC" (at 194.945 321.7377 0)
+    (property "Reference" "LNGD" (at 194.945 321.7377 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "NOR_LATCH" (at 194.945 324.1619 0)
@@ -9158,9 +8960,6 @@
     (pin "4" (uuid c1d48721-fb22-4946-af60-974a70c507b1))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "PAWC") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
           (reference "LNGD") (unit 1)
         )
@@ -9473,7 +9272,7 @@
   (symbol (lib_id "Ricoh_Cells:DFFR_B") (at 333.375 315.595 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 9675068c-b6c0-4699-951a-c8c8bdae49eb)
-    (property "Reference" "ECCU" (at 333.375 307.1327 0)
+    (property "Reference" "HMDM" (at 333.375 307.1327 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "DFFR_B" (at 333.375 309.5569 0)
@@ -9487,16 +9286,11 @@
     )
     (pin "1" (uuid 2da5588e-044c-46bb-977b-0113a3ec33ab))
     (pin "2" (uuid 29941c79-77c4-4f93-b971-b8db0685a393))
-    (pin "3" (uuid 2050fed1-e406-4b14-b082-537d045327eb))
-    (pin "4" (uuid 6002c909-7e78-4324-8dae-401dd222d646))
-    (pin "5" (uuid d61faa8b-3239-4562-aeb1-6ec7db4afb8f))
+    (pin "8" (uuid 2050fed1-e406-4b14-b082-537d045327eb))
+    (pin "9" (uuid 6002c909-7e78-4324-8dae-401dd222d646))
     (pin "6" (uuid 1bb9d046-35a9-4862-9996-17621b8f6604))
-    (pin "7" (uuid 88802745-c039-4506-8d34-5430bf88ccd6))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "ECCU") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
           (reference "HMDM") (unit 1)
         )
@@ -9562,7 +9356,7 @@
   (symbol (lib_id "Ricoh_Cells:NOR_LATCH") (at 194.945 387.35 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 97ca085b-81ec-47c0-a561-798b75e68746)
-    (property "Reference" "PAWC" (at 194.945 378.8877 0)
+    (property "Reference" "LNLG" (at 194.945 378.8877 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "NOR_LATCH" (at 194.945 381.3119 0)
@@ -9579,9 +9373,6 @@
     (pin "4" (uuid a8d14d66-2ef7-4b47-aeea-6059e438d580))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "PAWC") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
           (reference "LNLG") (unit 1)
         )
@@ -9633,9 +9424,7 @@
     )
     (pin "1" (uuid f5393549-9ff8-44f6-9ffe-d82260b4eaf7))
     (pin "2" (uuid 6665e08c-5eb7-41dd-90a7-655295882234))
-    (pin "3" (uuid ef7b99b0-5f9d-4009-9134-26747f6eaf1d))
-    (pin "4" (uuid 5542f8b1-3ca9-487d-926b-86ec4e8349c3))
-    (pin "5" (uuid bfca93d9-7ac4-4699-b7d7-950b322a0cec))
+    (pin "9" (uuid ef7b99b0-5f9d-4009-9134-26747f6eaf1d))
     (pin "6" (uuid 3a50b8e8-d026-4e15-809d-843d3d65e69a))
     (instances
       (project "S-CPU"
@@ -9754,7 +9543,7 @@
   (symbol (lib_id "Ricoh_Cells:NAND_5") (at 569.595 138.43 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid a08bcc20-9913-4981-b337-ab6e5185f229)
-    (property "Reference" "UBNH" (at 569.5812 129.2057 0)
+    (property "Reference" "OKJF" (at 569.5812 129.2057 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "NAND_5" (at 569.5812 131.6299 0)
@@ -9774,18 +9563,6 @@
     (pin "6" (uuid a2f1aef3-d40a-41ed-ac85-1450eaa12117))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/c42cdb83-bc69-486b-820b-017180bd7612"
-          (reference "UBNH") (unit 1)
-        )
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/4dc5cd9a-499d-4e55-930f-d6021c4e63f2"
-          (reference "UBNH") (unit 1)
-        )
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "OKES") (unit 1)
-        )
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb"
-          (reference "OKJF") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
           (reference "OKJF") (unit 1)
         )
@@ -10060,18 +9837,10 @@
     )
     (pin "1" (uuid 36c686d7-93ca-4827-bbbf-51a71359caf7))
     (pin "2" (uuid 3b5a2a87-f8e8-4be1-9169-617e3ca2b9c0))
-    (pin "3" (uuid cf12e9a8-c763-4edb-b6d1-a4064c8516fa))
-    (pin "4" (uuid 958088be-6c78-4adc-ad7a-fc1594afe505))
-    (pin "5" (uuid c1f8fa33-cc53-4f3d-86da-7c395464b05f))
+    (pin "9" (uuid cf12e9a8-c763-4edb-b6d1-a4064c8516fa))
     (pin "6" (uuid 633b6b9e-4c73-4656-96c2-030b42e5ecd8))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "ECEK") (unit 1)
-        )
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb"
-          (reference "ECEK1") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
           (reference "ECEK") (unit 1)
         )
@@ -10226,7 +9995,7 @@
     (property "Footprint" "" (at 742.95 402.59 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "http://iceboy.a-singer.de/doc/dmg_cells.html#dffr_b" (at 742.95 410.845 0)
+    (property "Datasheet" "" (at 742.95 410.845 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 4d3c81e3-1ddd-404a-9a2f-a344424c18ac))
@@ -10310,7 +10079,7 @@
   (symbol (lib_id "Ricoh_Cells:NOR_LATCH") (at 194.945 444.5 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid b54ccc5e-8f8e-4a04-be06-6544257bc3d4)
-    (property "Reference" "PAWC" (at 194.945 436.0377 0)
+    (property "Reference" "LNOK" (at 194.945 436.0377 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "NOR_LATCH" (at 194.945 438.4619 0)
@@ -10327,9 +10096,6 @@
     (pin "4" (uuid 2db76e2e-3d6d-443b-a1e4-ad3db50c4016))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "PAWC") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
           (reference "LNOK") (unit 1)
         )
@@ -10553,9 +10319,6 @@
     (pin "5" (uuid b249033e-a5af-4396-8136-4e4f60c59491))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "DBWG") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
           (reference "DBWG") (unit 1)
         )
@@ -10728,7 +10491,7 @@
   (symbol (lib_id "Ricoh_Cells:DFFR_A") (at 659.765 447.04 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid c20a7a5b-ff00-45b5-a52e-f56f632811ff)
-    (property "Reference" "EBSG" (at 659.765 438.5777 0)
+    (property "Reference" "CNMF" (at 659.765 438.5777 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "DFFR_A" (at 659.765 441.0019 0)
@@ -10742,15 +10505,10 @@
     )
     (pin "1" (uuid ed1dadd8-a60f-4908-a00e-10cc264f770a))
     (pin "2" (uuid 1b90ee23-6ba9-4e38-805b-5d2536ba2fad))
-    (pin "3" (uuid 2cb7f23d-7ed3-4435-9571-2adaacacb20f))
-    (pin "4" (uuid 7efde6ce-833c-4d91-b11e-40b5ec81dfb2))
-    (pin "5" (uuid cf112c5e-98c6-4c57-8596-a5d7c9c35fce))
+    (pin "9" (uuid 2cb7f23d-7ed3-4435-9571-2adaacacb20f))
     (pin "6" (uuid 3d942191-5b8a-42a9-b780-30ea5875dbdf))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "EBSG") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
           (reference "CNMF") (unit 1)
         )
@@ -10761,7 +10519,7 @@
   (symbol (lib_id "Ricoh_Cells:NOR_LATCH") (at 194.945 215.9 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid c3324224-d5c5-4d41-8af1-edcca8dc5adc)
-    (property "Reference" "PAWC" (at 194.945 207.4377 0)
+    (property "Reference" "LMSB" (at 194.945 207.4377 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "NOR_LATCH" (at 194.945 209.8619 0)
@@ -10778,9 +10536,6 @@
     (pin "4" (uuid 8887525b-893b-4396-a9de-b55c4bd4648a))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "PAWC") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
           (reference "LMSB") (unit 1)
         )
@@ -10845,7 +10600,7 @@
   (symbol (lib_id "Ricoh_Cells:DFFR_B") (at 333.375 429.895 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid c684f798-e5ac-4fe4-b20a-8d565eadeb78)
-    (property "Reference" "ECGN" (at 333.375 421.4327 0)
+    (property "Reference" "HMFF" (at 333.375 421.4327 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "DFFR_B" (at 333.375 423.8569 0)
@@ -10859,16 +10614,11 @@
     )
     (pin "1" (uuid 93c204d1-b8bb-4b65-953d-f3f227c0c1ab))
     (pin "2" (uuid d1821ed4-d805-4e17-9432-aff2dd666d10))
-    (pin "3" (uuid 3e5e8f72-0323-4df8-af83-2e3783fe89d5))
-    (pin "4" (uuid 7a65c841-45f9-4b7f-9d9d-eeddb1ab10d2))
-    (pin "5" (uuid 1dfd8788-9d12-4ef4-bb3d-b917b743b17e))
+    (pin "8" (uuid 3e5e8f72-0323-4df8-af83-2e3783fe89d5))
+    (pin "9" (uuid 7a65c841-45f9-4b7f-9d9d-eeddb1ab10d2))
     (pin "6" (uuid ea6056af-acaa-4f7b-8285-0d963ee597ed))
-    (pin "7" (uuid d201750b-a793-4a2e-a190-dee8b2f52e3e))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "ECGN") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
           (reference "HMFF") (unit 1)
         )
@@ -10893,9 +10643,7 @@
     )
     (pin "1" (uuid 0022bc54-a05c-40f7-979b-2ecb328d62fe))
     (pin "2" (uuid a14048f3-92a9-4ec1-b138-bb1400f8cddb))
-    (pin "3" (uuid c46998c4-0551-43b8-8703-2f8ffeea87ed))
-    (pin "4" (uuid 583daa68-a390-424c-bb9d-9e0134c45774))
-    (pin "5" (uuid 6d6fa578-2bfa-4aae-8d80-260c463b8844))
+    (pin "9" (uuid c46998c4-0551-43b8-8703-2f8ffeea87ed))
     (pin "6" (uuid 3314137c-e5c7-4b29-af80-89c8b4d6e890))
     (instances
       (project "S-CPU"
@@ -10923,11 +10671,9 @@
     )
     (pin "1" (uuid edb449fc-5bc4-4152-80af-f2e441097e37))
     (pin "2" (uuid d0c94210-cfe6-4577-9748-7791fee9c0b7))
-    (pin "3" (uuid 8d97619d-3b09-43c9-a38b-a59ea4527512))
-    (pin "4" (uuid d5a7245e-d81e-4713-998e-5b934b05f809))
-    (pin "5" (uuid 4bcb9be5-6628-439f-8014-d89839574318))
+    (pin "8" (uuid 8d97619d-3b09-43c9-a38b-a59ea4527512))
+    (pin "9" (uuid d5a7245e-d81e-4713-998e-5b934b05f809))
     (pin "6" (uuid 9feaeac4-b425-469d-b301-730c01571443))
-    (pin "7" (uuid c8bea2e7-eb47-4825-92d6-da22c52d8408))
     (instances
       (project "S-CPU"
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
@@ -11067,7 +10813,7 @@
   (symbol (lib_id "Ricoh_Cells:DFFR_A") (at 111.125 520.065 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid cec18e6a-5b6d-4f87-95ed-1e39037271d3)
-    (property "Reference" "EBSG" (at 111.125 511.6027 0)
+    (property "Reference" "NMMX" (at 111.125 511.6027 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "DFFR_A" (at 111.125 514.0269 0)
@@ -11081,15 +10827,10 @@
     )
     (pin "1" (uuid dc598607-693e-4407-8ae1-238fd674e1ec))
     (pin "2" (uuid cd243c5e-5a3e-4bb8-b63a-cb952379bf77))
-    (pin "3" (uuid 822d5af2-dd34-45f0-b416-1c32db942cb8))
-    (pin "4" (uuid 93139701-c1a2-4f52-91b2-dcd02235cc46))
-    (pin "5" (uuid 752b19c5-27a7-4ad1-8395-f417d9cad512))
+    (pin "9" (uuid 822d5af2-dd34-45f0-b416-1c32db942cb8))
     (pin "6" (uuid 59559391-1acb-451f-b0f9-24a0ecf4a20c))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "EBSG") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
           (reference "NMMX") (unit 1)
         )
@@ -11114,18 +10855,10 @@
     )
     (pin "1" (uuid 7c91870c-50ea-4cf5-a626-f411314e0677))
     (pin "2" (uuid 6563952b-7761-4bca-861b-2c902fd8507e))
-    (pin "3" (uuid 3fe01d3f-261a-4e16-89ca-3072f6e4a6c0))
-    (pin "4" (uuid ed4789ff-075e-4449-98aa-fa7d7a342e3b))
-    (pin "5" (uuid cd0b8c59-6067-4e65-bf2b-ed2f920af002))
+    (pin "9" (uuid 3fe01d3f-261a-4e16-89ca-3072f6e4a6c0))
     (pin "6" (uuid 971ca3f3-8255-4a88-aba7-3490d7f0e24c))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "EBSG") (unit 1)
-        )
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb"
-          (reference "EBSG1") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
           (reference "EBSG") (unit 1)
         )
@@ -11162,7 +10895,7 @@
   (symbol (lib_id "Ricoh_Cells:DFFR_A") (at 111.125 348.615 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid d3a28d93-7a9a-4ab4-8f91-2c172a281e1d)
-    (property "Reference" "EBSG" (at 111.125 340.1527 0)
+    (property "Reference" "NMJJ" (at 111.125 340.1527 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "DFFR_A" (at 111.125 342.5769 0)
@@ -11176,15 +10909,10 @@
     )
     (pin "1" (uuid 9868ab11-34e2-418f-bb76-b0cc7e571aae))
     (pin "2" (uuid 2863b81e-d3f5-4e6c-bcae-7111448a97a1))
-    (pin "3" (uuid fe1d185a-7244-4e34-be8b-e4d8b78c537c))
-    (pin "4" (uuid 27de8d29-5417-4eb6-a8a0-1e2b6a7d575a))
-    (pin "5" (uuid 4e3f21e3-ba25-4346-9ea6-b9e050c865a8))
+    (pin "9" (uuid fe1d185a-7244-4e34-be8b-e4d8b78c537c))
     (pin "6" (uuid 5c3209ec-ba9b-459f-a7fa-746e67904cf5))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "EBSG") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
           (reference "NMJJ") (unit 1)
         )
@@ -11232,7 +10960,7 @@
   (symbol (lib_id "Ricoh_Cells:DFFR_A") (at 111.125 462.915 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid d99bfaea-e5ce-4840-a500-9ebeeb4dd00b)
-    (property "Reference" "EBSG" (at 111.125 454.4527 0)
+    (property "Reference" "NMLZ" (at 111.125 454.4527 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "DFFR_A" (at 111.125 456.8769 0)
@@ -11246,15 +10974,10 @@
     )
     (pin "1" (uuid 2b550aa5-bdf8-4793-b77f-d3405520daba))
     (pin "2" (uuid 640f559b-0644-461a-91c2-46a048492cb9))
-    (pin "3" (uuid 5639755a-29d8-4e97-b74b-3499c8b35b3b))
-    (pin "4" (uuid 35a5015e-9e4c-4ec6-a0c1-52564ae36d12))
-    (pin "5" (uuid 44008541-0ebc-4a73-b265-d5b6b9bc1025))
+    (pin "9" (uuid 5639755a-29d8-4e97-b74b-3499c8b35b3b))
     (pin "6" (uuid 16ec6093-12cc-49ac-82c6-d1e75d2d2791))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "EBSG") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
           (reference "NMLZ") (unit 1)
         )
@@ -11489,7 +11212,7 @@
     (property "Footprint" "" (at 742.95 453.39 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "http://iceboy.a-singer.de/doc/dmg_cells.html#dffr_b" (at 742.95 461.645 0)
+    (property "Datasheet" "" (at 742.95 461.645 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid a22a148f-e684-4341-942a-3e4d69ecbd08))
@@ -11549,11 +11272,9 @@
     )
     (pin "1" (uuid 682b1adc-57e4-4829-b079-ab2dec211049))
     (pin "2" (uuid bb917051-bfef-409a-a8e2-8f3f6dde2004))
-    (pin "3" (uuid 2b462d9d-711d-40e3-a270-a9c8fab04efe))
-    (pin "4" (uuid a922ff4c-0043-4d94-aa57-6771c2edf803))
-    (pin "5" (uuid 9458d0ab-3e6b-4c3f-940f-65cf0dca0780))
+    (pin "8" (uuid 2b462d9d-711d-40e3-a270-a9c8fab04efe))
+    (pin "9" (uuid a922ff4c-0043-4d94-aa57-6771c2edf803))
     (pin "6" (uuid 46a123ef-3370-4837-b866-33590a8294eb))
-    (pin "7" (uuid 069bbdc3-2a92-4244-8630-a79a7f335f73))
     (instances
       (project "S-CPU"
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
@@ -11580,18 +11301,10 @@
     )
     (pin "1" (uuid 3b8c86f3-ae56-4414-8014-899a5a69e067))
     (pin "2" (uuid 63d3f33c-b1e3-46c3-bc01-acb6d2381924))
-    (pin "3" (uuid cffd0b7f-7025-4477-b4be-b531b91470c5))
-    (pin "4" (uuid 121371a6-8653-4c53-89ee-13efe3a02dba))
-    (pin "5" (uuid 9e0fbc53-d7a5-43a2-b444-68fda1422364))
+    (pin "9" (uuid cffd0b7f-7025-4477-b4be-b531b91470c5))
     (pin "6" (uuid 872baa64-da14-4f58-97e8-82cd2dcace6c))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "EBXE") (unit 1)
-        )
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb"
-          (reference "EBXE1") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
           (reference "EBXE") (unit 1)
         )
@@ -11680,9 +11393,7 @@
     )
     (pin "1" (uuid 996945a6-831c-4173-af2c-517d3863a515))
     (pin "2" (uuid 645aaa38-41c5-4aa3-b353-65d195f0831b))
-    (pin "3" (uuid c0fd72b0-b718-4f63-b542-bd89dd7040bd))
-    (pin "4" (uuid 4d58baad-023b-4d46-ac28-41366209fbd7))
-    (pin "5" (uuid 7bcdc345-00ac-4438-9ad2-6a6edc1627aa))
+    (pin "9" (uuid c0fd72b0-b718-4f63-b542-bd89dd7040bd))
     (pin "6" (uuid 8970e3f5-cb54-411c-a7c0-11575ff07e37))
     (instances
       (project "S-CPU"
@@ -11739,9 +11450,6 @@
     (pin "2" (uuid 052fcb90-6ef6-408e-9312-b0c77b756c51))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/6249ed0e-dad5-438e-aa66-f1dc5c72ea48"
-          (reference "CMVK") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
           (reference "CMVK") (unit 1)
         )
@@ -11752,7 +11460,7 @@
   (symbol (lib_id "Ricoh_Cells:NOR_LATCH") (at 194.945 231.775 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid ef5d0490-c3c3-47ac-8b05-b021348b5f40)
-    (property "Reference" "PAWC" (at 194.945 223.3127 0)
+    (property "Reference" "MMQC" (at 194.945 223.3127 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "NOR_LATCH" (at 194.945 225.7369 0)
@@ -11769,9 +11477,6 @@
     (pin "4" (uuid b8550291-3371-4991-80b4-be3d2af13df0))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "PAWC") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
           (reference "MMQC") (unit 1)
         )
@@ -11782,7 +11487,7 @@
   (symbol (lib_id "Ricoh_Cells:NOR_LATCH") (at 194.945 460.375 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid efa5139a-8396-4a94-bcf9-e215f2e5e47d)
-    (property "Reference" "PAWC" (at 194.945 451.9127 0)
+    (property "Reference" "MNRD" (at 194.945 451.9127 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "NOR_LATCH" (at 194.945 454.3369 0)
@@ -11799,9 +11504,6 @@
     (pin "4" (uuid ecdb3c57-f9bb-4331-87c8-dd8a4d845e5e))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "PAWC") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
           (reference "MNRD") (unit 1)
         )
@@ -11812,7 +11514,7 @@
   (symbol (lib_id "Ricoh_Cells:INVERTER_A") (at 549.275 129.54 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid f0234610-4450-4d43-a842-06f1a1bbbe97)
-    (property "Reference" "OKHF" (at 549.275 121.5857 0)
+    (property "Reference" "OKJL" (at 549.275 121.5857 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "INVERTER_A" (at 549.275 124.0099 0)
@@ -11828,12 +11530,6 @@
     (pin "2" (uuid e527a79d-a1d1-4f2d-b995-4947c2cd7a79))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "OKHF") (unit 1)
-        )
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb"
-          (reference "OKJL") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
           (reference "OKJL") (unit 1)
         )
@@ -11881,7 +11577,7 @@
   (symbol (lib_id "Ricoh_Cells:INVERTER_A") (at 549.275 151.13 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid f122dd71-f95b-4940-89c7-ccc6646c876c)
-    (property "Reference" "OKHF" (at 549.275 143.1757 0)
+    (property "Reference" "OKIO" (at 549.275 143.1757 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "INVERTER_A" (at 549.275 145.5999 0)
@@ -11897,12 +11593,6 @@
     (pin "2" (uuid c30c7840-b186-48d4-9542-2b615ba4bf6b))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "OKHF") (unit 1)
-        )
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb"
-          (reference "OKIO") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
           (reference "OKIO") (unit 1)
         )
@@ -11940,7 +11630,7 @@
   (symbol (lib_id "Ricoh_Cells:DFFR_A") (at 111.125 177.165 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid f5e95a31-175d-465a-ac42-f3b8682a4da1)
-    (property "Reference" "EBSG" (at 111.125 168.7027 0)
+    (property "Reference" "NMBF" (at 111.125 168.7027 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "DFFR_A" (at 111.125 171.1269 0)
@@ -11954,15 +11644,10 @@
     )
     (pin "1" (uuid 1cec8352-da2d-4577-8ca2-6e3774af02d2))
     (pin "2" (uuid 9a56a862-9be4-42ab-8833-dc8dbb73f0c5))
-    (pin "3" (uuid 00927a2a-0324-4643-a592-a0415f5a8356))
-    (pin "4" (uuid 9dea0aa8-6b2b-4d7c-aa47-658006ddf6c4))
-    (pin "5" (uuid 5ad5052e-dd4c-4600-91d9-eb8e3ebf168e))
+    (pin "9" (uuid 00927a2a-0324-4643-a592-a0415f5a8356))
     (pin "6" (uuid 5bb9e259-e119-4ef0-9935-d6ea33e1f17e))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "EBSG") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
           (reference "NMBF") (unit 1)
         )
@@ -11987,11 +11672,9 @@
     )
     (pin "1" (uuid aa38094f-969a-4dc9-9ac7-9ee35a4786fc))
     (pin "2" (uuid 4db52922-07a6-4b13-8ade-c903c7024be8))
-    (pin "3" (uuid ae76db61-3637-40b4-b2a9-573053b32a61))
-    (pin "4" (uuid 096d49b1-0176-4193-a0f2-13edaf3057da))
-    (pin "5" (uuid 4551ccf6-6be0-47f1-9315-80db9cb1efd7))
+    (pin "8" (uuid ae76db61-3637-40b4-b2a9-573053b32a61))
+    (pin "9" (uuid 096d49b1-0176-4193-a0f2-13edaf3057da))
     (pin "6" (uuid 9fc2ccd9-53df-4378-9b70-dbb0e0987fc0))
-    (pin "7" (uuid c10b3466-f863-4060-867e-a5969f95542b))
     (instances
       (project "S-CPU"
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
@@ -12020,9 +11703,6 @@
     (pin "2" (uuid 1674c675-2687-44c5-8a66-900c9ac977a8))
     (instances
       (project "S-CPU"
-        (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3"
-          (reference "OKHF") (unit 1)
-        )
         (path "/ca9d3ca9-0297-4b98-a109-b7c162ccc5c3/6ab7ea20-bfb3-4f18-94ca-a294126fa0fb/606b397f-d353-4bdc-83fa-3e77f933e2b8"
           (reference "OKHF") (unit 1)
         )
